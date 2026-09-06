@@ -302,11 +302,17 @@ img{display:block;max-width:100%}
 .icobtn{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center}
 .icobtn.ok{background:#DDEBE3}.icobtn.ok [data-i]{color:var(--green);width:16px;height:16px}
 .icobtn.no{background:#F6E4E2}.icobtn.no [data-i]{color:var(--red);width:16px;height:16px}
+.pill.buy{background:var(--green);color:#fff}
+.pill.boost [data-i]{width:12px;height:12px;flex:none}
+.btn.disabled{opacity:.4;pointer-events:none}
+.course-card{width:112px;height:84px;background:var(--copper-100);border-radius:14px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;flex:none}
+.course-card .code{font-family:monospace;font-weight:700;font-size:13px;color:var(--navy)}
+.course-card .cnt{font-size:11px;color:var(--copper);font-weight:500}
+.course-card.add{align-items:center;justify-content:center;background:transparent;border:1.5px dashed var(--copper-300)}
 </style>
 </head>
 <body>
 <div class="board">
-
 <!-- ═══════════════════════════ BUYER / SELLER — ONBOARDING ═══════════════════════════ -->
 <div class="persona">Buyer / Seller · <span>Onboarding &amp; Verification</span></div>
 
@@ -315,7 +321,6 @@ img{display:block;max-width:100%}
 <div class="screen">
   <img class="rays" src="ray1.png" alt=""><img class="noise" src="noise.png" alt="">
   <div class="rel">
-    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
     <div class="pad" style="padding-top:72px;display:flex;flex-direction:column;align-items:center;gap:0">
       <div style="width:88px;height:88px;border-radius:24px;background:var(--navy);display:flex;align-items:center;justify-content:center"><span data-i="shield" class="i40 c-cream"></span></div>
       <div class="wordmark" style="margin-top:16px">KNIGHT<span class="acc">MARKET</span></div>
@@ -323,7 +328,7 @@ img{display:block;max-width:100%}
     </div>
     <div class="pad" style="margin-top:40px;display:flex;flex-direction:column;gap:14px">
       <div class="field"><span class="label">School email</span>
-        <div class="input focus"><span data-i="user" class="i20 c-sec"></span><span class="val">yourname@addu.edu.ph</span></div>
+        <div class="input focus"><span data-i="user" class="i20 c-sec"></span><span class="val" style="color:var(--navy-300)">yourname@yourschool.edu.ph</span></div>
       </div>
       <div class="btn primary">Continue <span data-i="arrow" class="i20 c-cream"></span></div>
       <div class="center label-s sec">Don't have school email? <span class="acc">Verify with Student ID</span></div>
@@ -340,7 +345,6 @@ img{display:block;max-width:100%}
 <div class="screen">
   <img class="rays" src="ray1.png" alt=""><img class="noise" src="noise.png" alt="">
   <div class="rel">
-    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
     <div class="hdr"><span data-i="back"></span></div>
     <div class="pad" style="padding-top:24px;display:flex;flex-direction:column;gap:12px">
       <div class="display">Check your <span class="acc">email</span></div>
@@ -360,7 +364,6 @@ img{display:block;max-width:100%}
 <div class="slot"><label>03 · Verify with Student ID — Capture (alt path)</label>
 <div class="screen">
   <div class="rel">
-    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
     <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Verify with Student ID</span><span style="width:24px"></span></div>
     <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-top:8px">
       <div><div class="h2">Show us your <span class="acc">ID</span></div><div class="sec body-s" style="margin-top:4px">Front side, well-lit, all text readable.</div></div>
@@ -370,7 +373,7 @@ img{display:block;max-width:100%}
       </div>
       <div class="btn primary"><span data-i="camera" class="i20 c-cream"></span>Capture photo</div>
       <div class="btn outline">Upload from gallery instead</div>
-      <div class="body-s sec center">We only use this to verify you're a real AdDU student. Your ID photo isn't shown to other users.</div>
+      <div class="body-s sec center">We only use this to verify you're a real college student. Your ID photo isn't shown to other users.</div>
     </div>
     <div style="position:absolute;bottom:32px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px">
       <div class="stepdots"><i class="on"></i><i></i></div>
@@ -383,7 +386,6 @@ img{display:block;max-width:100%}
 <div class="slot"><label>04 · Confirm ID Details (OCR review)</label>
 <div class="screen">
   <div class="rel">
-    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
     <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Confirm your details</span><span style="width:24px"></span></div>
     <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px">
       <div class="card" style="padding:10px;display:flex;gap:10px;align-items:center">
@@ -405,6 +407,43 @@ img{display:block;max-width:100%}
   </div>
 </div></div>
 
+<!-- New · Switch campus (Step 4d) -->
+<div class="slot"><label>New · Switch campus (sheet overlay)</label>
+<div class="screen">
+<div class="scrim"></div>
+<div class="sheet">
+  <div class="grab"></div>
+  <span class="h3">Your campus</span>
+  <div class="lrow"><span data-i="seal-gold" class="c-acc"></span><div><div class="label">Ateneo de Davao University</div><div class="body-s sec">Verified · your account</div></div><span class="r"><span data-i="check-c" class="c-acc i20"></span></span></div>
+  <div class="lrow" style="opacity:.5"><span data-i="pin" class="c-sec"></span><div><div class="label">UIC</div><div class="body-s sec">Coming soon</div></div></div>
+  <div class="lrow" style="opacity:.5;border:none"><span data-i="pin" class="c-sec"></span><div><div class="label">SPC · HCDC</div><div class="body-s sec">Coming soon</div></div></div>
+  <div class="body-s sec center" style="margin-top:4px">KnightMarket is expanding to more Davao schools soon 👀</div>
+</div>
+</div></div>
+
+<!-- New · Add your classes (Step 5a) -->
+<div class="slot"><label>New · Add your classes (onboarding)</label>
+<div class="screen tall">
+<div class="hdr"><span data-i="back"></span><span class="h3 ttl">Add your classes</span><span class="label-s acc">Skip</span></div>
+<div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px">
+  <div>
+    <div class="h2">What are you <span class="acc">taking</span> this sem?</div>
+    <div class="sec body-s" style="margin-top:6px">We'll show PE gear, uniforms, and books made for your exact classes first.</div>
+  </div>
+  <div class="search"><span data-i="search" class="i20 c-sec"></span><span style="color:var(--navy-300)">Search course code, e.g. PATHFit3</span></div>
+  <div class="chips">
+    <span class="chip on">#PATHFit3 <span data-i="x" class="i16 c-white"></span></span>
+    <span class="chip on">#MMW <span data-i="x" class="i16 c-white"></span></span>
+    <span class="chip on">#RPH <span data-i="x" class="i16 c-white"></span></span>
+  </div>
+  <div class="body-s sec" style="margin-top:8px">Suggested for BS Nursing · 3rd year</div>
+  <div class="chips">
+    <span class="chip">#STS</span><span class="chip">#PurCom</span><span class="chip">#Ethics</span><span class="chip">#NCM106</span>
+  </div>
+</div>
+<div class="cta"><div class="btn primary">Continue</div></div>
+</div></div>
+
 <!-- ═══════════════════════════ BUYER / SELLER — CORE ═══════════════════════════ -->
 <div class="persona">Buyer / Seller · <span>Browse &amp; Buy</span></div>
 
@@ -413,14 +452,13 @@ img{display:block;max-width:100%}
 <div class="screen tall">
   <div style="position:absolute;top:0;left:0;right:0;height:160px;overflow:hidden;pointer-events:none"><img class="rays" src="ray1.png" alt=""></div>
   <div class="rel">
-    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
     <div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between">
       <div style="display:flex;align-items:center;gap:8px">
         <div style="width:26px;height:26px;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center"><span data-i="shield" style="width:16px;height:16px;color:var(--cream-50)"></span></div>
         <span class="h3">Knight<span class="acc">Market</span></span>
       </div>
       <div style="display:flex;gap:10px;align-items:center">
-        <span class="chip filter" style="height:28px"><span data-i="seal" class="i16"></span>AdDU</span>
+        <span class="chip filter" style="height:28px"><span data-i="seal" class="i16"></span>AdDU<span data-i="chev-d" class="i14"></span></span>
         <span data-i="heart" class="i20 c-sec"></span>
         <span data-i="bell" class="i20 c-sec"></span>
       </div>
@@ -444,14 +482,34 @@ img{display:block;max-width:100%}
         <div class="tile"><span data-i="calc"></span>Electronics</div>
         <div class="tile"><span data-i="fan"></span>Dorm</div>
         <div class="tile"><span data-i="hoodie"></span>Org/Club Merch</div>
-        <div class="tile"><span data-i="dress"></span>Formal</div>
+        <div class="tile"><span data-i="pkg"></span>Misc</div>
       </div>
     </div>
     <div class="sec-gap">
       <div class="pad sh"><span class="h2">Boosted picks</span><span data-i="chev-r" class="i20 c-sec"></span></div>
       <div class="rail" style="padding-left:16px">
-        <div class="card h"><div class="im"><span data-i="tshirt"></span><span class="pill boost"><span data-i="rocket" class="i16"></span>Boosted</span></div><div class="bd"><span class="price">₱450</span><span class="ttl">Nursing duty whites, M</span><span class="badge"><span data-i="seal"></span>Jo R.<span class="rate">★4.9</span></span></div></div>
-        <div class="card h"><div class="im"><span data-i="calc"></span><span class="pill boost"><span data-i="rocket" class="i16"></span>Boosted</span></div><div class="bd"><span class="price">₱600</span><span class="ttl">Casio fx-991EX calc</span><span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★4.6</span></span></div></div>
+        <div class="card h">
+          <div class="im">
+            <span data-i="tshirt"></span>
+            <span class="pill boost"><span data-i="rocket"></span>Boosted</span>
+          </div>
+          <div class="bd">
+            <span class="price">₱450</span>
+            <span class="ttl">Nursing duty whites, M</span>
+            <span class="badge"><span data-i="seal"></span>Jo R.<span class="rate">★4.9</span></span>
+          </div>
+        </div>
+        <div class="card h">
+          <div class="im">
+            <span data-i="calc"></span>
+            <span class="pill boost"><span data-i="rocket"></span>Boosted</span>
+          </div>
+          <div class="bd">
+            <span class="price">₱600</span>
+            <span class="ttl">Casio fx-991EX calc</span>
+            <span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★4.6</span></span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="sec-gap">
@@ -475,10 +533,14 @@ img{display:block;max-width:100%}
       </div>
     </div>
     <div class="pad sec-gap">
-      <div class="sh"><span class="h2">Your course codes</span><span class="label-s acc">Edit</span></div>
-      <div class="chips">
-        <span class="chip">#PATHFit3</span><span class="chip">#MMW</span><span class="chip">#RPH</span><span class="chip">#STS</span>
-        <span class="chip">#PurCom</span><span class="chip">#Ethics</span><span class="chip outline">+ add code</span>
+      <div class="sh"><span class="h2">Shop for your classes</span><span class="label-s acc">Edit</span></div>
+      <div class="body-s sec" style="margin-top:-6px;margin-bottom:8px">Filtered to what you're taking this sem</div>
+      <div class="rail">
+        <div class="course-card"><span class="code">#PATHFit3</span><span class="cnt">6 items</span></div>
+        <div class="course-card"><span class="code">#MMW</span><span class="cnt">3 items</span></div>
+        <div class="course-card"><span class="code">#RPH</span><span class="cnt">2 items</span></div>
+        <div class="course-card"><span class="code">#STS</span><span class="cnt">1 item</span></div>
+        <div class="course-card add"><span class="label-s acc">+ Add class</span></div>
       </div>
     </div>
     <div class="pad sec-gap" style="padding-bottom:100px">
@@ -500,10 +562,73 @@ img{display:block;max-width:100%}
   </div>
 </div></div>
 
+<!-- New · Edit your classes (Step 5c) -->
+<div class="slot"><label>New · Edit your classes</label>
+<div class="screen tall">
+<div class="hdr"><span data-i="back"></span><span class="h3 ttl">Edit your classes</span><span class="label-s acc">Done</span></div>
+<div class="pad" style="padding-top:8px"><div class="search"><span data-i="search" class="i20 c-sec"></span><span style="color:var(--navy-300)">Search course code…</span></div></div>
+<div class="pad sec-gap">
+  <div class="body-s sec" style="margin-bottom:8px">Currently added (4)</div>
+  <div class="chips">
+    <span class="chip on">#PATHFit3 <span data-i="x" class="i16 c-white"></span></span>
+    <span class="chip on">#MMW <span data-i="x" class="i16 c-white"></span></span>
+    <span class="chip on">#RPH <span data-i="x" class="i16 c-white"></span></span>
+    <span class="chip on">#STS <span data-i="x" class="i16 c-white"></span></span>
+  </div>
+</div>
+<div class="pad sec-gap" style="padding-bottom:100px">
+  <div class="body-s sec" style="margin-bottom:8px">Suggested for BS Nursing · 3rd year</div>
+  <div class="lrow"><span class="label-s">#NCM106 — Nursing Care Mgmt 106</span><span class="r"><span data-i="plus" class="i20 c-acc"></span></span></div>
+  <div class="lrow"><span class="label-s">#NCM107 — Nursing Care Mgmt 107</span><span class="r"><span data-i="plus" class="i20 c-acc"></span></span></div>
+  <div class="lrow" style="border:none"><span class="label-s">#RLE — Related Learning Experience</span><span class="r"><span data-i="plus" class="i20 c-acc"></span></span></div>
+</div>
+</div></div>
+
+<!-- New · Browse Explore landing (Step 6) -->
+<div class="slot"><label>New · Browse — Explore (default landing, scrolls)</label>
+<div class="screen tall">
+<div class="hdr" style="gap:10px">
+  <div class="search" style="flex:1">Search books, gear, uniforms…</div>
+  <span data-i="sliders"></span>
+</div>
+<div class="pad sec-gap">
+  <div class="tiles">
+    <div class="tile"><span data-i="book"></span>Books</div>
+    <div class="tile"><span data-i="tshirt"></span>Uniforms</div>
+    <div class="tile"><span data-i="racket"></span>PE Gear</div>
+    <div class="tile"><span data-i="steth"></span>Lab</div>
+    <div class="tile"><span data-i="calc"></span>Electronics</div>
+    <div class="tile"><span data-i="fan"></span>Dorm</div>
+    <div class="tile"><span data-i="hoodie"></span>Org/Club</div>
+    <div class="tile"><span data-i="pkg"></span>Misc</div>
+  </div>
+</div>
+<div class="pad sec-gap">
+  <div class="chips">
+    <span class="chip filter on">All</span><span class="chip filter">Buy</span><span class="chip filter">Rent</span><span class="chip filter">Org/Club</span>
+  </div>
+</div>
+<div class="pad sec-gap" style="padding-bottom:110px">
+  <div class="sh"><span class="h2">Everyone's browsing</span></div>
+  <div class="grid">
+    <div class="card"><div class="im"><img src="books.png" alt=""><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span></div></div>
+    <div class="card spons"><div class="im" style="background:var(--copper-100)"><span data-i="printer" style="color:var(--copper);width:56px;height:56px"></span><span class="sp">SPONSORED</span></div><div class="bd"><span class="price">₱2 <span class="per">/page</span></span><span class="ttl">Thesis printing + binding</span><span class="body-s sec">PrintHub Roxas · 4 min walk</span></div></div>
+    <div class="card"><div class="im"><span data-i="hoodie"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱650</span><span class="ttl">CSSEC Varsity Hoodie 2025</span><span class="badge"><span data-i="seal-gold"></span>Official · CSSEC</span></div></div>
+    <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱80 <span class="per">/sem</span></span><span class="ttl">Badminton racket + case</span><span class="body-s sec">Good · #PATHFit3</span></div></div>
+  </div>
+</div>
+<div class="tabbar">
+  <div class="tab"><span data-i="home"></span>Home</div>
+  <div class="tab on"><span data-i="grid"></span>Browse</div>
+  <div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
+  <div class="tab"><span data-i="chat"></span>Inbox</div>
+  <div class="tab"><span data-i="user"></span>Me</div>
+</div>
+</div></div>
+
 <!-- 06 BROWSE -->
 <div class="slot"><label>06 · Browse — #PATHFit3 (scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr" style="gap:10px">
     <span data-i="back"></span>
     <div class="search" style="flex:1;height:44px;border-radius:12px"><span data-i="search" class="i20 c-sec"></span><span class="val">#PATHFit3</span></div>
@@ -543,7 +668,6 @@ img{display:block;max-width:100%}
 <!-- 07 FILTER SHEET -->
 <div class="slot"><label>07 · Filter Sheet (overlay)</label>
 <div class="screen">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr" style="gap:10px"><span data-i="back"></span><div class="search" style="flex:1;height:44px;border-radius:12px"><span data-i="search" class="i20 c-sec"></span><span class="val">#PATHFit3</span></div><span data-i="sliders"></span></div>
   <div class="pad" style="display:flex;gap:8px;margin-top:4px"><span class="chip filter on">#PATHFit3</span><span class="chip filter">Filters</span></div>
   <div class="pad" style="margin-top:24px"><div class="grid">
@@ -555,8 +679,18 @@ img{display:block;max-width:100%}
     <div class="grab"></div>
     <div style="display:flex;justify-content:space-between;align-items:center"><span class="h3">Filters</span><span class="label-s acc">Reset all</span></div>
     <div class="field"><span class="label">Listing type</span><div class="seg"><div>Buy</div><div class="on">Rent</div><div>All</div></div></div>
-    <div class="field"><span class="label">Category</span><div class="input"><span class="val" style="flex:1">PE &amp; Sports Gear</span><span data-i="chev-d" class="i20"></span></div></div>
-    <div class="field"><span class="label">Course code</span><div class="input"><span class="val" style="flex:1">PATHFit 3</span><span data-i="chev-d" class="i20"></span></div></div>
+    <div class="field"><span class="label">Categories</span>
+    <div class="chips">
+      <span class="chip filter on">PE & Sports Gear <span data-i="x" class="i14 c-cream"></span></span>
+      <span class="chip filter">Books</span><span class="chip filter">Uniforms</span><span class="chip filter">Electronics</span><span class="chip filter">Misc</span>
+    </div></div>
+    <div class="field"><span class="label">Course codes</span>
+    <div class="chips">
+      <span class="chip filter on">#PATHFit3 <span data-i="x" class="i14 c-cream"></span></span>
+      <span class="chip filter on">#MMW <span data-i="x" class="i14 c-cream"></span></span>
+      <span class="chip filter">#RPH</span><span class="chip filter">#STS</span>
+      <span class="chip filter outline">+ more</span>
+    </div></div>
     <div class="field"><span class="label">Condition</span>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
         <!-- FIX: check icon now uses .i14 so it sits inside the 20px box properly -->
@@ -621,10 +755,87 @@ img{display:block;max-width:100%}
   <div class="cta"><div class="btn outline md">Make offer</div><div class="btn primary md wide"><span data-i="chat" class="i20 c-cream"></span>Request rental</div></div>
 </div></div>
 
+<!-- New · Listing Detail — Buy version (Step 8) -->
+<div class="slot"><label>New · Listing Detail — Buy version</label>
+<div class="screen tall">
+<div class="hero">
+  <span data-i="imgph" style="width:88px;height:88px;color:var(--copper-300)"></span>
+  <div class="top"><div class="circ"><span data-i="back" class="i20"></span></div><div class="r"><div class="circ"><span data-i="heart" class="i20"></span></div><div class="circ"><span data-i="dots" class="i20"></span></div></div></div>
+  <div class="dots"><i class="on"></i><i></i><i></i></div>
+</div>
+<div class="pad" style="padding-top:16px;display:flex;flex-direction:column;gap:10px">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <span class="price-lg">₱350</span><span class="pill buy">Buy</span>
+  </div>
+  <div class="h3">Math in the Modern World, 2nd Ed</div>
+  <div class="body-s sec">Like New · Textbooks · <span class="acc">#MMW</span></div>
+  <div class="seller">
+    <div class="avatar" style="width:44px;height:44px"><span data-i="user" class="i20 c-acc"></span></div>
+    <div style="flex:1"><div class="nm"><span class="h3">Kai M.</span><span data-i="seal" class="i16"></span></div>
+    <div class="body-s sec">4.8 ★ (12) · 15 trades</div></div>
+    <span data-i="chev-r" class="i20 c-sec"></span>
+  </div>
+  <div class="body-s" style="line-height:18px">Barely used, no highlights or writing. Selling because I already passed the course.</div>
+  <div class="detail-row"><span data-i="pin"></span>Preferred meetup: Jacinto campus</div>
+  <div class="detail-row"><span data-i="clock"></span>Listed 2 days ago</div>
+</div>
+<div class="cta"><div class="btn outline md">Make offer</div><div class="btn primary md wide"><span data-i="chat" class="i20 c-cream"></span>Buy now</div></div>
+</div></div>
+
+<!-- New · Listing Detail — Sold/Unavailable (Step 9) -->
+<div class="slot"><label>New · Listing Detail — Sold/Unavailable</label>
+<div class="screen tall">
+<div class="hero">
+  <span data-i="imgph" style="width:88px;height:88px;color:var(--copper-300)"></span>
+  <div class="top"><div class="circ"><span data-i="back" class="i20"></span></div></div>
+</div>
+<div class="pad" style="padding-top:16px;display:flex;flex-direction:column;gap:10px">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <span class="price-lg">₱80 <span class="per" style="font-size:14px">/semester</span></span><span class="pill rent">Rent</span>
+  </div>
+  <div class="h3">Badminton racket with case — Yonex Nanoray</div>
+  <div class="body-s sec">Good · PE &amp; Sports Gear · <span class="acc">#PATHFit3</span></div>
+  <div class="benefit" style="background:var(--sand);border:1px solid var(--sand-300)">
+    <div class="ic" style="background:var(--navy-100)"><span data-i="check-c" style="color:var(--navy-300)"></span></div>
+    <div><div class="label">This item is no longer available</div><div class="body-s sec">Sold to another student on Oct 9</div></div>
+  </div>
+</div>
+<div class="cta">
+  <div class="btn outline md disabled">Make offer</div>
+  <div class="btn primary md wide disabled">Request rental</div>
+</div>
+</div></div>
+
+<!-- New · My Listing — Manage (seller view) (Step 10) -->
+<div class="slot"><label>New · My Listing — Manage (seller view)</label>
+<div class="screen tall">
+<div class="hero">
+  <span data-i="racket" style="width:80px;height:80px;color:var(--copper-300)"></span>
+  <div class="top"><div class="circ"><span data-i="back" class="i20"></span></div><div class="r"><div class="circ"><span data-i="dots" class="i20"></span></div></div></div>
+</div>
+<div class="pad" style="padding-top:16px;display:flex;flex-direction:column;gap:14px;padding-bottom:20px">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <span class="price-lg">₱80 <span class="per" style="font-size:14px">/sem</span></span><span class="pill rent">Rent</span>
+  </div>
+  <div class="h3">Badminton racket with case — Yonex Nanoray</div>
+  <div class="body-s sec">Good · PE &amp; Sports Gear · #PATHFit3</div>
+  <div class="stats">
+    <div class="stat"><span class="n">14</span><span class="d">views</span></div>
+    <div class="stat"><span class="n">3</span><span class="d">chats</span></div>
+    <div class="stat"><span class="n">2</span><span class="d">saved by</span></div>
+  </div>
+  <div>
+    <div class="lrow"><span data-i="rocket" class="c-acc"></span><span>Boost this listing</span><span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
+    <div class="lrow"><span data-i="pkg" class="c-acc"></span><span>Edit listing details</span><span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
+    <div class="lrow"><span data-i="check-c" class="c-acc"></span><span>Mark as sold / rented out</span><span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
+    <div class="lrow" style="border:none"><span data-i="trash" class="c-red"></span><span class="c-red">Delete listing</span></div>
+  </div>
+</div>
+</div></div>
+
 <!-- 09 CHAT -->
 <div class="slot"><label>09 · Chat</label>
 <div class="screen">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr" style="background:#fff;border-bottom:1px solid var(--sand-300)">
     <span data-i="back"></span>
     <div class="avatar" style="width:34px;height:34px"><span data-i="user" class="i16 c-acc"></span></div>
@@ -657,13 +868,42 @@ img{display:block;max-width:100%}
   </div>
 </div></div>
 
+<!-- New · Inbox (conversation list) (Step 11) -->
+<div class="slot"><label>New · Inbox (conversation list, scrolls)</label>
+<div class="screen tall">
+<div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between"><span class="h3">Inbox</span><span data-i="search" class="i20 c-sec"></span></div>
+<div class="pad" style="padding-bottom:100px">
+  <div class="lrow">
+    <div class="avatar" style="width:44px;height:44px"><span data-i="user" class="i20 c-acc"></span></div>
+    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="label">Kai M.</span><span data-i="seal" class="i16"></span></div><div class="body-s sec">Perfect, see you at 4:15 👍</div></div>
+    <span class="body-s sec">2:14 PM</span>
+  </div>
+  <div class="lrow">
+    <div class="avatar" style="width:44px;height:44px"><span data-i="user" class="i20 c-acc"></span></div>
+    <div style="flex:1"><div class="label">Bea T.</div><div class="body-s sec">Is the calc still available?</div></div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span class="body-s sec">Yesterday</span><span class="unread-dot"></span></div>
+  </div>
+  <div class="lrow" style="border:none">
+    <div class="avatar" style="width:44px;height:44px;background:var(--gold)"><span data-i="store" class="i20" style="color:var(--navy)"></span></div>
+    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="label">CSSEC</span><span data-i="seal-gold" class="i16"></span></div><div class="body-s sec">Your hoodie order is confirmed!</div></div>
+    <span class="body-s sec">2d ago</span>
+  </div>
+</div>
+<div class="tabbar">
+  <div class="tab"><span data-i="home"></span>Home</div>
+  <div class="tab"><span data-i="grid"></span>Browse</div>
+  <div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
+  <div class="tab on"><span data-i="chat"></span>Inbox</div>
+  <div class="tab"><span data-i="user"></span>Me</div>
+</div>
+</div></div>
+
 <!-- ═══════════════════════════ BUYER / SELLER — SELLING &amp; TRUST ═══════════════════════════ -->
 <div class="persona">Buyer / Seller · <span>Selling, Trust &amp; Safety</span></div>
 
 <!-- 10 SELL -->
 <div class="slot"><label>10 · Sell / New Listing (scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">New listing</span><span class="label-s acc">Preview</span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px;padding-bottom:100px">
     <div class="field"><div class="photos"><div><span data-i="camera"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div></div><span class="body-s sec">Add up to 6 photos · first one is the cover</span></div>
@@ -689,7 +929,6 @@ img{display:block;max-width:100%}
 <!-- 11 BOOST -->
 <div class="slot"><label>11 · Boost this listing (seller)</label>
 <div class="screen">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">Boost listing</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px">
     <div class="card" style="padding:12px;display:flex;gap:12px;align-items:center">
@@ -714,7 +953,6 @@ img{display:block;max-width:100%}
 <div class="screen">
   <img class="rays" src="ray1.png" alt="">
   <div class="rel">
-    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
     <div class="hdr"><span style="width:24px"></span><span class="h3 ttl">Rate your trade</span><span class="label-s sec">Skip</span></div>
     <div class="pad" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center;padding-top:8px">
       <div style="width:358px;background:#fff;border-radius:16px;box-shadow:var(--sh-card);padding:12px;display:flex;align-items:center;gap:12px;text-align:left">
@@ -742,7 +980,6 @@ img{display:block;max-width:100%}
 <!-- 13 SELLER PROFILE -->
 <div class="slot"><label>13 · Seller profile (public, scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="back"></span><span class="ttl"></span><span data-i="share"></span><span data-i="flag" class="c-red"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:100px">
     <div style="display:flex;gap:14px;align-items:center">
@@ -781,7 +1018,6 @@ img{display:block;max-width:100%}
 <!-- 14 REPORT A LISTING -->
 <div class="slot"><label>14 · Report a listing (new)</label>
 <div class="screen">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">Report listing</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px">
     <div class="card" style="padding:12px;display:flex;gap:12px;align-items:center">
@@ -812,7 +1048,6 @@ img{display:block;max-width:100%}
 <div class="screen">
   <img class="rays" src="ray1.png" alt="">
   <div class="rel" style="height:100%;display:flex;flex-direction:column">
-    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
     <div class="hdr" style="gap:10px">
       <span data-i="back"></span>
       <div class="search" style="flex:1;height:44px;border-radius:12px"><span data-i="search" class="i20 c-sec"></span><span class="val">#Theo</span></div>
@@ -838,7 +1073,6 @@ img{display:block;max-width:100%}
 <!-- 16 WISHLIST -->
 <div class="slot"><label>16 · Saved items / Wishlist (scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Saved items</span><span class="label-s acc">Edit</span></div>
   <div class="pad" style="margin-top:4px"><div class="seg"><div class="on">All 9</div><div>Buy 6</div><div>Rent 3</div></div></div>
   <div class="pad" style="margin-top:16px;padding-bottom:100px">
@@ -866,7 +1100,6 @@ img{display:block;max-width:100%}
 <!-- 17 ME -->
 <div class="slot"><label>17 · Me (own profile, scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between"><span class="h3">Me</span><span data-i="settings" class="i20 c-sec"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:100px">
     <div style="display:flex;gap:14px;align-items:center">
@@ -885,7 +1118,7 @@ img{display:block;max-width:100%}
     <div>
       <div class="sh"><span class="h3">My listings</span><span class="label-s acc">Manage all</span></div>
       <div class="rail">
-        <div class="card h"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket</span><span class="pill boost" style="margin-top:2px"><span data-i="rocket" class="i16"></span>Boosted</span></div></div>
+        <div class="card h"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket</span><span class="pill boost" style="margin-top:2px"><span data-i="rocket"></span>Boosted</span></div></div>
         <div class="card h"><div class="im"><span data-i="book"></span></div><div class="bd"><span class="price">₱200</span><span class="ttl">Chem lab manual</span><span class="body-s acc" style="cursor:pointer">Boost this →</span></div></div>
       </div>
     </div>
@@ -911,7 +1144,6 @@ img{display:block;max-width:100%}
 <!-- 18 NOTIFICATIONS -->
 <div class="slot"><label>18 · Notifications (scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Notifications</span><span class="label-s acc">Mark all read</span></div>
   <div class="pad" style="margin-top:4px"><div class="seg"><div class="on">All</div><div>Unread</div></div></div>
   <div class="pad" style="margin-top:16px;padding-bottom:100px">
@@ -931,7 +1163,6 @@ img{display:block;max-width:100%}
 <div class="screen">
   <img class="rays" src="ray1.png" alt="">
   <div class="rel">
-    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
     <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Invite friends</span><span style="width:24px"></span></div>
     <div class="pad" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
       <div class="avatar" style="width:64px;height:64px;background:var(--copper-100)"><span data-i="gift" class="i32 c-acc"></span></div>
@@ -959,14 +1190,12 @@ img{display:block;max-width:100%}
   </div>
 </div></div>
 
-
 <!-- ═══════════════════════════ ORGS &amp; CLUBS ═══════════════════════════ -->
 <div class="persona">Student <span>Orgs &amp; Clubs</span></div>
 
 <!-- 20 APPLY -->
 <div class="slot"><label>20 · Apply for Org/Club badge (scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Verify your org or club</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-bottom:100px">
     <div><div class="h1">Your org/club, <span class="acc">more visible.</span></div><div class="sec" style="margin-top:6px;font-size:13px">Reach students already browsing for what you're selling.</div></div>
@@ -995,7 +1224,6 @@ img{display:block;max-width:100%}
 <!-- 21 DASHBOARD -->
 <div class="slot"><label>21 · Org/Club dashboard (scrolls)</label>
 <div class="screen tall">
-  <div style="background:var(--navy)"><div class="status" style="color:var(--cream-50)"><span>9:41</span><span class="sig"><span class="bat" style="border-color:var(--cream-50)"></span></span></div></div>
   <div class="orghdr" style="padding-top:8px">
     <div class="avatar"><span data-i="store" class="i28"></span></div>
     <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="h2">CSSEC</span><span data-i="seal-gold" class="i20"></span></div><div class="body-s" style="color:rgba(250,246,236,.7)">Full plan · active until Dec 20</div></div>
@@ -1058,7 +1286,6 @@ img{display:block;max-width:100%}
 <!-- 22 ORG ANALYTICS DEEP-DIVE (new) -->
 <div class="slot"><label>22 · Org analytics deep-dive (new, scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Analytics</span><span data-i="upload" class="i20"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:20px;padding-bottom:40px">
     <div class="seg"><div class="on">This sem</div><div>Last sem</div><div>All time</div></div>
@@ -1095,7 +1322,6 @@ img{display:block;max-width:100%}
 <!-- 23 NEW PRE-ORDER -->
 <div class="slot"><label>23 · New pre-order (scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">New pre-order</span><span class="label-s acc">Preview</span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px;padding-bottom:100px">
     <div class="field"><div class="photos"><div><span data-i="hoodie"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div></div><span class="body-s sec">Mockups are fine — show front and back</span></div>
@@ -1124,7 +1350,6 @@ img{display:block;max-width:100%}
 <!-- 24 ADD MERCH -->
 <div class="slot"><label>24 · Add merch item — in-hand stock (new)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">Add merch item</span><span class="label-s acc">Preview</span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px;padding-bottom:100px">
     <div class="field"><div class="photos"><div><span data-i="tag"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div></div><span class="body-s sec">Add photos of the actual item</span></div>
@@ -1150,7 +1375,6 @@ img{display:block;max-width:100%}
 <!-- 25 STOREFRONT -->
 <div class="slot"><label>25 · Org/Club storefront — student view (scrolls)</label>
 <div class="screen tall">
-  <div style="background:var(--navy)"><div class="status" style="color:var(--cream-50)"><span>9:41</span><span class="sig"><span class="bat" style="border-color:var(--cream-50)"></span></span></div></div>
   <div class="orghdr" style="padding-top:4px;flex-wrap:wrap">
     <span data-i="back" class="c-cream" style="width:100%;margin-bottom:4px"></span>
     <div class="avatar"><span data-i="store" class="i28"></span></div>
@@ -1199,7 +1423,6 @@ img{display:block;max-width:100%}
 <!-- 26 ORDERS LIST -->
 <div class="slot"><label>26 · Pre-order orders list (scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="back"></span><div style="flex:1"><div class="h3">Varsity Hoodie</div><div class="body-s sec">Orders · closes Oct 15</div></div><span data-i="dots"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:110px">
     <div class="stats">
@@ -1229,7 +1452,6 @@ img{display:block;max-width:100%}
 <!-- 27 PITCH -->
 <div class="slot"><label>27 · Partner with KnightMarket (scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">For businesses</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-bottom:100px">
     <div style="background:var(--navy);border-radius:20px;padding:20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
@@ -1258,7 +1480,6 @@ img{display:block;max-width:100%}
 <!-- 28 DASHBOARD -->
 <div class="slot"><label>28 · Business dashboard (scrolls)</label>
 <div class="screen tall">
-  <div style="background:var(--navy)"><div class="status" style="color:var(--cream-50)"><span>9:41</span><span class="sig"><span class="bat" style="border-color:var(--cream-50)"></span></span></div></div>
   <div class="orghdr" style="padding-top:8px">
     <div class="avatar" style="background:var(--copper)"><span data-i="coffee" class="i28 c-white"></span></div>
     <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="h2">Kape Roxas</span><span class="pill partner">Advertiser</span></div><div class="body-s" style="color:rgba(250,246,236,.7)">Plan renews Nov 1</div></div>
@@ -1313,7 +1534,6 @@ img{display:block;max-width:100%}
 <!-- 29 PLAN MANAGEMENT -->
 <div class="slot"><label>29 · Business plan management / upgrade (new)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Billing &amp; plan</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:40px">
     <div class="card" style="padding:16px;display:flex;flex-direction:column;gap:8px;border:1.5px solid var(--copper)">
@@ -1348,7 +1568,6 @@ img{display:block;max-width:100%}
 <!-- 30 MEETUP PICKER -->
 <div class="slot"><label>30 · Propose meetup — student sees partner spots</label>
 <div class="screen">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr" style="background:#fff;border-bottom:1px solid var(--sand-300)">
     <span data-i="back"></span>
     <div class="avatar" style="width:32px;height:32px"><span data-i="user" class="i16 c-acc"></span></div>
@@ -1385,7 +1604,6 @@ img{display:block;max-width:100%}
 <div class="screen">
   <img class="rays" src="ray1.png" alt=""><img class="noise" src="noise.png" alt="">
   <div class="rel">
-    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
     <div class="hdr"><span style="width:24px"></span><span class="ttl"></span><span data-i="x"></span></div>
     <div class="pad" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center;padding-top:8px">
       <div class="bigcheck"><span data-i="check"></span></div>
@@ -1412,7 +1630,6 @@ img{display:block;max-width:100%}
 <!-- 32 VERIFY COUPON STAFF -->
 <div class="slot"><label>32 · Verify a coupon code (staff side)</label>
 <div class="screen">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Verify a coupon</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
     <div class="sec body-s">Ask the student for their code and enter it below</div>
@@ -1439,7 +1656,6 @@ img{display:block;max-width:100%}
 <!-- 33 AD PLACEMENTS -->
 <div class="slot"><label>33 · Ad placements — student sees in Home (scrolls)</label>
 <div class="screen tall">
-  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between">
     <div style="display:flex;align-items:center;gap:8px">
       <div style="width:26px;height:26px;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center"><span data-i="shield" style="width:16px;height:16px;color:var(--cream-50)"></span></div>
@@ -1466,7 +1682,7 @@ img{display:block;max-width:100%}
       <div class="tile"><span data-i="calc"></span>Electronics</div>
       <div class="tile"><span data-i="fan"></span>Dorm</div>
       <div class="tile"><span data-i="hoodie"></span>Org/Club Merch</div>
-      <div class="tile"><span data-i="dress"></span>Formal</div>
+      <div class="tile"><span data-i="pkg"></span>Misc</div>
     </div>
   </div>
   <div class="pad sec-gap" style="padding-bottom:110px">
@@ -1557,7 +1773,6 @@ const I={
  racket:'<ellipse cx="14.5" cy="8.5" rx="5" ry="6.5" transform="rotate(40 14.5 8.5)"/><path d="M10.5 13.5L4 20M12 5l5 4M10 8l6 5"/>',
  steth:'<path d="M6 3v6a5 5 0 0 0 10 0V3"/><path d="M11 14v2a4 4 0 0 0 8 0v-2"/><circle cx="19" cy="12" r="2"/>',
  calc:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8.5 12h1M12 12h1M15.5 12h1M8.5 16h1M12 16h1M15.5 16h1"/>',
- fan:'<circle cx="12" cy="12" r="2"/><path d="M12 10c0-5 4-6 4-3s-2 3-4 3zM14 12c5 0 6 4 3 4s-3-2-3-4zM12 14c0 5-4 6-4 3s2-3 4-3zM10 12c-5 0-6-4-3-4s3 2 3 4z"/>',
  hoodie:'<path d="M8 6a4 4 0 0 1 8 0l4 3-2 3-2-1v10H8V11l-2 1-2-3z"/><path d="M10 6a2 2 0 0 0 4 0"/>',
  dress:'<path d="M9 3l3 4 3-4 1 6-2 2 4 10H6l4-10-2-2z"/>',
  star:'<path fill="currentColor" stroke="none" d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/>',
