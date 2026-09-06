@@ -2,69 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>KnightMarket — MVP Screens</title>
+<title>KnightMarket — Full MVP Screens (34)</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
-/* ───────── ADDITIONS ───────── */
-.board{flex-wrap:wrap;max-width:2760px}
-.persona{width:100%;font-size:18px;font-weight:600;padding:32px 0 0;margin-top:16px;border-top:2px dashed var(--copper-300)}
-.persona span{color:var(--copper)}
-.rate{color:var(--copper);font-size:11px;font-weight:500;margin-left:4px}
-.stars{display:inline-flex;gap:2px}.stars [data-i]{width:14px;height:14px;color:var(--gold)}.stars .off{color:var(--sand-300)}
-.stars.lg{gap:8px}.stars.lg [data-i]{width:40px;height:40px}
-.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-.stat{background:#fff;border-radius:16px;box-shadow:var(--sh-card);padding:12px;display:flex;flex-direction:column;gap:2px}
-.stat .n{font-size:20px;font-weight:700;line-height:26px}.stat .d{font-size:11px;color:var(--navy-300);line-height:14px}.stat .up{font-size:11px;color:var(--green);font-weight:500}
-.lrow{min-height:56px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--sand-300);font-size:14px;padding:8px 0}
-.lrow .r{margin-left:auto;display:flex;align-items:center;gap:8px}
-.lrow .sub{font-size:12px;color:var(--navy-300)}
-.prog{height:6px;background:var(--sand);border-radius:3px;overflow:hidden}.prog i{display:block;height:100%;background:var(--copper);border-radius:3px}
-.bar{display:flex;align-items:center;gap:8px;font-size:12px}.bar .prog{flex:1}
-.coupon{background:var(--copper);color:#fff;border-radius:16px;padding:16px;position:relative;display:flex;align-items:center;gap:14px}
-.coupon::before,.coupon::after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:var(--cream);top:calc(50% - 10px)}
-.coupon::before{left:-10px}.coupon::after{right:-10px}
-.coupon .dash{border-left:2px dashed rgba(255,255,255,.5);height:56px}
-.coupon .pct{font-size:28px;font-weight:700;line-height:32px}.coupon .sm{font-size:11px;opacity:.85}
-.coupon.mini{padding:12px 14px}.coupon.mini .pct{font-size:20px;line-height:24px}.coupon.mini .dash{height:40px}
-.spons{outline:1.5px solid var(--copper-300);outline-offset:-1.5px}
-.spons .sp{position:absolute;top:8px;left:8px;background:var(--copper-100);color:var(--copper);padding:0 8px;height:20px;border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.4px;display:flex;align-items:center}
-.banner{height:96px;border-radius:16px;background:var(--navy);color:var(--cream-50);display:flex;align-items:center;padding:0 16px;gap:12px;position:relative;overflow:hidden}
-.banner .ad{position:absolute;top:8px;right:12px;font-size:9px;letter-spacing:.6px;opacity:.6}
-.banner .im{width:56px;height:56px;border-radius:12px;background:var(--copper);display:flex;align-items:center;justify-content:center;flex:none}
-.banner .im [data-i]{color:#fff;width:28px;height:28px}
-.benefit{background:#fff;border-radius:16px;box-shadow:var(--sh-card);padding:14px;display:flex;gap:12px;align-items:flex-start}
-.benefit .ic{width:40px;height:40px;border-radius:12px;background:var(--copper-100);display:flex;align-items:center;justify-content:center;flex:none}
-.benefit .ic [data-i]{color:var(--copper)}
-.plan{background:#fff;border-radius:16px;border:1.5px solid var(--sand-300);padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
-.plan.on{border-color:var(--copper);box-shadow:var(--sh-card)}
-.plan .pr{font-size:18px;font-weight:700}.plan .pr small{font-size:11px;font-weight:400;color:var(--navy-300)}
-.plan li{font-size:11px;line-height:16px;color:var(--navy-300);list-style:none;display:flex;gap:4px}
-.orghdr{background:var(--navy);padding:16px 16px 20px;color:var(--cream-50);border-radius:0 0 24px 24px;display:flex;gap:12px;align-items:center}
-.orghdr .avatar{width:56px;height:56px;background:var(--gold);color:var(--navy)}
-.orghdr .badge{color:var(--gold)}.orghdr .sec{color:rgba(250,246,236,.7)}
-.sizes{display:flex;gap:8px;flex-wrap:wrap}.sizes div{width:44px;height:36px;border-radius:10px;border:1px solid var(--sand-300);background:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500}
-.sizes .on{background:var(--navy);color:var(--cream-50);border-color:var(--navy)}
-.toggle{width:44px;height:26px;border-radius:13px;background:var(--navy);position:relative;flex:none}
-.toggle::after{content:"";position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;background:#fff}
-.toggle.off{background:var(--sand-300)}.toggle.off::after{right:auto;left:3px}
-.trow{display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:12px;border:1px solid var(--sand-300);padding:12px 14px}
-.mapbox{height:140px;border-radius:16px;background:var(--navy-100);position:relative;overflow:hidden}
-.mapbox::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 39px,rgba(11,42,62,.06) 39px 40px),repeating-linear-gradient(0deg,transparent 0 39px,rgba(11,42,62,.06) 39px 40px)}
-.pin{position:absolute;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;font-weight:500}
-.pin [data-i]{width:24px;height:24px}
-.pin.partner{color:var(--copper)}.pin.partner [data-i]{color:var(--copper)}
-.pin.pub{color:var(--navy)}
-.hbars{display:flex;align-items:flex-end;gap:6px;height:64px}
-.hbars i{flex:1;background:var(--copper-100);border-radius:4px 4px 0 0}.hbars i.hi{background:var(--copper)}
-.pill.paid{background:#DDEBE3;color:var(--green);text-transform:none;letter-spacing:0}
-.pill.pend{background:var(--copper-100);color:var(--copper);text-transform:none;letter-spacing:0}
-.pill.gold{background:var(--gold);color:var(--navy)}
-.pill.partner{background:var(--copper-100);color:var(--copper);text-transform:none;letter-spacing:0}
-.bigcheck{width:80px;height:80px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto}
-.bigcheck [data-i]{width:40px;height:40px;color:#fff}
-.review{background:#fff;border-radius:12px;padding:12px;box-shadow:var(--sh-card);display:flex;flex-direction:column;gap:4px}
-/* ───────── TOKENS ───────── */
 :root{
   --cream-50:#FAF6EC; --cream:#F2EBD9; --sand:#F3E0C2; --sand-300:#E3CBA4;
   --copper-100:#EAD6C7; --copper-300:#C69C82; --copper:#8E5F44; --copper-700:#6B4632;
@@ -77,23 +17,25 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Poppins,sans-serif;color:var(--navy);background:#E4DCC8;padding:60px;font-size:14px;line-height:20px}
 img{display:block;max-width:100%}
-.board{display:flex;gap:60px;align-items:flex-start}
+.board{display:flex;gap:60px;align-items:flex-start;flex-wrap:wrap;max-width:2760px}
 .slot{display:flex;flex-direction:column;gap:12px;flex:none}
 .slot>label{font-size:13px;font-weight:600;color:var(--navy-300);letter-spacing:.6px;text-transform:uppercase}
+.persona{width:100%;font-size:18px;font-weight:600;padding:32px 0 0;margin-top:16px;border-top:2px dashed var(--copper-300)}
+.persona span{color:var(--copper)}
+.persona.internal{border-top:2px dashed var(--red)}
+.persona.internal span{color:var(--red)}
 
-/* ───────── SCREEN FRAME ───────── */
 .screen{width:390px;height:844px;background:var(--cream);position:relative;overflow:hidden;flex:none}
-.screen.tall{height:auto;min-height:844px}
+.screen.tall{height:auto;min-height:844px;overflow:visible}
 .status{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-weight:600;font-size:15px}
-.status .sig{display:flex;gap:5px;align-items:center}
 .status .bat{width:24px;height:11px;border:1.5px solid var(--navy);border-radius:3px;position:relative}
 .status .bat::after{content:"";position:absolute;inset:2px;right:4px;background:var(--navy);border-radius:1px}
 .pad{padding:0 16px}
 .rays{position:absolute;inset:0;pointer-events:none;opacity:.7;object-fit:cover;width:100%;height:100%}
 .noise{position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:multiply;object-fit:cover;width:100%;height:100%}
-.rel{position:relative;z-index:1}
+/* FIX: .rel needs real height so absolute-positioned children (step dots) anchor to the full screen, not just content height */
+.rel{position:relative;z-index:1;height:100%}
 
-/* ───────── TYPE ───────── */
 .display{font-size:28px;line-height:34px;font-weight:600;letter-spacing:-.2px}
 .h1{font-size:24px;line-height:30px;font-weight:600;letter-spacing:-.2px}
 .h2{font-size:20px;line-height:26px;font-weight:600}
@@ -109,19 +51,20 @@ img{display:block;max-width:100%}
 .acc{color:var(--copper)}
 .center{text-align:center}
 .per{font-size:12px;font-weight:400;color:var(--navy-300)}
+.rate{font-size:11px;font-weight:500;color:var(--copper);margin-left:4px}
 
-/* ───────── ICONS ───────── */
 [data-i]{display:inline-flex;width:24px;height:24px;flex:none;color:var(--navy);vertical-align:middle}
 [data-i] svg{width:100%;height:100%}
+.i14{width:14px;height:14px}
 .i16{width:16px;height:16px}.i20{width:20px;height:20px}.i28{width:28px;height:28px}.i32{width:32px;height:32px}.i40{width:40px;height:40px}.i64{width:64px;height:64px}
-.c-sec{color:var(--navy-300)}.c-acc{color:var(--copper)}.c-white{color:#fff}.c-cream{color:var(--cream-50)}.c-red{color:var(--red)}.c-gold{color:var(--gold)}
+.c-sec{color:var(--navy-300)}.c-acc{color:var(--copper)}.c-white{color:#fff}.c-cream{color:var(--cream-50)}.c-red{color:var(--red)}.c-gold{color:var(--gold)}.c-green{color:var(--green)}
 
-/* ───────── COMPONENTS ───────── */
-.btn{height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:500;width:100%}
-.btn.md{height:44px}.btn.sm{height:36px;padding:0 14px;width:auto}
+.btn{height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;font-weight:500;width:100%;cursor:pointer}
+.btn.md{height:44px}.btn.sm{height:36px;padding:0 14px;width:auto;border-radius:10px}
 .btn.primary{background:var(--navy);color:var(--cream-50)}
 .btn.accent{background:var(--copper);color:#fff}
 .btn.outline{border:1.5px solid var(--navy);color:var(--navy)}
+.btn.outline.danger{border-color:var(--red);color:var(--red)}
 .btn.ghost{color:var(--copper);height:auto;width:auto}
 .input{height:48px;background:#fff;border:1px solid var(--sand-300);border-radius:12px;padding:0 14px;display:flex;align-items:center;gap:10px;font-size:16px;color:var(--navy-300)}
 .input.focus{border:1.5px solid var(--navy)}
@@ -137,18 +80,29 @@ img{display:block;max-width:100%}
 .chip.filter{background:#fff;border:1px solid var(--sand-300)}
 .chip.filter.on{background:var(--navy);color:var(--cream-50);border-color:var(--navy)}
 .chip.outline{background:transparent;border:1.5px dashed var(--copper-300);color:var(--copper)}
-.pill{height:20px;padding:0 8px;border-radius:8px;display:inline-flex;align-items:center;font-size:11px;font-weight:500;letter-spacing:.3px;text-transform:uppercase}
+.pill{height:20px;padding:0 8px;border-radius:8px;display:inline-flex;align-items:center;font-size:11px;font-weight:500;letter-spacing:.3px;text-transform:uppercase;white-space:nowrap}
 .pill.rent{background:var(--navy);color:var(--cream-50)}
 .pill.pre{background:var(--copper);color:#fff}
 .pill.cond{background:var(--sand);color:var(--navy);text-transform:none;letter-spacing:0;font-size:12px}
+.pill.paid{background:#DDEBE3;color:var(--green);text-transform:none;letter-spacing:0}
+.pill.pend{background:var(--copper-100);color:var(--copper);text-transform:none;letter-spacing:0}
+.pill.gold{background:var(--gold);color:var(--navy)}
+.pill.partner{background:var(--copper-100);color:var(--copper);text-transform:none;letter-spacing:0}
+.pill.boost{background:var(--gold);color:var(--navy);text-transform:none;letter-spacing:0;gap:4px}
+.pill.danger{background:#F6E4E2;color:var(--red);text-transform:none;letter-spacing:0}
 .badge{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:500;color:var(--navy)}
 .badge [data-i]{width:16px;height:16px}
 .avatar{border-radius:999px;background:var(--copper-100);display:flex;align-items:center;justify-content:center;color:var(--copper);flex:none}
 
-/* Card / listing grid */
+.stars{display:inline-flex;gap:2px}
+.stars [data-i]{width:14px;height:14px;color:var(--gold)}
+.stars .off{color:var(--sand-300)}
+.stars.lg{gap:8px}
+.stars.lg [data-i]{width:40px;height:40px}
+
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .card{background:#fff;border-radius:16px;box-shadow:var(--sh-card);overflow:hidden;position:relative}
-.card .im{height:173px;background:var(--sand);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.card .im{height:160px;background:var(--sand);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .card .im img{width:60%;height:auto}
 .card .im [data-i]{width:56px;height:56px;color:var(--copper)}
 .card .pill{position:absolute;top:8px;left:8px}
@@ -157,85 +111,82 @@ img{display:block;max-width:100%}
 .card .bd{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px}
 .card .ttl{font-size:12px;line-height:16px;font-weight:500;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .card .bd .badge{margin-top:2px}
-/* horizontal small card */
+.card.spons{outline:1.5px solid var(--copper-300);outline-offset:-1.5px}
+.card.spons .sp{position:absolute;top:8px;left:8px;background:var(--copper-100);color:var(--copper);padding:0 8px;height:20px;border-radius:8px;font-size:10px;font-weight:600;letter-spacing:.4px;display:flex;align-items:center}
 .rail{display:flex;gap:12px;overflow:hidden}
-.card.h{width:140px;flex:none}
+.card.h{width:148px;flex:none}
 .card.h .im{height:110px}
 .card.h .im [data-i]{width:44px;height:44px}
 .card.h .ttl{-webkit-line-clamp:1}
-/* tile */
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.tile{height:84px;background:#fff;border-radius:16px;box-shadow:var(--sh-card);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:11px;font-weight:500;letter-spacing:.3px}
-.tile [data-i]{width:32px;height:32px}
-/* seller card */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.tile{height:80px;background:#fff;border-radius:14px;box-shadow:var(--sh-card);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:11px;font-weight:500;letter-spacing:.2px;text-align:center;padding:4px}
+.tile [data-i]{width:28px;height:28px}
 .seller{background:var(--sand);border-radius:16px;padding:12px;display:flex;align-items:center;gap:12px}
 .seller .avatar{width:44px;height:44px}
 .seller .nm{display:flex;align-items:center;gap:6px}
-/* section header */
 .sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-.sec-gap{margin-top:24px}
+.sec-gap{margin-top:20px}
 
-/* Tab bar */
-.tabbar{position:absolute;left:0;right:0;bottom:0;height:90px;background:#fff;border-top:1px solid var(--sand-300);display:flex;padding:0 6px;z-index:5}
+.tabbar{position:absolute;left:0;right:0;bottom:0;height:83px;background:#fff;border-top:1px solid var(--sand-300);display:flex;align-items:flex-start;padding-top:8px;z-index:5}
 .screen.tall .tabbar{position:sticky;bottom:0;margin-top:24px}
-.tab{width:78px;height:56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:11px;font-weight:500;letter-spacing:.3px;color:var(--navy-300)}
-.tab [data-i]{color:var(--navy-300)}
-.tab.on{color:var(--navy)}.tab.on [data-i]{color:var(--navy)}
-.tab.sell{position:relative}
-.tab.sell .fab{width:56px;height:56px;border-radius:999px;background:var(--navy);border:2px solid var(--copper);box-shadow:var(--sh-raised);display:flex;align-items:center;justify-content:center;position:absolute;top:-24px;left:11px}
-.tab.sell .fab [data-i]{width:28px;height:28px;color:var(--cream-50)}
-.tab.sell span{margin-top:32px;color:var(--navy)}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:3px;padding-top:2px;font-size:10px;font-weight:500;letter-spacing:.2px;color:var(--navy-300)}
+.tab [data-i]{width:22px;height:22px;color:var(--navy-300)}
+.tab.on{color:var(--navy)}
+.tab.on [data-i]{color:var(--navy)}
 
-/* Sticky CTA bar */
-.cta{position:absolute;left:0;right:0;bottom:0;height:84px;background:#fff;border-top:1px solid var(--sand-300);padding:16px 16px 0;display:flex;gap:12px;z-index:5}
+.tab-sell-wrap{flex:1;position:relative;display:flex;flex-direction:column;align-items:center}
+.fab-sell{position:absolute;top:-26px;width:56px;height:56px;border-radius:999px;background:var(--navy);border:3px solid var(--cream);box-shadow:var(--sh-raised);display:flex;align-items:center;justify-content:center}
+.fab-sell [data-i]{width:26px;height:26px;color:var(--cream-50)}
+.tab-sell-wrap .tab-label{margin-top:34px;font-size:10px;font-weight:500;letter-spacing:.2px;color:var(--navy)}
+
+.cta{position:absolute;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--sand-300);padding:12px 16px 20px;display:flex;gap:12px;z-index:5}
 .screen.tall .cta{position:sticky;bottom:0}
-.cta .btn{flex:1}.cta .btn.wide{flex:1.5}
+.cta .btn{flex:1}
+.cta .btn.wide{flex:1.5}
 
-/* Header bars */
-.hdr{height:56px;display:flex;align-items:center;gap:12px;padding:0 16px}
+.hdr{height:52px;display:flex;align-items:center;gap:12px;padding:0 16px}
 .hdr .ttl{flex:1;text-align:center}
-.circ{width:40px;height:40px;border-radius:999px;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-card)}
+.circ{width:40px;height:40px;border-radius:999px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:var(--sh-card)}
 
-/* Segmented */
 .seg{height:40px;background:var(--sand);border-radius:12px;padding:3px;display:flex}
 .seg div{flex:1;display:flex;align-items:center;justify-content:center;border-radius:9px;font-size:13px;font-weight:500;color:var(--navy-300)}
 .seg .on{background:#fff;color:var(--navy);box-shadow:var(--sh-card)}
-/* Checkbox */
+
 .cb{display:flex;align-items:center;gap:10px;font-size:14px}
 .cb i{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--navy-300);display:inline-flex;align-items:center;justify-content:center;flex:none}
 .cb.on i{background:var(--navy);border-color:var(--navy)}
-.cb.on i svg{width:14px;height:14px}
-/* Slider */
+
 .slider{height:24px;position:relative;margin:8px 0 4px}
 .slider .tr{position:absolute;top:10px;left:0;right:0;height:4px;background:var(--sand-300);border-radius:2px}
 .slider .fl{position:absolute;top:10px;left:0;width:36%;height:4px;background:var(--copper);border-radius:2px}
 .slider .th{position:absolute;top:0;width:24px;height:24px;border-radius:999px;background:#fff;box-shadow:var(--sh-raised)}
-/* Sheet */
+
 .scrim{position:absolute;inset:0;background:rgba(11,42,62,.4);z-index:8}
-.sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:24px 24px 0 0;box-shadow:var(--sh-sheet);padding:0 16px 32px;z-index:9;display:flex;flex-direction:column;gap:20px}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:24px 24px 0 0;box-shadow:var(--sh-sheet);padding:0 16px 32px;z-index:9;display:flex;flex-direction:column;gap:16px}
 .grab{width:40px;height:4px;border-radius:2px;background:var(--navy-100);margin:8px auto 4px}
-/* Chat */
+
 .pinned{height:64px;background:#fff;border-bottom:1px solid var(--sand-300);display:flex;align-items:center;gap:12px;padding:0 16px}
-.pinned .th{width:48px;height:48px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center;color:var(--copper)}
+.pinned .th{width:48px;height:48px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center}
 .pinned .th [data-i]{width:28px;height:28px;color:var(--copper)}
-.msgs{padding:16px;display:flex;flex-direction:column;gap:10px}
-.bub{max-width:280px;padding:10px 14px;border-radius:16px;font-size:14px;line-height:20px}
+.msgs{padding:12px 16px;display:flex;flex-direction:column;gap:10px}
+.bub{max-width:260px;padding:10px 14px;border-radius:16px;font-size:14px;line-height:20px}
 .bub.me{align-self:flex-end;background:var(--navy);color:var(--cream-50);border-bottom-right-radius:4px}
 .bub.them{align-self:flex-start;background:#fff;color:var(--navy);border-bottom-left-radius:4px;box-shadow:var(--sh-card)}
-.ts{font-size:11px;color:var(--navy-300);align-self:center;margin:4px 0}
-.composer{position:absolute;left:0;right:0;bottom:0;height:90px;background:#fff;border-top:1px solid var(--sand-300);padding:8px 16px 0;display:flex;flex-direction:column;gap:8px}
+.ts{font-size:11px;color:var(--navy-300);align-self:center;margin:2px 0}
+
+.composer{position:absolute;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--sand-300);padding:8px 16px 20px;display:flex;flex-direction:column;gap:8px;z-index:5}
 .composer .row{display:flex;gap:8px;align-items:center}
-.composer .in{flex:1;height:44px;border-radius:999px;background:var(--cream);padding:0 16px;display:flex;align-items:center;color:var(--navy-300)}
-.composer .send{width:44px;height:44px;border-radius:999px;background:var(--navy);display:flex;align-items:center;justify-content:center}
+.composer .in{flex:1;height:42px;border-radius:999px;background:var(--cream);padding:0 16px;display:flex;align-items:center;color:var(--navy-300);font-size:14px}
+.composer .send{width:42px;height:42px;border-radius:999px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex:none}
 .composer .send [data-i]{color:var(--cream-50);width:20px;height:20px}
-/* Sell photos */
+.composer .quick{display:flex;gap:8px;overflow:hidden}
+
 .photos{display:flex;gap:8px}
 .photos div{width:80px;height:80px;border-radius:12px;border:1.5px dashed var(--sand-300);display:flex;align-items:center;justify-content:center;color:var(--navy-300)}
 .photos div:first-child{background:#fff;border-style:solid;color:var(--navy)}
-.textarea{height:120px;align-items:flex-start;padding-top:12px}
-/* Detail hero */
-.hero{height:390px;background:var(--sand);display:flex;align-items:center;justify-content:center;position:relative}
-.hero [data-i]{width:140px;height:140px;color:var(--copper)}
+.textarea{height:100px;align-items:flex-start;padding-top:12px}
+
+.hero{height:340px;background:var(--sand);display:flex;align-items:center;justify-content:center;position:relative}
 .hero .top{position:absolute;top:52px;left:16px;right:16px;display:flex;justify-content:space-between}
 .hero .top .r{display:flex;gap:8px}
 .dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:6px}
@@ -243,56 +194,148 @@ img{display:block;max-width:100%}
 .dots i.on{background:var(--navy)}
 .detail-row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--navy-300)}
 .detail-row [data-i]{width:16px;height:16px;color:var(--navy-300)}
-/* OTP */
+
 .otp{display:flex;gap:8px}
 .otp div{width:50px;height:56px;background:#fff;border:1px solid var(--sand-300);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600}
 .otp div.on{border:1.5px solid var(--navy)}
 .stepdots{display:flex;gap:8px;justify-content:center}
 .stepdots i{width:8px;height:8px;border-radius:4px;background:var(--sand-300)}
 .stepdots i.on{background:var(--copper)}
-/* Org banner */
-.org{background:#fff;border-radius:16px;box-shadow:var(--sh-card);display:flex;overflow:hidden;height:120px}
-.org .im{width:120px;background:var(--sand);display:flex;align-items:center;justify-content:center;flex:none}
-.org .im [data-i]{width:56px;height:56px;color:var(--copper)}
-.org .bd{padding:14px 16px;display:flex;flex-direction:column;gap:4px;justify-content:center}
-/* Divider row */
-.divrow{display:flex;align-items:center;gap:12px;color:var(--navy-300);font-size:12px;margin:20px 0 12px}
+
+.org{background:#fff;border-radius:16px;box-shadow:var(--sh-card);display:flex;overflow:hidden;height:116px}
+.org .im{width:110px;background:var(--sand);display:flex;align-items:center;justify-content:center;flex:none}
+.org .im [data-i]{width:48px;height:48px;color:var(--copper)}
+.org .bd{padding:12px 14px;display:flex;flex-direction:column;gap:4px;justify-content:center}
+
+.divrow{display:flex;align-items:center;gap:12px;color:var(--navy-300);font-size:12px;margin:16px 0 12px}
 .divrow::before,.divrow::after{content:"";flex:1;height:1px;background:var(--sand-300)}
-/* Empty */
-.empty{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;padding:80px 40px 0}
-.empty img{width:120px}
+
 .wordmark{font-size:28px;line-height:34px;font-weight:700;letter-spacing:-.5px}
+
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.stat{background:#fff;border-radius:16px;box-shadow:var(--sh-card);padding:12px;display:flex;flex-direction:column;gap:2px}
+.stat .n{font-size:20px;font-weight:700;line-height:26px}
+.stat .d{font-size:11px;color:var(--navy-300);line-height:14px}
+.stat .up{font-size:11px;color:var(--green);font-weight:500}
+.stat .down{font-size:11px;color:var(--red);font-weight:500}
+.lrow{min-height:52px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--sand-300);font-size:14px;padding:6px 0}
+.lrow .r{margin-left:auto;display:flex;align-items:center;gap:8px}
+.lrow .sub{font-size:12px;color:var(--navy-300)}
+.prog{height:6px;background:var(--sand);border-radius:3px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--copper);border-radius:3px}
+.bar{display:flex;align-items:center;gap:8px;font-size:12px}
+.bar .prog{flex:1}
+
+.coupon{background:var(--copper);color:#fff;border-radius:16px;padding:16px;position:relative;display:flex;align-items:center;gap:14px}
+.coupon::before,.coupon::after{content:"";position:absolute;width:20px;height:20px;border-radius:50%;background:var(--cream);top:calc(50% - 10px)}
+.coupon::before{left:-10px}.coupon::after{right:-10px}
+.coupon .dash{border-left:2px dashed rgba(255,255,255,.5);height:56px}
+.coupon .pct{font-size:28px;font-weight:700;line-height:32px}
+.coupon .sm{font-size:11px;opacity:.85}
+
+.banner{height:88px;border-radius:16px;background:var(--navy);color:var(--cream-50);display:flex;align-items:center;padding:0 14px;gap:12px;position:relative;overflow:hidden}
+.banner .ad{position:absolute;top:7px;right:10px;font-size:9px;letter-spacing:.6px;opacity:.55;font-weight:500}
+.banner .im{width:52px;height:52px;border-radius:12px;background:var(--copper);display:flex;align-items:center;justify-content:center;flex:none}
+.banner .im [data-i]{color:#fff;width:26px;height:26px}
+
+.benefit{background:#fff;border-radius:16px;box-shadow:var(--sh-card);padding:14px;display:flex;gap:12px;align-items:flex-start}
+.benefit .ic{width:40px;height:40px;border-radius:12px;background:var(--copper-100);display:flex;align-items:center;justify-content:center;flex:none}
+.benefit .ic [data-i]{color:var(--copper)}
+.benefit.warn{background:#FCF3E7;border:1px solid var(--gold)}
+.benefit.warn .ic{background:var(--gold)}
+.benefit.warn .ic [data-i]{color:var(--navy)}
+
+.plan{background:#fff;border-radius:16px;border:1.5px solid var(--sand-300);padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.plan.on{border-color:var(--copper);box-shadow:var(--sh-card)}
+.plan .pr{font-size:18px;font-weight:700}
+.plan .pr small{font-size:11px;font-weight:400;color:var(--navy-300)}
+.plan li{font-size:11px;line-height:16px;color:var(--navy-300);list-style:none;display:flex;gap:4px}
+
+.orghdr{background:var(--navy);padding:16px 16px 20px;color:var(--cream-50);border-radius:0 0 24px 24px;display:flex;gap:12px;align-items:center}
+.orghdr .avatar{width:56px;height:56px;background:var(--gold);color:var(--navy)}
+.orghdr .sec{color:rgba(250,246,236,.7)}
+
+.sizes{display:flex;gap:8px;flex-wrap:wrap}
+.sizes div{width:44px;height:36px;border-radius:10px;border:1px solid var(--sand-300);background:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500}
+.sizes .on{background:var(--navy);color:var(--cream-50);border-color:var(--navy)}
+
+.toggle{width:44px;height:26px;border-radius:13px;background:var(--navy);position:relative;flex:none}
+.toggle::after{content:"";position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;background:#fff}
+.toggle.off{background:var(--sand-300)}
+.toggle.off::after{right:auto;left:3px}
+.trow{display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:12px;border:1px solid var(--sand-300);padding:12px 14px;gap:12px}
+
+.mapbox{height:140px;border-radius:16px;background:var(--navy-100);position:relative;overflow:hidden}
+.mapbox::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 39px,rgba(11,42,62,.06) 39px 40px),repeating-linear-gradient(0deg,transparent 0 39px,rgba(11,42,62,.06) 39px 40px)}
+.pin{position:absolute;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;font-weight:500}
+.pin [data-i]{width:24px;height:24px}
+.pin.partner{color:var(--copper)}
+.pin.partner [data-i]{color:var(--copper)}
+.pin.pub{color:var(--navy)}
+
+.hbars{display:flex;align-items:flex-end;gap:6px;height:64px}
+.hbars i{flex:1;background:var(--copper-100);border-radius:4px 4px 0 0}
+.hbars i.hi{background:var(--copper)}
+
+.bigcheck{width:80px;height:80px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto}
+.bigcheck [data-i]{width:40px;height:40px;color:#fff}
+
+.review{background:#fff;border-radius:12px;padding:12px;box-shadow:var(--sh-card);display:flex;flex-direction:column;gap:4px}
+.code-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--sand-300);font-size:12px}
+.code-tag{font-family:monospace;font-size:13px;font-weight:600;background:var(--sand);padding:3px 8px;border-radius:6px;color:var(--navy);letter-spacing:1px}
+
+.camera-view{background:var(--navy-700);border-radius:20px;height:280px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.camera-view .idbox{width:280px;height:174px;border:3px solid var(--gold);border-radius:16px;position:relative}
+.camera-view .hint{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:var(--cream-50);font-size:12px;padding:0 30px}
+.refcode{background:var(--navy);color:var(--cream-50);border-radius:16px;padding:22px;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center}
+.refcode .code{font-size:26px;font-weight:700;letter-spacing:5px}
+.nicon{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:none}
+.nicon [data-i]{width:18px;height:18px}
+.unread-dot{width:8px;height:8px;border-radius:50%;background:var(--copper);flex:none}
+.codebox{display:flex;gap:6px;justify-content:center}
+.codebox div{width:44px;height:52px;background:#fff;border:1px solid var(--sand-300);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;font-family:monospace}
+
+/* admin */
+.adminbar{background:var(--navy-700);color:var(--cream-50);height:56px;display:flex;align-items:center;gap:10px;padding:0 16px}
+.admin-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--sand-300)}
+.admin-actions{display:flex;gap:6px;margin-left:auto}
+.icobtn{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.icobtn.ok{background:#DDEBE3}.icobtn.ok [data-i]{color:var(--green);width:16px;height:16px}
+.icobtn.no{background:#F6E4E2}.icobtn.no [data-i]{color:var(--red);width:16px;height:16px}
 </style>
 </head>
 <body>
 <div class="board">
 
-<!-- ═══════════════ 01 VERIFY EMAIL ═══════════════ -->
+<!-- ═══════════════════════════ BUYER / SELLER — ONBOARDING ═══════════════════════════ -->
+<div class="persona">Buyer / Seller · <span>Onboarding &amp; Verification</span></div>
+
+<!-- 01 -->
 <div class="slot"><label>01 · Verify Email</label>
 <div class="screen">
   <img class="rays" src="ray1.png" alt=""><img class="noise" src="noise.png" alt="">
   <div class="rel">
     <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
-    <div class="pad" style="padding-top:76px;display:flex;flex-direction:column;align-items:center;gap:0">
-      <img src="logo.png" alt="KnightMarket" style="width:96px;height:96px;object-fit:contain">
+    <div class="pad" style="padding-top:72px;display:flex;flex-direction:column;align-items:center;gap:0">
+      <div style="width:88px;height:88px;border-radius:24px;background:var(--navy);display:flex;align-items:center;justify-content:center"><span data-i="shield" class="i40 c-cream"></span></div>
       <div class="wordmark" style="margin-top:16px">KNIGHT<span class="acc">MARKET</span></div>
-      <div class="sec center" style="margin-top:8px;max-width:260px">Verified students. Verified items.<br>No scams.</div>
+      <div class="sec center" style="margin-top:8px;max-width:260px;font-size:13px">Verified students. Verified items.<br>No scams.</div>
     </div>
-    <div class="pad" style="margin-top:40px;display:flex;flex-direction:column;gap:16px">
+    <div class="pad" style="margin-top:40px;display:flex;flex-direction:column;gap:14px">
       <div class="field"><span class="label">School email</span>
-        <div class="input focus"><span data-i="user" class="i20 c-sec"></span><span>yourname@addu.edu.ph</span></div>
+        <div class="input focus"><span data-i="user" class="i20 c-sec"></span><span class="val">yourname@addu.edu.ph</span></div>
       </div>
       <div class="btn primary">Continue <span data-i="arrow" class="i20 c-cream"></span></div>
       <div class="center label-s sec">Don't have school email? <span class="acc">Verify with Student ID</span></div>
     </div>
-    <div style="position:absolute;top:748px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="position:absolute;bottom:32px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px">
       <div class="stepdots"><i class="on"></i><i></i><i></i></div>
       <div class="caption sec">STEP 1 OF 3</div>
     </div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 02 VERIFY CODE ═══════════════ -->
+<!-- 02 -->
 <div class="slot"><label>02 · Verify Code</label>
 <div class="screen">
   <img class="rays" src="ray1.png" alt=""><img class="noise" src="noise.png" alt="">
@@ -302,41 +345,97 @@ img{display:block;max-width:100%}
     <div class="pad" style="padding-top:24px;display:flex;flex-direction:column;gap:12px">
       <div class="display">Check your <span class="acc">email</span></div>
       <div class="sec">We sent a 6-digit code to<br><b style="color:var(--navy);font-weight:500">bea.tan@addu.edu.ph</b></div>
-      <div class="otp" style="margin-top:20px">
-        <div>4</div><div>8</div><div>2</div><div class="on"></div><div></div><div></div>
-      </div>
+      <div class="otp" style="margin-top:20px"><div>4</div><div>8</div><div>2</div><div class="on"></div><div></div><div></div></div>
       <div class="btn primary" style="margin-top:20px">Verify</div>
       <div class="center label-s sec" style="margin-top:4px">Didn't get it? <span class="acc">Resend in 0:42</span></div>
     </div>
-    <div style="position:absolute;top:748px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px">
+    <div style="position:absolute;bottom:32px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px">
       <div class="stepdots"><i></i><i class="on"></i><i></i></div>
       <div class="caption sec">STEP 2 OF 3</div>
     </div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 03 HOME ═══════════════ -->
-<div class="slot"><label>03 · Home (scrolls)</label>
+<!-- 03 -->
+<div class="slot"><label>03 · Verify with Student ID — Capture (alt path)</label>
+<div class="screen">
+  <div class="rel">
+    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+    <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Verify with Student ID</span><span style="width:24px"></span></div>
+    <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-top:8px">
+      <div><div class="h2">Show us your <span class="acc">ID</span></div><div class="sec body-s" style="margin-top:4px">Front side, well-lit, all text readable.</div></div>
+      <div class="camera-view">
+        <div class="idbox"><span data-i="idcard" style="width:56px;height:56px;color:rgba(242,201,76,.5);display:block;margin:58px auto"></span></div>
+        <div class="hint">Align your ID within the frame</div>
+      </div>
+      <div class="btn primary"><span data-i="camera" class="i20 c-cream"></span>Capture photo</div>
+      <div class="btn outline">Upload from gallery instead</div>
+      <div class="body-s sec center">We only use this to verify you're a real AdDU student. Your ID photo isn't shown to other users.</div>
+    </div>
+    <div style="position:absolute;bottom:32px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px">
+      <div class="stepdots"><i class="on"></i><i></i></div>
+      <div class="caption sec">STEP 1 OF 2</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 04 -->
+<div class="slot"><label>04 · Confirm ID Details (OCR review)</label>
+<div class="screen">
+  <div class="rel">
+    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+    <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Confirm your details</span><span style="width:24px"></span></div>
+    <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px">
+      <div class="card" style="padding:10px;display:flex;gap:10px;align-items:center">
+        <div style="width:64px;height:44px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="idcard" style="color:var(--copper);width:24px;height:24px"></span></div>
+        <div style="flex:1"><div class="label-s">ID_front_capture.jpg</div><div class="body-s sec">Uploaded just now</div></div>
+        <span class="label-s acc">Retake</span>
+      </div>
+      <div class="benefit" style="background:var(--copper-100)"><div class="ic" style="background:#fff"><span data-i="scanframe"></span></div><div><div class="label">We used OCR to read this automatically</div><div class="body-s sec">Please check that everything below is correct before continuing.</div></div></div>
+      <div class="field"><span class="label">Full name</span><div class="input"><span class="val">Bea Marie Tan</span></div></div>
+      <div class="field"><span class="label">Student number</span><div class="input"><span class="val">2021-04521</span></div></div>
+      <div class="field"><span class="label">Program</span><div class="input"><span class="val" style="flex:1">BS Nursing</span><span data-i="chev-d" class="i20"></span></div></div>
+      <div class="field"><span class="label">Year level</span><div class="input"><span class="val" style="flex:1">3rd year</span><span data-i="chev-d" class="i20"></span></div></div>
+      <div class="btn primary">Confirm &amp; continue</div>
+    </div>
+    <div style="position:absolute;bottom:32px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:8px">
+      <div class="stepdots"><i></i><i class="on"></i></div>
+      <div class="caption sec">STEP 2 OF 2</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- ═══════════════════════════ BUYER / SELLER — CORE ═══════════════════════════ -->
+<div class="persona">Buyer / Seller · <span>Browse &amp; Buy</span></div>
+
+<!-- 05 HOME -->
+<div class="slot"><label>05 · Home (scrolls)</label>
 <div class="screen tall">
   <div style="position:absolute;top:0;left:0;right:0;height:160px;overflow:hidden;pointer-events:none"><img class="rays" src="ray1.png" alt=""></div>
   <div class="rel">
     <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
-    <div class="pad" style="height:52px;display:flex;align-items:center;justify-content:space-between">
-      <div style="display:flex;align-items:center;gap:8px"><img src="logo.png" alt="" style="width:28px;height:28px;object-fit:contain"><span class="h3">Knight<span class="acc">Market</span></span></div>
-      <span class="chip filter" style="height:28px"><span data-i="seal" class="i16"></span>AdDU</span>
-    </div>
-    <div class="pad" style="margin-top:8px"><div class="search"><span data-i="search" class="i20 c-sec"></span>Search books, gear, uniforms…</div></div>
-
-    <div class="pad sec-gap">
-      <div class="sh"><span class="h2">Your course codes</span><span class="label-s acc">See all</span></div>
-      <div class="chips">
-        <span class="chip">#PATHFit3</span><span class="chip">#MMW</span><span class="chip">#RPH</span><span class="chip">#STS</span>
-        <span class="chip">#PurCom</span><span class="chip">#Ethics</span><span class="chip">#Theo</span><span class="chip outline">+ add</span>
+    <div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="width:26px;height:26px;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center"><span data-i="shield" style="width:16px;height:16px;color:var(--cream-50)"></span></div>
+        <span class="h3">Knight<span class="acc">Market</span></span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <span class="chip filter" style="height:28px"><span data-i="seal" class="i16"></span>AdDU</span>
+        <span data-i="heart" class="i20 c-sec"></span>
+        <span data-i="bell" class="i20 c-sec"></span>
       </div>
     </div>
-
+    <div class="pad" style="margin-top:4px"><div class="search"><span data-i="search" class="i20 c-sec"></span>Search books, gear, uniforms…</div></div>
     <div class="pad sec-gap">
-      <div class="sh"><span class="h2">Categories</span></div>
+      <div class="banner">
+        <div class="im"><span data-i="coffee"></span></div>
+        <div style="flex:1"><div class="label" style="color:var(--cream-50);font-size:13px">Iced latte ₱79 for KnightMarket users</div><div class="body-s" style="opacity:.7;margin-top:2px">Kape Roxas · 2 min from Jacinto gate</div></div>
+        <span class="pill" style="background:var(--copper);color:#fff;text-transform:none;letter-spacing:0;font-size:11px">Coupon</span>
+        <span class="ad">SPONSORED</span>
+      </div>
+    </div>
+    <div class="pad sec-gap">
+      <div class="sh"><span class="h2">Categories</span><span class="label-s acc">See all</span></div>
       <div class="tiles">
         <div class="tile"><span data-i="book"></span>Books</div>
         <div class="tile"><span data-i="tshirt"></span>Uniforms</div>
@@ -344,61 +443,71 @@ img{display:block;max-width:100%}
         <div class="tile"><span data-i="steth"></span>Lab</div>
         <div class="tile"><span data-i="calc"></span>Electronics</div>
         <div class="tile"><span data-i="fan"></span>Dorm</div>
-        <div class="tile"><span data-i="hoodie"></span>Org Merch</div>
+        <div class="tile"><span data-i="hoodie"></span>Org/Club Merch</div>
         <div class="tile"><span data-i="dress"></span>Formal</div>
       </div>
     </div>
-
+    <div class="sec-gap">
+      <div class="pad sh"><span class="h2">Boosted picks</span><span data-i="chev-r" class="i20 c-sec"></span></div>
+      <div class="rail" style="padding-left:16px">
+        <div class="card h"><div class="im"><span data-i="tshirt"></span><span class="pill boost"><span data-i="rocket" class="i16"></span>Boosted</span></div><div class="bd"><span class="price">₱450</span><span class="ttl">Nursing duty whites, M</span><span class="badge"><span data-i="seal"></span>Jo R.<span class="rate">★4.9</span></span></div></div>
+        <div class="card h"><div class="im"><span data-i="calc"></span><span class="pill boost"><span data-i="rocket" class="i16"></span>Boosted</span></div><div class="bd"><span class="price">₱600</span><span class="ttl">Casio fx-991EX calc</span><span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★4.6</span></span></div></div>
+      </div>
+    </div>
     <div class="sec-gap">
       <div class="pad sh"><span class="h2">For rent <span class="acc">this sem</span></span><span data-i="chev-r" class="i20 c-sec"></span></div>
       <div class="rail" style="padding-left:16px">
-        <div class="card h"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span></div><div class="bd"><span class="price">₱80 <span class="per">/sem</span></span><span class="ttl">Badminton racket + case</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★ 4.8</span></span></div></div>
-        <div class="card h"><div class="im"><span data-i="steth"></span><span class="pill rent">Rent</span></div><div class="bd"><span class="price">₱150 <span class="per">/sem</span></span><span class="ttl">BP apparatus, manual</span><span class="badge"><span data-i="seal"></span>Jo R.</span></div></div>
-        <div class="card h"><div class="im"><span data-i="fan"></span><span class="pill rent">Rent</span></div><div class="bd"><span class="price">₱200 <span class="per">/sem</span></span><span class="ttl">Electric fan 16"</span><span class="badge"><span data-i="seal"></span>Mico G.</span></div></div>
+        <div class="card h"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span></div><div class="bd"><span class="price">₱80 <span class="per">/sem</span></span><span class="ttl">Badminton racket + case</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★4.8</span></span></div></div>
+        <div class="card h"><div class="im"><span data-i="steth"></span><span class="pill rent">Rent</span></div><div class="bd"><span class="price">₱150 <span class="per">/sem</span></span><span class="ttl">BP apparatus, manual</span><span class="badge"><span data-i="seal"></span>Jo R.<span class="rate">★4.9</span></span></div></div>
+        <div class="card h"><div class="im"><span data-i="fan"></span><span class="pill rent">Rent</span></div><div class="bd"><span class="price">₱200 <span class="per">/sem</span></span><span class="ttl">Electric fan 16"</span><span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★4.6</span></span></div></div>
       </div>
     </div>
-
     <div class="pad sec-gap">
-      <div class="sh"><span class="h2">Org drops</span><span data-i="chev-r" class="i20 c-sec"></span></div>
+      <div class="sh"><span class="h2">Org &amp; Club drops</span><span data-i="chev-r" class="i20 c-sec"></span></div>
       <div class="org">
         <div class="im"><span data-i="hoodie"></span></div>
         <div class="bd">
-          <span class="badge"><span data-i="seal-gold"></span>Official Org · CSSEC</span>
-          <span class="h3">CSSEC Varsity Hoodie</span>
-          <span class="body-s sec">Pre-order until Oct 15 · ₱650</span>
-          <span class="pill pre" style="margin-top:4px;align-self:flex-start">Preorder</span>
+          <span class="badge"><span data-i="seal-gold"></span>Official · CSSEC</span>
+          <span class="h3">CSSEC Varsity Hoodie 2025</span>
+          <span class="body-s sec">Pre-order · closes Oct 15 · ₱650</span>
+          <span class="pill pre" style="margin-top:4px;align-self:flex-start">Preorder open</span>
         </div>
       </div>
     </div>
-
-    <div class="pad sec-gap" style="padding-bottom:16px">
-      <div class="sh"><span class="h2">New near you</span></div>
-      <div class="grid">
-        <div class="card"><div class="im"><img src="books.png" alt=""><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★ 4.8</span></span></div></div>
-        <div class="card"><div class="im"><span data-i="tshirt"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱450</span><span class="ttl">Nursing duty whites, size M</span><span class="body-s sec">Good · Uniforms</span><span class="badge"><span data-i="seal"></span>Jo R.</span></div></div>
-        <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket + 3 shuttles</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Bea T.</span></div></div>
-        <div class="card"><div class="im"><span data-i="calc"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱600</span><span class="ttl">Casio fx-991EX scientific calc</span><span class="body-s sec">Good · Electronics</span><span class="badge"><span data-i="seal"></span>Mico G.</span></div></div>
+    <div class="pad sec-gap">
+      <div class="sh"><span class="h2">Your course codes</span><span class="label-s acc">Edit</span></div>
+      <div class="chips">
+        <span class="chip">#PATHFit3</span><span class="chip">#MMW</span><span class="chip">#RPH</span><span class="chip">#STS</span>
+        <span class="chip">#PurCom</span><span class="chip">#Ethics</span><span class="chip outline">+ add code</span>
       </div>
     </div>
-
+    <div class="pad sec-gap" style="padding-bottom:100px">
+      <div class="sh"><span class="h2">New near you</span></div>
+      <div class="grid">
+        <div class="card"><div class="im"><img src="books.png" alt=""><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★4.8</span></span></div></div>
+        <div class="card"><div class="im"><span data-i="tshirt"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱450</span><span class="ttl">Nursing duty whites, size M</span><span class="body-s sec">Good · Uniforms</span><span class="badge"><span data-i="seal"></span>Jo R.<span class="rate">★4.9</span></span></div></div>
+        <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket + 3 shuttles</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Bea T.<span class="rate">★5.0</span></span></div></div>
+        <div class="card"><div class="im"><span data-i="calc"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱600</span><span class="ttl">Casio fx-991EX scientific calc</span><span class="body-s sec">Good · Electronics</span><span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★4.6</span></span></div></div>
+      </div>
+    </div>
     <div class="tabbar">
       <div class="tab on"><span data-i="home"></span>Home</div>
       <div class="tab"><span data-i="grid"></span>Browse</div>
-      <div class="tab sell"><div class="fab"><span data-i="plus"></span></div><span>Sell</span></div>
+      <div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
       <div class="tab"><span data-i="chat"></span>Inbox</div>
       <div class="tab"><span data-i="user"></span>Me</div>
     </div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 04 BROWSE ═══════════════ -->
-<div class="slot"><label>04 · Browse — #PATHFit3 (scrolls)</label>
+<!-- 06 BROWSE -->
+<div class="slot"><label>06 · Browse — #PATHFit3 (scrolls)</label>
 <div class="screen tall">
   <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr" style="gap:10px">
     <span data-i="back"></span>
     <div class="search" style="flex:1;height:44px;border-radius:12px"><span data-i="search" class="i20 c-sec"></span><span class="val">#PATHFit3</span></div>
-    <span data-i="sliders" style="position:relative"></span>
+    <span data-i="sliders"></span>
   </div>
   <div class="pad" style="display:flex;gap:8px;margin-top:4px;overflow:hidden">
     <span class="chip filter on">#PATHFit3 <span data-i="x" class="i16 c-cream"></span></span>
@@ -406,32 +515,33 @@ img{display:block;max-width:100%}
     <span class="chip filter"><span data-i="sliders" class="i16"></span>Filters (2)</span>
   </div>
   <div class="pad" style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
-    <span class="body-s sec">6 results</span><span class="label-s" style="display:flex;align-items:center;gap:2px">Newest <span data-i="chev-d" class="i16"></span></span>
+    <span class="body-s sec">6 results</span>
+    <span class="label-s" style="display:flex;align-items:center;gap:2px">Newest <span data-i="chev-d" class="i16"></span></span>
   </div>
-  <div class="pad" style="margin-top:12px">
+  <div class="pad" style="margin-top:12px;padding-bottom:100px">
     <div class="grid">
-      <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱80 <span class="per">/sem</span></span><span class="ttl">Badminton racket + case</span><span class="body-s sec">Good · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★ 4.8</span></span></div></div>
-      <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket + 3 shuttles</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Bea T.</span></div></div>
-      <div class="card"><div class="im"><img src="shoes.png" alt=""><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱100 <span class="per">/sem</span></span><span class="ttl">Court shoes, size 8</span><span class="body-s sec">Good · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Jo R.</span></div></div>
-      <div class="card"><div class="im"><span data-i="tag"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱60 <span class="per">/sem</span></span><span class="ttl">Table tennis paddle set</span><span class="body-s sec">Acceptable · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Mico G.</span></div></div>
+      <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱80 <span class="per">/sem</span></span><span class="ttl">Badminton racket + case</span><span class="body-s sec">Good · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★4.8</span></span></div></div>
+      <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket + 3 shuttles</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Bea T.<span class="rate">★5.0</span></span></div></div>
+      <div class="card"><div class="im"><span data-i="tshirt"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱100 <span class="per">/sem</span></span><span class="ttl">Court shoes, size 8</span><span class="body-s sec">Good · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Jo R.<span class="rate">★4.9</span></span></div></div>
+      <div class="card"><div class="im"><span data-i="tag"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱60 <span class="per">/sem</span></span><span class="ttl">Table tennis paddle set</span><span class="body-s sec">Acceptable · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★4.6</span></span></div></div>
     </div>
-    <div class="divrow">4 more available to buy</div>
-    <div class="grid" style="padding-bottom:16px">
-      <div class="card"><div class="im"><span data-i="racket"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Racket, barely used</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Ana L.</span></div></div>
-      <div class="card"><div class="im"><span data-i="tshirt"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱180</span><span class="ttl">PE uniform set, M</span><span class="body-s sec">Good · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Ram S.</span></div></div>
+    <div class="divrow">4 available to buy</div>
+    <div class="grid">
+      <div class="card"><div class="im"><span data-i="racket"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Racket, barely used</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Ana L.<span class="rate">★4.7</span></span></div></div>
+      <div class="card"><div class="im"><span data-i="tshirt"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱180</span><span class="ttl">PE uniform set, M</span><span class="body-s sec">Good · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Ram S.<span class="rate">★4.5</span></span></div></div>
     </div>
   </div>
   <div class="tabbar">
     <div class="tab"><span data-i="home"></span>Home</div>
     <div class="tab on"><span data-i="grid"></span>Browse</div>
-    <div class="tab sell"><div class="fab"><span data-i="plus"></span></div><span>Sell</span></div>
+    <div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
     <div class="tab"><span data-i="chat"></span>Inbox</div>
     <div class="tab"><span data-i="user"></span>Me</div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 05 FILTER SHEET ═══════════════ -->
-<div class="slot"><label>05 · Filter Sheet (overlay)</label>
+<!-- 07 FILTER SHEET -->
+<div class="slot"><label>07 · Filter Sheet (overlay)</label>
 <div class="screen">
   <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr" style="gap:10px"><span data-i="back"></span><div class="search" style="flex:1;height:44px;border-radius:12px"><span data-i="search" class="i20 c-sec"></span><span class="val">#PATHFit3</span></div><span data-i="sliders"></span></div>
@@ -443,60 +553,85 @@ img{display:block;max-width:100%}
   <div class="scrim"></div>
   <div class="sheet">
     <div class="grab"></div>
-    <div style="display:flex;justify-content:space-between;align-items:center"><span class="h3">Filters</span><span class="label-s acc">Reset</span></div>
-    <div class="field"><span class="label">Type</span><div class="seg"><div>Buy</div><div class="on">Rent</div><div>All</div></div></div>
+    <div style="display:flex;justify-content:space-between;align-items:center"><span class="h3">Filters</span><span class="label-s acc">Reset all</span></div>
+    <div class="field"><span class="label">Listing type</span><div class="seg"><div>Buy</div><div class="on">Rent</div><div>All</div></div></div>
     <div class="field"><span class="label">Category</span><div class="input"><span class="val" style="flex:1">PE &amp; Sports Gear</span><span data-i="chev-d" class="i20"></span></div></div>
     <div class="field"><span class="label">Course code</span><div class="input"><span class="val" style="flex:1">PATHFit 3</span><span data-i="chev-d" class="i20"></span></div></div>
     <div class="field"><span class="label">Condition</span>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <div class="cb on"><i><span data-i="check" class="c-white"></span></i>Like New</div><div class="cb on"><i><span data-i="check" class="c-white"></span></i>Good</div>
-        <div class="cb"><i></i>Acceptable</div><div class="cb"><i></i>Fair</div>
-      </div></div>
-    <div class="field"><span class="label">Seller</span><div style="display:flex;gap:24px"><div class="cb on"><i><span data-i="check" class="c-white"></span></i>Students</div><div class="cb on"><i><span data-i="check" class="c-white"></span></i>Orgs</div></div></div>
+        <!-- FIX: check icon now uses .i14 so it sits inside the 20px box properly -->
+        <div class="cb on"><i><span data-i="check" class="i14 c-white"></span></i>Like New</div>
+        <div class="cb on"><i><span data-i="check" class="i14 c-white"></span></i>Good</div>
+        <div class="cb"><i></i>Acceptable</div>
+        <div class="cb"><i></i>Fair</div>
+      </div>
+    </div>
+    <div class="field"><span class="label">Seller</span><div style="display:flex;gap:24px">
+      <div class="cb on"><i><span data-i="check" class="i14 c-white"></span></i>Students</div>
+      <div class="cb on"><i><span data-i="check" class="i14 c-white"></span></i>Orgs/Clubs</div>
+    </div></div>
     <div class="field"><span class="label">Price</span>
       <div class="slider"><div class="tr"></div><div class="fl"></div><div class="th" style="left:0"></div><div class="th" style="left:calc(36% - 12px)"></div></div>
-      <div style="display:flex;justify-content:space-between" class="body-s sec"><span>₱0</span><span>₱2,000</span></div></div>
+      <div style="display:flex;justify-content:space-between" class="body-s sec"><span>₱0</span><span>₱2,000</span></div>
+    </div>
     <div class="btn primary">Show 6 results</div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 06 LISTING DETAIL ═══════════════ -->
-<div class="slot"><label>06 · Listing Detail (scrolls)</label>
+<!-- 08 LISTING DETAIL -->
+<div class="slot"><label>08 · Listing Detail (scrolls)</label>
 <div class="screen tall">
   <div class="hero">
-    <span data-i="racket"></span>
-    <div class="top"><div class="circ"><span data-i="back" class="i20"></span></div><div class="r"><div class="circ"><span data-i="heart" class="i20"></span></div><div class="circ"><span data-i="dots" class="i20"></span></div></div></div>
+    <!-- FIX: neutral "no photo" placeholder icon instead of an oversized item icon -->
+    <span data-i="imgph" style="width:88px;height:88px;color:var(--copper-300)"></span>
+    <div class="top">
+      <div class="circ"><span data-i="back" class="i20"></span></div>
+      <div class="r"><div class="circ"><span data-i="heart" class="i20"></span></div><div class="circ"><span data-i="dots" class="i20"></span></div></div>
+    </div>
     <div class="dots"><i class="on"></i><i></i><i></i><i></i></div>
   </div>
-  <div class="pad" style="padding-top:16px;display:flex;flex-direction:column;gap:8px;padding-bottom:16px">
-    <div style="display:flex;justify-content:space-between;align-items:center"><span class="price-lg">₱80 <span class="per" style="font-size:14px">/semester</span></span><span class="pill rent">Rent</span></div>
+  <div class="pad" style="padding-top:16px;display:flex;flex-direction:column;gap:10px;padding-bottom:16px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span class="price-lg">₱80 <span class="per" style="font-size:14px">/semester</span></span>
+      <span class="pill rent">Rent</span>
+    </div>
     <div class="h3">Badminton racket with case — Yonex Nanoray</div>
     <div class="body-s sec">Good · PE &amp; Sports Gear · <span class="acc">#PATHFit3</span></div>
     <div class="chips"><span class="chip tag">#yonex</span><span class="chip tag">#withCase</span><span class="chip tag">#restrung</span></div>
-    <div class="seller" style="margin-top:8px">
-      <div class="avatar"><span data-i="user" class="i20 c-acc"></span></div>
-      <div style="flex:1"><div class="nm"><span class="h3">Kai M.</span><span class="badge"><span data-i="seal"></span>Verified Student</span></div><div class="body-s sec">BS Nursing · 3rd year · 3 trades</div></div>
+    <div class="seller" style="margin-top:4px">
+      <div class="avatar" style="width:44px;height:44px"><span data-i="user" class="i20 c-acc"></span></div>
+      <div style="flex:1">
+        <div class="nm"><span class="h3">Kai M.</span><span data-i="seal" class="i16"></span></div>
+        <div style="display:flex;align-items:center;gap:6px;margin-top:2px">
+          <span class="stars"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span></span>
+          <span class="label-s">4.8</span><span class="body-s sec">(12) · 15 trades</span>
+        </div>
+        <div class="body-s sec">BS Nursing · 3rd year</div>
+      </div>
       <span data-i="chev-r" class="i20 c-sec"></span>
     </div>
-    <div style="margin-top:8px">Used for one sem of PATHFit 3, restrung last month. Comes with the original case and grip tape. Meetup at Jacinto or Roxas gate, free after 4pm.</div>
-    <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+    <div class="body-s" style="line-height:18px">Used for one sem of PATHFit 3, restrung last month. Comes with original case and grip tape. Meetup at Jacinto or Roxas gate, free after 4pm.</div>
+    <div style="display:flex;flex-direction:column;gap:6px">
       <div class="detail-row"><span data-i="pin"></span>Preferred meetup: Jacinto campus</div>
       <div class="detail-row"><span data-i="clock"></span>Listed 2 days ago</div>
       <div class="detail-row"><span data-i="refresh"></span>Return by end of sem · Deposit ₱200</div>
     </div>
-    <div style="display:flex;align-items:center;gap:6px;margin-top:8px" class="label-s c-red"><span data-i="flag" class="i16 c-red"></span>Report listing</div>
+    <div style="display:flex;align-items:center;gap:6px;margin-top:4px" class="label-s c-red"><span data-i="flag" class="i16 c-red"></span>Report listing</div>
   </div>
   <div class="cta"><div class="btn outline md">Make offer</div><div class="btn primary md wide"><span data-i="chat" class="i20 c-cream"></span>Request rental</div></div>
 </div></div>
 
-<!-- ═══════════════ 07 CHAT ═══════════════ -->
-<div class="slot"><label>07 · Chat</label>
+<!-- 09 CHAT -->
+<div class="slot"><label>09 · Chat</label>
 <div class="screen">
   <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
-  <div class="hdr" style="background:#fff">
+  <div class="hdr" style="background:#fff;border-bottom:1px solid var(--sand-300)">
     <span data-i="back"></span>
-    <div class="avatar" style="width:32px;height:32px"><span data-i="user" class="i16 c-acc"></span></div>
-    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="label">Kai M.</span><span data-i="seal" class="i16"></span></div><div class="body-s sec"><span class="rate" style="margin:0">★ 4.8</span> · 15 trades · replies in ~1 hr</div></div>
+    <div class="avatar" style="width:34px;height:34px"><span data-i="user" class="i16 c-acc"></span></div>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:6px"><span class="label">Kai M.</span><span data-i="seal" class="i16"></span></div>
+      <div class="body-s sec" style="display:flex;align-items:center;gap:4px"><span class="rate" style="margin:0">★4.8</span>· 15 trades · replies in ~1 hr</div>
+    </div>
     <span data-i="dots"></span>
   </div>
   <div class="pinned">
@@ -504,107 +639,108 @@ img{display:block;max-width:100%}
     <div style="flex:1"><div class="label" style="line-height:18px">Badminton racket with case</div><div class="body-s sec">₱80/sem · <span style="color:var(--green)">Available</span></div></div>
     <span class="label-s acc">View</span>
   </div>
-  <div class="msgs">
+  <div class="msgs" style="padding-bottom:4px">
     <span class="ts">Today, 2:14 PM</span>
     <div class="bub me">Hi! Is the racket still available for rent this sem?</div>
     <div class="bub them">Yes! Still here. You taking PATHFit 3 with Sir Dela Cruz?</div>
-    <div class="bub me">Yup, MWF 1pm. Can I see it first before I decide?</div>
+    <div class="bub me">Yup, MWF 1pm. Can I see it first?</div>
     <div class="bub them">Sure, free tomorrow after 4pm. Jacinto gate ok?</div>
     <div class="bub me">Perfect, see you at 4:15 👍</div>
   </div>
   <div class="composer">
-    <div style="display:flex;gap:8px"><span class="chip filter"><span data-i="pin" class="i16"></span>Propose meetup</span><span class="chip filter">₱ Make offer</span></div>
+    <div class="quick">
+      <span class="chip filter" style="font-size:11px"><span data-i="pin" class="i16"></span>Meetup</span>
+      <span class="chip filter" style="font-size:11px">₱ Offer</span>
+      <span class="chip filter" style="font-size:11px"><span data-i="check-c" class="i16"></span>Done</span>
+    </div>
     <div class="row"><div class="in">Message…</div><div class="send"><span data-i="send"></span></div></div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 08 SELL ═══════════════ -->
-<div class="slot"><label>08 · Sell / New Listing (scrolls)</label>
+<!-- ═══════════════════════════ BUYER / SELLER — SELLING &amp; TRUST ═══════════════════════════ -->
+<div class="persona">Buyer / Seller · <span>Selling, Trust &amp; Safety</span></div>
+
+<!-- 10 SELL -->
+<div class="slot"><label>10 · Sell / New Listing (scrolls)</label>
 <div class="screen tall">
   <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">New listing</span><span class="label-s acc">Preview</span></div>
-  <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-top:8px;padding-bottom:16px">
-    <div class="field">
-      <div class="photos"><div><span data-i="camera"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div></div>
-      <span class="body-s sec">Add up to 6 photos · first one is the cover</span>
-    </div>
+  <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px;padding-bottom:100px">
+    <div class="field"><div class="photos"><div><span data-i="camera"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div></div><span class="body-s sec">Add up to 6 photos · first one is the cover</span></div>
     <div class="field"><span class="label">Title *</span><div class="input"><span class="val">Math in the Modern World, 2nd Ed</span></div></div>
-    <div class="field"><span class="label">I want to</span><div class="seg"><div class="on">Sell</div><div>Rent</div></div></div>
+    <div class="field"><span class="label">I want to</span><div class="seg"><div class="on">Sell</div><div>Rent out</div></div></div>
     <div class="field"><span class="label">Price *</span><div class="input"><span style="color:var(--navy);font-weight:500">₱</span><span class="val">350</span></div></div>
     <div class="field"><span class="label">Category *</span><div class="input"><span class="val" style="flex:1">Textbooks &amp; Readings</span><span data-i="chev-d" class="i20"></span></div></div>
-    <div class="field"><span class="label">Course code</span><div class="input"><span class="val" style="flex:1">MMW — Mathematics in the Modern World</span><span data-i="chev-d" class="i20"></span></div><span class="body-s sec">Can't find it? <span class="acc">Suggest a code</span></span></div>
+    <div class="field"><span class="label">Course code <span class="body-s sec" style="font-weight:400">(optional)</span></span><div class="input"><span class="val" style="flex:1">MMW — Mathematics in the Modern World</span><span data-i="chev-d" class="i20"></span></div><span class="body-s sec">Can't find it? <span class="acc">Suggest a code</span></span></div>
     <div class="field"><span class="label">Condition *</span><div class="input"><span class="val" style="flex:1">Like New</span><span data-i="chev-d" class="i20"></span></div></div>
     <div class="field"><span class="label">Tags</span>
-      <div class="input" style="height:auto;min-height:48px;padding:8px 10px;flex-wrap:wrap;gap:6px"><span class="chip on" style="height:28px">#2ndEdition <span data-i="x" class="i16 c-white"></span></span><span class="chip on" style="height:28px">#unmarked <span data-i="x" class="i16 c-white"></span></span><span class="sec" style="font-size:14px">+ add</span></div>
-      <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap"><span class="body-s sec">Try:</span><span class="chip tag">#hardbound</span><span class="chip tag">#withAnswerKey</span><span class="chip tag">#highlighted</span></div>
+      <div class="input" style="height:auto;min-height:48px;padding:8px 10px;flex-wrap:wrap;gap:6px">
+        <span class="chip on" style="height:28px">#2ndEdition <span data-i="x" class="i16 c-white"></span></span>
+        <span class="chip on" style="height:28px">#unmarked <span data-i="x" class="i16 c-white"></span></span>
+        <span class="sec" style="font-size:14px">+ add</span>
+      </div>
     </div>
     <div class="field"><span class="label">Description</span><div class="input textarea">Used for one sem, no highlights or writing…</div></div>
     <div class="field"><span class="label">Meetup spot</span><div class="input"><span data-i="pin" class="i20 c-sec"></span><span class="val" style="flex:1">Jacinto campus — main gate</span><span data-i="chev-d" class="i20"></span></div></div>
   </div>
-  <div class="cta" style="padding:16px"><div class="btn primary">Publish listing</div></div>
+  <div class="cta" style="padding:12px 16px 20px"><div class="btn primary">Publish listing</div></div>
 </div></div>
 
-<!-- ═══════════════ 09 EMPTY STATE ═══════════════ -->
-<div class="slot"><label>09 · Empty State</label>
+<!-- 11 BOOST -->
+<div class="slot"><label>11 · Boost this listing (seller)</label>
 <div class="screen">
-  <img class="rays" src="ray1.png" alt="">
-  <div class="rel">
-    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
-    <div class="hdr" style="gap:10px"><span data-i="back"></span><div class="search" style="flex:1;height:44px;border-radius:12px"><span data-i="search" class="i20 c-sec"></span><span class="val">#Theo</span></div><span data-i="sliders"></span></div>
-    <div class="pad" style="display:flex;gap:8px;margin-top:4px"><span class="chip filter on">#Theo <span data-i="x" class="i16 c-cream"></span></span></div>
-    <div class="empty">
-      <img src="books.png" alt="">
-      <div class="h3" style="margin-top:8px">Nobody's listed #Theo yet</div>
-      <div class="sec" style="max-width:280px">Be the first — or post what you're looking for and we'll notify you when it shows up.</div>
-      <div class="btn accent" style="margin-top:12px">Be the first to sell</div>
-      <div class="label-s acc">Post a "Looking For"</div>
+  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+  <div class="hdr"><span data-i="x"></span><span class="h3 ttl">Boost listing</span><span style="width:24px"></span></div>
+  <div class="pad" style="display:flex;flex-direction:column;gap:16px">
+    <div class="card" style="padding:12px;display:flex;gap:12px;align-items:center">
+      <div style="width:56px;height:56px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="racket" style="color:var(--copper)"></span></div>
+      <div style="flex:1"><div class="label">Yonex racket + 3 shuttles</div><div class="body-s sec">₱120/sem · 14 views so far</div></div>
     </div>
-    <div class="tabbar">
-      <div class="tab"><span data-i="home"></span>Home</div>
-      <div class="tab on"><span data-i="grid"></span>Browse</div>
-      <div class="tab sell"><div class="fab"><span data-i="plus"></span></div><span>Sell</span></div>
-      <div class="tab"><span data-i="chat"></span>Inbox</div>
-      <div class="tab"><span data-i="user"></span>Me</div>
+    <div class="benefit"><div class="ic"><span data-i="rocket"></span></div><div><div class="label">Top of Browse &amp; #PATHFit3 search</div><div class="body-s sec">Boosted listings appear above regular results for the whole duration.</div></div></div>
+    <div class="benefit"><div class="ic"><span data-i="home"></span></div><div><div class="label">Featured in Home's "Boosted picks"</div><div class="body-s sec">Seen by every student browsing Home, not just search.</div></div></div>
+    <div class="h3">Choose a duration</div>
+    <div style="display:flex;gap:10px">
+      <div class="plan"><span class="label">3 days</span><span class="pr">₱29</span></div>
+      <div class="plan on"><span class="pill boost" style="align-self:flex-start"><span data-i="rocket" class="i16"></span>Popular</span><span class="label">7 days</span><span class="pr">₱59</span></div>
+      <div class="plan"><span class="label">14 days</span><span class="pr">₱99</span></div>
     </div>
+    <div class="field"><span class="label">Pay via</span><div class="input"><span data-i="cash" class="i20 c-sec"></span><span class="val" style="flex:1">GCash — send to 0917 ••• 1000</span></div><span class="body-s sec">Boost activates within ~15 mins after payment is confirmed.</span></div>
   </div>
+  <div class="cta"><div class="btn accent"><span data-i="rocket" class="i20 c-white"></span>Confirm boost — ₱59</div></div>
 </div></div>
 
-<!-- ═══════════════════════════ RATING (Buyer / Seller) ═══════════════════════════ -->
-<div class="persona">Buyer / Seller · <span>Ratings</span></div>
-
-<!-- ═══════════════ 10 RATE YOUR TRADE ═══════════════ -->
-<div class="slot"><label>10 · Rate your trade</label>
+<!-- 12 RATE TRADE -->
+<div class="slot"><label>12 · Rate your trade</label>
 <div class="screen">
   <img class="rays" src="ray1.png" alt="">
   <div class="rel">
     <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
-    <div class="hdr"><span data-i="x"></span><span class="h3 ttl">Rate your trade</span><span class="label-s sec">Skip</span></div>
-    <div class="pad" style="display:flex;flex-direction:column;gap:20px;align-items:center;padding-top:16px;text-align:center">
-      <div class="pinned" style="width:358px;border:1px solid var(--sand-300);border-radius:16px;text-align:left">
-        <div class="th"><span data-i="racket"></span></div>
-        <div style="flex:1"><div class="label" style="line-height:18px">Badminton racket with case</div><div class="body-s sec">Rented from <b style="font-weight:500;color:var(--navy)">Kai M.</b> · ₱80/sem</div></div>
+    <div class="hdr"><span style="width:24px"></span><span class="h3 ttl">Rate your trade</span><span class="label-s sec">Skip</span></div>
+    <div class="pad" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center;padding-top:8px">
+      <div style="width:358px;background:#fff;border-radius:16px;box-shadow:var(--sh-card);padding:12px;display:flex;align-items:center;gap:12px;text-align:left">
+        <div class="pinned" style="border:none;height:auto;padding:0;background:none;flex:1">
+          <div class="th" style="background:var(--sand)"><span data-i="racket"></span></div>
+          <div style="flex:1"><div class="label" style="line-height:18px">Badminton racket with case</div><div class="body-s sec">Rented from <b style="font-weight:500;color:var(--navy)">Kai M.</b> · ₱80/sem</div></div>
+        </div>
         <span class="pill paid">Completed</span>
       </div>
-      <div>
-        <div class="h2">How was <span class="acc">Kai</span>?</div>
-        <div class="sec body-s" style="margin-top:4px">Your rating helps other students trust them.</div>
-      </div>
+      <div><div class="h2">How was <span class="acc">Kai</span>?</div><div class="sec body-s" style="margin-top:4px">Your rating helps other students trust them.</div></div>
       <div class="stars lg"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star" class="off"></span></div>
       <div class="label acc">Great!</div>
       <div class="chips" style="justify-content:center">
-        <span class="chip on"><span data-i="check" class="i16 c-white"></span>On time</span>
-        <span class="chip on"><span data-i="check" class="i16 c-white"></span>As described</span>
+        <span class="chip on"><span data-i="check" class="i14 c-white"></span>On time</span>
+        <span class="chip on"><span data-i="check" class="i14 c-white"></span>As described</span>
         <span class="chip">Friendly</span><span class="chip">Easy to reach</span><span class="chip">Fair price</span>
       </div>
-      <div class="input textarea" style="width:358px;text-align:left;height:96px">Add a note (optional)…</div>
-      <div class="btn primary">Submit rating</div>
-      <div class="body-s sec" style="max-width:280px">Ratings go live once both of you rate, or after 7 days — so nobody can retaliate.</div>
+      <div class="input textarea" style="width:358px;text-align:left;height:80px;font-size:14px">Add a note (optional)…</div>
+      <div class="btn primary" style="width:358px">Submit rating</div>
+      <div class="body-s sec" style="max-width:290px">Ratings go live once both of you rate, or after 7 days — so nobody can retaliate.</div>
     </div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 11 SELLER PROFILE (PUBLIC) ═══════════════ -->
-<div class="slot"><label>11 · Seller profile (public, scrolls)</label>
+<!-- 13 SELLER PROFILE -->
+<div class="slot"><label>13 · Seller profile (public, scrolls)</label>
 <div class="screen tall">
   <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="back"></span><span class="ttl"></span><span data-i="share"></span><span data-i="flag" class="c-red"></span></div>
@@ -620,19 +756,19 @@ img{display:block;max-width:100%}
     <div class="stats">
       <div class="stat"><span class="n">15</span><span class="d">trades done</span></div>
       <div class="stat"><span class="n">98%</span><span class="d">reply rate</span></div>
-      <div class="stat"><span class="n">1 hr</span><span class="d">avg reply</span></div>
+      <div class="stat"><span class="n">~1 hr</span><span class="d">avg reply</span></div>
     </div>
     <div style="display:flex;flex-direction:column;gap:6px">
-      <div class="bar"><span style="width:8px">5</span><span data-i="star" class="i16 c-gold"></span><div class="prog"><i style="width:83%"></i></div><span class="sec" style="width:20px">10</span></div>
-      <div class="bar"><span style="width:8px">4</span><span data-i="star" class="i16 c-gold"></span><div class="prog"><i style="width:17%"></i></div><span class="sec" style="width:20px">2</span></div>
-      <div class="bar"><span style="width:8px">3</span><span data-i="star" class="i16 c-gold"></span><div class="prog"><i style="width:0"></i></div><span class="sec" style="width:20px">0</span></div>
-      <div class="bar"><span style="width:8px">2</span><span data-i="star" class="i16 c-gold"></span><div class="prog"><i style="width:0"></i></div><span class="sec" style="width:20px">0</span></div>
-      <div class="bar"><span style="width:8px">1</span><span data-i="star" class="i16 c-gold"></span><div class="prog"><i style="width:0"></i></div><span class="sec" style="width:20px">0</span></div>
+      <div class="bar"><span style="width:10px;font-size:11px">5</span><span data-i="star" class="i16 c-gold"></span><div class="prog"><i style="width:83%"></i></div><span class="sec body-s" style="width:20px">10</span></div>
+      <div class="bar"><span style="width:10px;font-size:11px">4</span><span data-i="star" class="i16 c-gold"></span><div class="prog"><i style="width:17%"></i></div><span class="sec body-s" style="width:20px">2</span></div>
+      <div class="bar"><span style="width:10px;font-size:11px">3</span><span data-i="star" class="i16 c-gold"></span><div class="prog"><i style="width:0"></i></div><span class="sec body-s" style="width:20px">0</span></div>
+      <div class="bar"><span style="width:10px;font-size:11px">2</span><span data-i="star" class="i16 c-gold"></span><div class="prog"><i style="width:0"></i></div><span class="sec body-s" style="width:20px">0</span></div>
+      <div class="bar"><span style="width:10px;font-size:11px">1</span><span data-i="star" class="i16 c-gold"></span><div class="prog"><i style="width:0"></i></div><span class="sec body-s" style="width:20px">0</span></div>
     </div>
     <div class="chips"><span class="chip tag">On time ×11</span><span class="chip tag">As described ×10</span><span class="chip tag">Friendly ×8</span><span class="chip tag">Fair price ×5</span></div>
     <div class="sh" style="margin:0"><span class="h3">Recent reviews</span><span class="label-s acc">See all 12</span></div>
-    <div class="review"><div style="display:flex;justify-content:space-between"><span class="label">Bea T.</span><span class="stars"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span></span></div><div class="body-s">Racket was exactly as described, met on time at Jacinto. Would rent again!</div><div class="body-s sec">Rented · 2 weeks ago</div></div>
-    <div class="review"><div style="display:flex;justify-content:space-between"><span class="label">Ram S.</span><span class="stars"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star" class="off"></span></span></div><div class="body-s">Book had a few more highlights than the photos showed but Kai gave a discount. Fair.</div><div class="body-s sec">Bought · 1 month ago</div></div>
+    <div class="review"><div style="display:flex;justify-content:space-between"><span class="label">Bea T.</span><span class="stars"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span></span></div><div class="body-s" style="margin-top:2px">Racket was exactly as described, met on time at Jacinto. Would rent again!</div><div class="body-s sec" style="margin-top:2px">Rented · 2 weeks ago</div></div>
+    <div class="review"><div style="display:flex;justify-content:space-between"><span class="label">Ram S.</span><span class="stars"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star" class="off"></span></span></div><div class="body-s" style="margin-top:2px">Book had a few more highlights than the photos showed but Kai gave a discount. Fair.</div><div class="body-s sec" style="margin-top:2px">Bought · 1 month ago</div></div>
     <div class="sh" style="margin:0"><span class="h3">Listings (3)</span></div>
     <div class="grid">
       <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span></div><div class="bd"><span class="price">₱80 <span class="per">/sem</span></span><span class="ttl">Badminton racket + case</span><span class="body-s sec">Good · #PATHFit3</span></div></div>
@@ -642,51 +778,234 @@ img{display:block;max-width:100%}
   <div class="cta"><div class="btn primary"><span data-i="chat" class="i20 c-cream"></span>Message Kai</div></div>
 </div></div>
 
-
-<!-- ═══════════════════════════ ORGS ═══════════════════════════ -->
-<div class="persona">Student <span>Orgs</span></div>
-
-<!-- ═══════════════ 12 APPLY FOR ORG BADGE ═══════════════ -->
-<div class="slot"><label>12 · Apply for Org badge (scrolls)</label>
-<div class="screen tall">
+<!-- 14 REPORT A LISTING -->
+<div class="slot"><label>14 · Report a listing (new)</label>
+<div class="screen">
   <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
-  <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Verify your org</span><span style="width:24px"></span></div>
-  <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:100px">
-    <div>
-      <div class="h1">Your org, <span class="acc">more visible.</span></div>
-      <div class="sec" style="margin-top:6px">Reach students already browsing — not just your followers.</div>
+  <div class="hdr"><span data-i="x"></span><span class="h3 ttl">Report listing</span><span style="width:24px"></span></div>
+  <div class="pad" style="display:flex;flex-direction:column;gap:14px">
+    <div class="card" style="padding:12px;display:flex;gap:12px;align-items:center">
+      <div style="width:52px;height:52px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="racket" style="color:var(--copper)"></span></div>
+      <div><div class="label-s">Badminton racket with case</div><div class="body-s sec">₱80/sem · Kai M.</div></div>
     </div>
-    <div class="benefit"><div class="ic"><span data-i="seal-gold"></span></div><div><div class="label">Gold Official Org badge</div><div class="body-s sec">Buyers know it's the real CSSEC, not a reseller.</div></div></div>
-    <div class="benefit"><div class="ic"><span data-i="pkg"></span></div><div><div class="label">Run pre-orders properly</div><div class="body-s sec">Sizes, min quantity, deadline, GCash tracking — no more Google Forms + spreadsheets.</div></div></div>
-    <div class="benefit"><div class="ic"><span data-i="bolt"></span></div><div><div class="label">Featured on Home</div><div class="body-s sec">"Org drops" slot seen by every student who opens the app.</div></div></div>
-    <div class="h3" style="margin-top:8px">Choose a plan <span class="body-s sec" style="font-weight:400">(sample pricing)</span></div>
-    <div style="display:flex;gap:10px">
-      <div class="plan"><span class="label">Basic</span><span class="pr">₱0</span><li>✓ Org badge</li><li>✓ List merch</li><li>· Pre-orders</li><li>· Featured slot</li></div>
-      <div class="plan on"><div style="display:flex;justify-content:space-between"><span class="label">Semester</span><span class="pill gold">Popular</span></div><span class="pr">₱499 <small>/sem</small></span><li>✓ Everything in Basic</li><li>✓ Unlimited pre-orders</li><li>✓ Featured on Home</li><li>✓ Order export &amp; analytics</li></div>
+    <div class="field"><span class="label">What's wrong? *</span>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div class="cb on"><i><span data-i="check" class="i14 c-white"></span></i>Suspicious seller / possible scam</div>
+        <div class="cb"><i></i>Item not as described</div>
+        <div class="cb"><i></i>Inappropriate photos or content</div>
+        <div class="cb"><i></i>Fake / stolen item</div>
+        <div class="cb"><i></i>Duplicate or spam listing</div>
+        <div class="cb"><i></i>Other</div>
+      </div>
     </div>
-    <div class="field"><span class="label">Organization name *</span><div class="input"><span class="val">CSSEC — Computer Studies Student Executive Council</span></div></div>
-    <div class="field"><span class="label">Type *</span><div class="input"><span class="val" style="flex:1">Accredited org (SAMAHAN)</span><span data-i="chev-d" class="i20"></span></div></div>
-    <div class="field"><span class="label">Adviser / moderator email *</span><div class="input"><span class="val">jdelacruz@addu.edu.ph</span></div></div>
-    <div class="field"><span class="label">Proof of accreditation *</span><div class="photos"><div style="width:100%;height:72px;flex-direction:row;gap:8px;border-style:dashed;background:transparent;color:var(--navy-300)"><span data-i="upload" class="i20"></span><span class="body-s">Upload cert or SAMAHAN endorsement (PDF/JPG)</span></div></div></div>
-    <div class="field"><span class="label">Officer submitting</span><div class="input" style="background:var(--sand);border:none"><span data-i="seal" class="i20"></span><span class="val">Mico G. · Verified Student · President</span></div></div>
+    <div class="field"><span class="label">Tell us more</span><div class="input textarea">Describe what happened…</div></div>
+    <div class="field"><span class="label">Attach evidence <span class="body-s sec" style="font-weight:400">(optional)</span></span>
+      <div class="photos"><div><span data-i="camera"></span></div><div><span data-i="plus"></span></div></div>
+    </div>
+    <div class="benefit warn"><div class="ic"><span data-i="alert"></span></div><div><div class="label">What happens next</div><div class="body-s sec">Our team reviews reports within 24 hrs. The listing is hidden from search while under review if multiple reports come in.</div></div></div>
   </div>
-  <div class="cta" style="flex-direction:column;gap:6px;height:104px"><div class="btn primary">Submit for review</div><div class="body-s sec center">Usually approved within 2 school days</div></div>
+  <div class="cta"><div class="btn accent">Submit report</div></div>
 </div></div>
 
-<!-- ═══════════════ 13 ORG DASHBOARD ═══════════════ -->
-<div class="slot"><label>13 · Org dashboard (scrolls)</label>
+<!-- 15 EMPTY STATE -->
+<div class="slot"><label>15 · Empty State — #Theo</label>
+<div class="screen">
+  <img class="rays" src="ray1.png" alt="">
+  <div class="rel" style="height:100%;display:flex;flex-direction:column">
+    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+    <div class="hdr" style="gap:10px">
+      <span data-i="back"></span>
+      <div class="search" style="flex:1;height:44px;border-radius:12px"><span data-i="search" class="i20 c-sec"></span><span class="val">#Theo</span></div>
+      <span data-i="sliders"></span>
+    </div>
+    <div class="pad" style="display:flex;gap:8px;margin-top:4px"><span class="chip filter on">#Theo <span data-i="x" class="i16 c-cream"></span></span></div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 40px;text-align:center;gap:14px;padding-bottom:83px">
+      <div style="width:80px;height:80px;border-radius:999px;background:var(--copper-100);display:flex;align-items:center;justify-content:center"><span data-i="book" style="width:40px;height:40px;color:var(--copper)"></span></div>
+      <div><div class="h3">Nobody's listed #Theo yet</div><div class="sec body-s" style="margin-top:6px;max-width:260px">Be the first — or post what you're looking for and we'll notify you when it shows up.</div></div>
+      <div class="btn accent" style="max-width:280px">Be the first to sell</div>
+      <span class="label-s acc" style="cursor:pointer">Post a "Looking For"</span>
+    </div>
+    <div class="tabbar" style="position:absolute;bottom:0;left:0;right:0">
+      <div class="tab"><span data-i="home"></span>Home</div>
+      <div class="tab on"><span data-i="grid"></span>Browse</div>
+      <div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
+      <div class="tab"><span data-i="chat"></span>Inbox</div>
+      <div class="tab"><span data-i="user"></span>Me</div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 16 WISHLIST -->
+<div class="slot"><label>16 · Saved items / Wishlist (scrolls)</label>
+<div class="screen tall">
+  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+  <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Saved items</span><span class="label-s acc">Edit</span></div>
+  <div class="pad" style="margin-top:4px"><div class="seg"><div class="on">All 9</div><div>Buy 6</div><div>Rent 3</div></div></div>
+  <div class="pad" style="margin-top:16px;padding-bottom:100px">
+    <div class="grid">
+      <div class="card"><div class="im"><img src="books.png" alt=""><div class="heart"><span data-i="heart-filled" class="c-red"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★4.8</span></span></div></div>
+      <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart-filled" class="c-red"></span></div></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket + 3 shuttles</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Bea T.<span class="rate">★5.0</span></span></div></div>
+      <div class="card"><div class="im"><span data-i="calc"></span><div class="heart"><span data-i="heart-filled" class="c-red"></span></div></div><div class="bd"><span class="price">₱600</span><span class="ttl">Casio fx-991EX scientific calc</span><span class="body-s sec">Good · Electronics</span><span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★4.6</span></span></div></div>
+      <div class="card"><div class="im"><span data-i="tshirt"></span><div class="heart"><span data-i="heart-filled" class="c-red"></span></div></div><div class="bd"><span class="price">₱450</span><span class="ttl">Nursing duty whites, size M</span><span class="body-s sec">Good · Uniforms</span><span class="badge"><span data-i="seal"></span>Jo R.<span class="rate">★4.9</span></span></div></div>
+    </div>
+    <div class="divrow">Price drop alerts</div>
+    <div class="lrow" style="background:#fff;border-radius:12px;padding:10px 12px;border:1px solid var(--sand-300)"><span data-i="bell" class="c-acc"></span><div><div class="label-s">Notify me when saved items drop in price</div><div class="body-s sec">Applies to all 9 saved items</div></div><div class="toggle" style="margin-left:auto"></div></div>
+  </div>
+  <div class="tabbar">
+    <div class="tab"><span data-i="home"></span>Home</div>
+    <div class="tab"><span data-i="grid"></span>Browse</div>
+    <div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
+    <div class="tab"><span data-i="chat"></span>Inbox</div>
+    <div class="tab on"><span data-i="user"></span>Me</div>
+  </div>
+</div></div>
+
+<!-- ═══════════════════════════ BUYER / SELLER — ACCOUNT ═══════════════════════════ -->
+<div class="persona">Buyer / Seller · <span>Account</span></div>
+
+<!-- 17 ME -->
+<div class="slot"><label>17 · Me (own profile, scrolls)</label>
+<div class="screen tall">
+  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+  <div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between"><span class="h3">Me</span><span data-i="settings" class="i20 c-sec"></span></div>
+  <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:100px">
+    <div style="display:flex;gap:14px;align-items:center">
+      <div class="avatar" style="width:60px;height:60px"><span data-i="user" class="i28 c-acc"></span></div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:6px"><span class="h2">Bea T.</span><span data-i="seal" class="i20"></span></div>
+        <div style="display:flex;align-items:center;gap:6px;margin-top:2px"><span class="stars"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span></span><span class="label-s">5.0</span><span class="body-s sec">(8)</span></div>
+      </div>
+      <span class="label-s acc">View public</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="n">4</span><span class="d">active listings</span></div>
+      <div class="stat"><span class="n">15</span><span class="d">trades done</span></div>
+      <div class="stat"><span class="n">9</span><span class="d">saved items</span></div>
+    </div>
+    <div>
+      <div class="sh"><span class="h3">My listings</span><span class="label-s acc">Manage all</span></div>
+      <div class="rail">
+        <div class="card h"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket</span><span class="pill boost" style="margin-top:2px"><span data-i="rocket" class="i16"></span>Boosted</span></div></div>
+        <div class="card h"><div class="im"><span data-i="book"></span></div><div class="bd"><span class="price">₱200</span><span class="ttl">Chem lab manual</span><span class="body-s acc" style="cursor:pointer">Boost this →</span></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="lrow"><span data-i="heart" class="c-acc"></span><span>Saved items</span><span class="r sec body-s">9</span><span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
+      <div class="lrow"><span data-i="seal-gold" class="c-acc"></span><span>Verify my org / club</span><span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
+      <div class="lrow"><span data-i="gift" class="c-acc"></span><span>Invite friends</span><span class="r pill" style="background:var(--copper-100);color:var(--copper);text-transform:none">2 boosts earned</span></div>
+      <div class="lrow"><span data-i="bell" class="c-acc"></span><span>Notifications</span><span class="r"><span class="unread-dot"></span></span></div>
+      <div class="lrow"><span data-i="cash" class="c-acc"></span><span>Payment info</span><span class="r sec body-s">GCash 0917•••2210</span></div>
+      <div class="lrow"><span data-i="flag" class="c-acc"></span><span>Help &amp; report a problem</span><span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
+      <div class="lrow" style="border:none"><span data-i="logout" class="c-red"></span><span class="c-red">Log out</span></div>
+    </div>
+  </div>
+  <div class="tabbar">
+    <div class="tab"><span data-i="home"></span>Home</div>
+    <div class="tab"><span data-i="grid"></span>Browse</div>
+    <div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
+    <div class="tab"><span data-i="chat"></span>Inbox</div>
+    <div class="tab on"><span data-i="user"></span>Me</div>
+  </div>
+</div></div>
+
+<!-- 18 NOTIFICATIONS -->
+<div class="slot"><label>18 · Notifications (scrolls)</label>
+<div class="screen tall">
+  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+  <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Notifications</span><span class="label-s acc">Mark all read</span></div>
+  <div class="pad" style="margin-top:4px"><div class="seg"><div class="on">All</div><div>Unread</div></div></div>
+  <div class="pad" style="margin-top:16px;padding-bottom:100px">
+    <div class="body-s sec" style="margin-bottom:8px">Today</div>
+    <div class="lrow"><div class="nicon" style="background:var(--navy-100)"><span data-i="chat" style="color:var(--navy)"></span></div><div><div class="label-s">Kai M. sent you a message</div><div class="body-s sec">"Sure, free tomorrow after 4pm" · 10m ago</div></div><span class="unread-dot" style="margin-left:auto"></span></div>
+    <div class="lrow"><div class="nicon" style="background:#DDEBE3"><span data-i="check-c" style="color:var(--green)"></span></div><div><div class="label-s">Your offer was accepted</div><div class="body-s sec">Badminton racket · ₱80/sem · 1 hr ago</div></div><span class="unread-dot" style="margin-left:auto"></span></div>
+    <div class="body-s sec" style="margin:16px 0 8px">Earlier</div>
+    <div class="lrow"><div class="nicon" style="background:var(--copper-100)"><span data-i="star" style="color:var(--gold)"></span></div><div><div class="label-s">Bea T. rated you 5★</div><div class="body-s sec">"On time, great condition!" · Yesterday</div></div></div>
+    <div class="lrow"><div class="nicon" style="background:var(--copper-100)"><span data-i="pkg" style="color:var(--copper)"></span></div><div><div class="label-s">CSSEC pre-order update</div><div class="body-s sec">Hoodie confirmed to push through — 86/120 · 2d ago</div></div></div>
+    <div class="lrow"><div class="nicon" style="background:var(--copper-100)"><span data-i="ticket" style="color:var(--copper)"></span></div><div><div class="label-s">Your coupon expires soon</div><div class="body-s sec">Kape Roxas 5% off · valid until 8PM today · 2d ago</div></div></div>
+    <div class="lrow" style="border:none"><div class="nicon" style="background:#F6E4E2"><span data-i="heart" style="color:var(--red)"></span></div><div><div class="label-s">Price drop on a saved item</div><div class="body-s sec">Casio fx-991EX now ₱600, was ₱750 · 3d ago</div></div></div>
+  </div>
+</div></div>
+
+<!-- 19 REFERRAL -->
+<div class="slot"><label>19 · Invite friends / Referral</label>
+<div class="screen">
+  <img class="rays" src="ray1.png" alt="">
+  <div class="rel">
+    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+    <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Invite friends</span><span style="width:24px"></span></div>
+    <div class="pad" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
+      <div class="avatar" style="width:64px;height:64px;background:var(--copper-100)"><span data-i="gift" class="i32 c-acc"></span></div>
+      <div><div class="h1">Give a boost. <span class="acc">Get a boost.</span></div><div class="sec body-s" style="margin-top:4px;max-width:280px">Invite classmates to KnightMarket. When they verify with their school email, you both get a free 3-day Boost.</div></div>
+      <div class="refcode" style="width:100%">
+        <div class="body-s" style="opacity:.7">Your invite code</div>
+        <div class="code">BEA-2K9F</div>
+        <div style="display:flex;gap:10px;margin-top:8px">
+          <div class="btn outline sm" style="border-color:var(--cream-50);color:var(--cream-50)"><span data-i="share" class="i16"></span>Share</div>
+          <div class="btn outline sm" style="border-color:var(--cream-50);color:var(--cream-50)">Copy code</div>
+        </div>
+      </div>
+      <div class="stats" style="width:100%">
+        <div class="stat"><span class="n">6</span><span class="d">invited</span></div>
+        <div class="stat"><span class="n">4</span><span class="d">joined</span></div>
+        <div class="stat"><span class="n">2</span><span class="d">boosts earned</span></div>
+      </div>
+      <div style="width:100%;text-align:left">
+        <div class="h3" style="margin-bottom:10px">How it works</div>
+        <div class="lrow"><span class="label-s" style="width:22px;color:var(--copper);font-weight:600">1</span><span class="body-s">Share your code with classmates</span></div>
+        <div class="lrow"><span class="label-s" style="width:22px;color:var(--copper);font-weight:600">2</span><span class="body-s">They sign up using their school email</span></div>
+        <div class="lrow" style="border:none"><span class="label-s" style="width:22px;color:var(--copper);font-weight:600">3</span><span class="body-s">You both get a free 3-day Boost, automatically</span></div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+
+<!-- ═══════════════════════════ ORGS &amp; CLUBS ═══════════════════════════ -->
+<div class="persona">Student <span>Orgs &amp; Clubs</span></div>
+
+<!-- 20 APPLY -->
+<div class="slot"><label>20 · Apply for Org/Club badge (scrolls)</label>
+<div class="screen tall">
+  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+  <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Verify your org or club</span><span style="width:24px"></span></div>
+  <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-bottom:100px">
+    <div><div class="h1">Your org/club, <span class="acc">more visible.</span></div><div class="sec" style="margin-top:6px;font-size:13px">Reach students already browsing for what you're selling.</div></div>
+    <div class="benefit"><div class="ic"><span data-i="seal-gold"></span></div><div><div class="label">Gold Official badge</div><div class="body-s sec">Students know it's the real CSSEC/JPIA/Dance Club — not a random reseller.</div></div></div>
+    <div class="benefit"><div class="ic"><span data-i="pkg"></span></div><div><div class="label">Run pre-orders properly</div><div class="body-s sec">Sizes, quantities, deadline — GCash number shown to buyer. No more Google Forms chaos.</div></div></div>
+    <div class="benefit"><div class="ic"><span data-i="store"></span></div><div><div class="label">Your own storefront</div><div class="body-s sec">List hoodies, shirts, stickers, lanyards, pins, tote bags — anything you sell.</div></div></div>
+    <div class="benefit"><div class="ic"><span data-i="bolt"></span></div><div><div class="label">Featured on Home · "Org &amp; Club drops"</div><div class="body-s sec">Seen by every student who opens the app, not just your followers.</div></div></div>
+    <div class="h3" style="margin-top:4px">Plans</div>
+    <div style="display:flex;gap:10px">
+      <div class="plan"><span class="label">Starter</span><span class="pr">₱299 <small>/sem</small></span><li>✓ Org/Club badge</li><li>✓ List up to 10 items</li><li>✓ Basic pre-order (1 active)</li><li>· Featured on Home</li><li>· Analytics</li></div>
+      <div class="plan on"><div style="display:flex;justify-content:space-between"><span class="label">Full</span><span class="pill gold">Popular</span></div><span class="pr">₱599 <small>/sem</small></span><li>✓ Everything in Starter</li><li>✓ Unlimited listings</li><li>✓ Unlimited pre-orders</li><li>✓ Featured on Home</li><li>✓ Order list + export</li><li>✓ Analytics</li></div>
+    </div>
+    <div class="field"><span class="label">Organization / club name *</span><div class="input"><span class="val">CSSEC — Computer Studies Student Exec. Council</span></div></div>
+    <div class="field"><span class="label">Type *</span><div class="input"><span class="val" style="flex:1">Accredited org (SAMAHAN-recognized)</span><span data-i="chev-d" class="i20"></span></div></div>
+    <div class="field"><span class="label">Adviser / moderator email *</span><div class="input"><span class="val">jdelacruz@addu.edu.ph</span></div></div>
+    <div class="field"><span class="label">Proof of accreditation / recognition *</span>
+      <div style="height:64px;border:1.5px dashed var(--sand-300);border-radius:12px;display:flex;align-items:center;justify-content:center;gap:8px;color:var(--navy-300);background:#fff">
+        <span data-i="upload" class="i20"></span><span class="body-s">Upload cert or endorsement (PDF / JPG)</span>
+      </div>
+    </div>
+    <div class="field"><span class="label">Officer submitting</span><div class="input" style="background:var(--sand);border:none"><span data-i="seal" class="i20"></span><span class="val">Mico G. · Verified Student · President</span></div></div>
+  </div>
+  <div class="cta" style="flex-direction:column;gap:6px;padding:10px 16px 20px"><div class="btn primary">Submit for review</div><div class="body-s sec center">Usually approved within 2 school days</div></div>
+</div></div>
+
+<!-- 21 DASHBOARD -->
+<div class="slot"><label>21 · Org/Club dashboard (scrolls)</label>
 <div class="screen tall">
   <div style="background:var(--navy)"><div class="status" style="color:var(--cream-50)"><span>9:41</span><span class="sig"><span class="bat" style="border-color:var(--cream-50)"></span></span></div></div>
   <div class="orghdr" style="padding-top:8px">
     <div class="avatar"><span data-i="store" class="i28"></span></div>
-    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="h2">CSSEC</span><span data-i="seal-gold" class="i20"></span></div><div class="body-s sec">Semester plan · active until Dec 20</div></div>
+    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="h2">CSSEC</span><span data-i="seal-gold" class="i20"></span></div><div class="body-s" style="color:rgba(250,246,236,.7)">Full plan · active until Dec 20</div></div>
     <span data-i="bell" class="c-cream"></span>
   </div>
   <div class="pad" style="display:flex;flex-direction:column;gap:20px;padding-top:20px;padding-bottom:110px">
     <div>
-      <div class="sh"><span class="h3">This semester</span><span class="label-s acc">Analytics</span></div>
+      <div class="sh"><span class="h3">This semester</span><span class="label-s acc">Full analytics →</span></div>
       <div class="stats">
-        <div class="stat"><span class="n">1,240</span><span class="d">store views</span><span class="up">↑ 32% vs last</span></div>
+        <div class="stat"><span class="n">1,240</span><span class="d">store views</span><span class="up">↑ 32%</span></div>
         <div class="stat"><span class="n">86</span><span class="d">pre-orders</span><span class="up">↑ 18 this wk</span></div>
         <div class="stat"><span class="n">₱55.9k</span><span class="d">collected</span><span class="up">71 paid</span></div>
       </div>
@@ -695,12 +1014,20 @@ img{display:block;max-width:100%}
       <div class="sh"><span class="h3">Active pre-order</span></div>
       <div class="card" style="padding:14px;display:flex;flex-direction:column;gap:10px">
         <div style="display:flex;gap:12px;align-items:center">
-          <div class="pinned" style="border:none;height:auto;padding:0;background:none;flex:1"><div class="th"><span data-i="hoodie"></span></div><div style="flex:1"><div class="label">CSSEC Varsity Hoodie</div><div class="body-s sec">₱650 · closes in <b class="acc" style="font-weight:500">4 days</b></div></div></div>
+          <div style="width:44px;height:44px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="hoodie" style="color:var(--copper)"></span></div>
+          <div style="flex:1"><div class="label">CSSEC Varsity Hoodie 2025</div><div class="body-s sec">₱650 · closes in <b class="acc" style="font-weight:500">4 days</b></div></div>
           <span class="pill pre">Live</span>
         </div>
         <div class="prog"><i style="width:72%"></i></div>
         <div style="display:flex;justify-content:space-between" class="body-s"><span><b>86</b> / 120 max</span><span style="color:var(--green);font-weight:500">✓ Min 50 reached</span></div>
-        <div style="display:flex;gap:8px"><div class="btn outline sm" style="flex:1;width:auto">View orders</div><div class="btn primary sm" style="flex:1;width:auto"><span data-i="share" class="i16 c-cream"></span>Share</div></div>
+        <div style="display:flex;gap:8px"><div class="btn outline sm" style="flex:1;width:auto">View orders</div><div class="btn primary sm" style="flex:1;width:auto"><span data-i="share" class="i16 c-cream"></span>Share link</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="sh"><span class="h3">In-hand merch</span><span class="label-s acc">+ Add item</span></div>
+      <div class="grid">
+        <div class="card"><div class="im"><span data-i="tshirt"></span></div><div class="bd"><span class="price">₱250</span><span class="ttl">CSSEC Shirt 2025 — Navy</span><span class="body-s sec">In stock · S–XL</span></div></div>
+        <div class="card"><div class="im"><span data-i="tag"></span></div><div class="bd"><span class="price">₱80</span><span class="ttl">Lanyard + ID holder</span><span class="body-s sec">In stock · 32 left</span></div></div>
       </div>
     </div>
     <div>
@@ -713,164 +1040,228 @@ img{display:block;max-width:100%}
       </div>
     </div>
     <div>
-      <div class="sh"><span class="h3">Recent</span></div>
-      <div class="lrow"><div class="avatar" style="width:36px;height:36px"><span data-i="user" class="i16 c-acc"></span></div><div><div>Ana L. pre-ordered <b style="font-weight:500">Hoodie · L</b></div><div class="sub">Paid via GCash · 12 min ago</div></div><span class="r pill paid">₱650</span></div>
-      <div class="lrow"><div class="avatar" style="width:36px;height:36px"><span data-i="user" class="i16 c-acc"></span></div><div><div>Ram S. pre-ordered <b style="font-weight:500">Hoodie · M</b></div><div class="sub">Awaiting payment · 1 hr ago</div></div><span class="r pill pend">Pending</span></div>
-      <div class="lrow"><div class="avatar" style="width:36px;height:36px"><span data-i="star" class="i16 c-gold"></span></div><div><div>New 5★ review on <b style="font-weight:500">Tote bag</b></div><div class="sub">"Legit and on-time pickup!" · 3 hrs ago</div></div></div>
+      <div class="sh"><span class="h3">Recent activity</span></div>
+      <div class="lrow"><div class="avatar" style="width:34px;height:34px"><span data-i="user" class="i16 c-acc"></span></div><div><div class="label-s">Ana L. pre-ordered <b style="font-weight:600">Hoodie · L</b></div><div class="sub">GCash sent to 0917-xxx-4421 · 12 min ago</div></div><span class="r pill paid">₱650</span></div>
+      <div class="lrow"><div class="avatar" style="width:34px;height:34px"><span data-i="user" class="i16 c-acc"></span></div><div><div class="label-s">Ram S. pre-ordered <b style="font-weight:600">Hoodie · M</b></div><div class="sub">Payment pending · 1 hr ago</div></div><span class="r pill pend">Pending</span></div>
+      <div class="lrow"><div class="avatar" style="width:34px;height:34px"><span data-i="star" class="i16 c-gold"></span></div><div><div class="label-s">New ★5 review on <b style="font-weight:600">Lanyard</b></div><div class="sub">"Legit and on-time pickup!" · 3 hrs</div></div></div>
     </div>
   </div>
   <div class="tabbar">
     <div class="tab"><span data-i="home"></span>Home</div>
     <div class="tab"><span data-i="grid"></span>Browse</div>
-    <div class="tab sell"><div class="fab"><span data-i="plus"></span></div><span>Sell</span></div>
+    <div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
     <div class="tab"><span data-i="chat"></span>Inbox</div>
     <div class="tab on"><span data-i="store"></span>Org</div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 14 NEW PRE-ORDER ═══════════════ -->
-<div class="slot"><label>14 · New pre-order (scrolls)</label>
+<!-- 22 ORG ANALYTICS DEEP-DIVE (new) -->
+<div class="slot"><label>22 · Org analytics deep-dive (new, scrolls)</label>
+<div class="screen tall">
+  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+  <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Analytics</span><span data-i="upload" class="i20"></span></div>
+  <div class="pad" style="display:flex;flex-direction:column;gap:20px;padding-bottom:40px">
+    <div class="seg"><div class="on">This sem</div><div>Last sem</div><div>All time</div></div>
+    <div class="stats">
+      <div class="stat"><span class="n">1,240</span><span class="d">store views</span><span class="up">↑ 32%</span></div>
+      <div class="stat"><span class="n">2,310</span><span class="d">followers</span><span class="up">↑ 140</span></div>
+      <div class="stat"><span class="n">₱55.9k</span><span class="d">total revenue</span><span class="up">↑ 18%</span></div>
+    </div>
+    <div>
+      <div class="sh"><span class="h3">Store views over time</span></div>
+      <div class="card" style="padding:14px;display:flex;flex-direction:column;gap:8px">
+        <div class="hbars"><i style="height:30%"></i><i style="height:35%"></i><i style="height:28%"></i><i style="height:50%"></i><i style="height:65%"></i><i class="hi" style="height:100%"></i><i class="hi" style="height:85%"></i></div>
+        <div style="display:flex;justify-content:space-between" class="body-s sec"><span>Wk1</span><span>Wk2</span><span>Wk3</span><span>Wk4</span><span>Wk5</span><span>Wk6</span><span>Wk7</span></div>
+        <div class="body-s">Spike in Wk6 correlates with hoodie pre-order launch</div>
+      </div>
+    </div>
+    <div>
+      <div class="sh"><span class="h3">Top performing items</span></div>
+      <div class="lrow"><span class="label-s" style="width:20px">1</span><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="hoodie" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">Varsity Hoodie 2025</div><div class="body-s sec">86 orders · ₱55.9k</div></div></div>
+      <div class="lrow"><span class="label-s" style="width:20px">2</span><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="tag" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">Lanyard + ID holder</div><div class="body-s sec">48 sold · ₱3.8k</div></div></div>
+      <div class="lrow" style="border:none"><span class="label-s" style="width:20px">3</span><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="tshirt" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">CSSEC Shirt 2025</div><div class="body-s sec">31 sold · ₱7.75k</div></div></div>
+    </div>
+    <div>
+      <div class="sh"><span class="h3">Follower growth</span></div>
+      <div class="card" style="padding:14px;display:flex;align-items:center;gap:14px">
+        <div style="width:56px;height:56px;border-radius:50%;background:var(--copper-100);display:flex;align-items:center;justify-content:center"><span data-i="users" class="i28 c-acc"></span></div>
+        <div><div class="h3">2,310 followers</div><div class="body-s sec">+140 this semester · mostly from pre-order shares</div></div>
+      </div>
+    </div>
+    <div class="btn outline"><span data-i="upload" class="i20"></span>Export full report (.csv)</div>
+  </div>
+</div></div>
+
+<!-- 23 NEW PRE-ORDER -->
+<div class="slot"><label>23 · New pre-order (scrolls)</label>
 <div class="screen tall">
   <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">New pre-order</span><span class="label-s acc">Preview</span></div>
-  <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-top:8px;padding-bottom:100px">
+  <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px;padding-bottom:100px">
     <div class="field"><div class="photos"><div><span data-i="hoodie"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div></div><span class="body-s sec">Mockups are fine — show front and back</span></div>
     <div class="field"><span class="label">Item name *</span><div class="input"><span class="val">CSSEC Varsity Hoodie 2025</span></div></div>
-    <div class="field"><span class="label">Price *</span><div class="input"><span style="font-weight:500">₱</span><span class="val">650</span></div></div>
-    <div class="field"><span class="label">Sizes offered</span><div class="sizes"><div>XS</div><div class="on">S</div><div class="on">M</div><div class="on">L</div><div class="on">XL</div><div>XXL</div></div><span class="body-s sec">Buyers pick their size when ordering</span></div>
+    <div class="field"><span class="label">Category *</span><div class="input"><span class="val" style="flex:1">Clothing &amp; Merch</span><span data-i="chev-d" class="i20"></span></div></div>
+    <div class="field"><span class="label">Price per piece *</span><div class="input"><span style="font-weight:500">₱</span><span class="val">650</span></div></div>
+    <div class="field"><span class="label">Sizes offered <span class="body-s sec" style="font-weight:400">(skip if one-size)</span></span><div class="sizes"><div>XS</div><div class="on">S</div><div class="on">M</div><div class="on">L</div><div class="on">XL</div><div>XXL</div></div></div>
     <div style="display:flex;gap:12px">
       <div class="field" style="flex:1"><span class="label">Min. to proceed</span><div class="input"><span class="val">50</span><span class="sec body-s" style="margin-left:auto">pcs</span></div></div>
       <div class="field" style="flex:1"><span class="label">Max. orders</span><div class="input"><span class="val">120</span><span class="sec body-s" style="margin-left:auto">pcs</span></div></div>
     </div>
     <div class="field"><span class="label">Order deadline *</span><div class="input"><span data-i="cal" class="i20 c-sec"></span><span class="val" style="flex:1">Oct 15, 2025 · 11:59 PM</span><span data-i="chev-d" class="i20"></span></div></div>
-    <div class="field"><span class="label">Payment</span>
-      <div class="input"><span data-i="cash" class="i20 c-sec"></span><span class="val" style="flex:1">GCash · 0917 ••• 4421</span><span data-i="chev-d" class="i20"></span></div>
-      <div class="trow"><div><div class="label">Require downpayment</div><div class="body-s sec">₱200 now, balance on pickup</div></div><div class="toggle"></div></div>
+    <div class="field"><span class="label">How do buyers pay? *</span>
+      <div class="seg"><div class="on">GCash</div><div>Cash</div><div>Both</div></div>
+      <div class="input" style="margin-top:6px"><span data-i="cash" class="i20 c-sec"></span><span class="val" style="flex:1">GCash number: 0917 ••• 4421</span><span data-i="chev-d" class="i20"></span></div>
+      <div class="body-s sec">Buyers see this number and send payment themselves. You mark them paid when you confirm.</div>
     </div>
-    <div class="field"><span class="label">Pickup</span><div class="input"><span data-i="pin" class="i20 c-sec"></span><span class="val" style="flex:1">Finster Hall lobby · Oct 28–30, 1–5 PM</span></div></div>
-    <div class="trow"><div><div class="label" style="display:flex;align-items:center;gap:6px">Feature on Home <span class="pill gold">Plan</span></div><div class="body-s sec">Shows in "Org drops" until deadline</div></div><div class="toggle"></div></div>
+    <div class="trow"><div><div class="label">Require downpayment</div><div class="body-s sec">₱200 now — balance paid on pickup</div></div><div class="toggle"></div></div>
+    <div class="field"><span class="label">Pickup details</span><div class="input"><span data-i="pin" class="i20 c-sec"></span><span class="val" style="flex:1">Finster Hall lobby · Oct 28–30, 1–5 PM</span></div></div>
+    <div class="trow"><div><div class="label" style="display:flex;align-items:center;gap:6px">Feature on Home <span class="pill gold">Full plan</span></div><div class="body-s sec">Shows in "Org &amp; Club drops" until deadline</div></div><div class="toggle"></div></div>
     <div class="trow"><div><div class="label">Notify followers</div><div class="body-s sec">2,310 students follow CSSEC</div></div><div class="toggle"></div></div>
   </div>
-  <div class="cta" style="padding:16px"><div class="btn primary">Publish pre-order</div></div>
+  <div class="cta" style="padding:12px 16px 20px"><div class="btn primary">Publish pre-order</div></div>
 </div></div>
 
-<!-- ═══════════════ 15 ORG STOREFRONT (BUYER VIEW) ═══════════════ -->
-<div class="slot"><label>15 · Org storefront — what students see (scrolls)</label>
+<!-- 24 ADD MERCH -->
+<div class="slot"><label>24 · Add merch item — in-hand stock (new)</label>
+<div class="screen tall">
+  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+  <div class="hdr"><span data-i="x"></span><span class="h3 ttl">Add merch item</span><span class="label-s acc">Preview</span></div>
+  <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px;padding-bottom:100px">
+    <div class="field"><div class="photos"><div><span data-i="tag"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div></div><span class="body-s sec">Add photos of the actual item</span></div>
+    <div class="field"><span class="label">Item name *</span><div class="input"><span class="val">Enamel pin set</span></div></div>
+    <div class="field"><span class="label">Type *</span>
+      <div class="chips">
+        <span class="chip on">Pin</span><span class="chip">Sticker</span><span class="chip">Lanyard</span><span class="chip">Shirt</span><span class="chip">Hoodie</span><span class="chip">Tote bag</span><span class="chip">Other</span>
+      </div>
+    </div>
+    <div class="field"><span class="label">Price *</span><div class="input"><span style="font-weight:500">₱</span><span class="val">45</span></div></div>
+    <div class="field"><span class="label">Stock quantity *</span><div class="input"><span class="val">10</span><span class="sec body-s" style="margin-left:auto">pcs left</span></div></div>
+    <div class="field"><span class="label">Sizes <span class="body-s sec" style="font-weight:400">(skip if not applicable)</span></span><div class="sizes"><div>XS</div><div>S</div><div>M</div><div>L</div><div>XL</div></div></div>
+    <div class="field"><span class="label">How do buyers pay? *</span>
+      <div class="seg"><div class="on">GCash</div><div>Cash</div><div>Both</div></div>
+      <div class="input" style="margin-top:6px"><span data-i="cash" class="i20 c-sec"></span><span class="val" style="flex:1">GCash number: 0917 ••• 4421</span></div>
+    </div>
+    <div class="field"><span class="label">Pickup / claim spot</span><div class="input"><span data-i="pin" class="i20 c-sec"></span><span class="val" style="flex:1">CSSEC office, Finster Hall</span></div></div>
+    <div class="field"><span class="label">Description</span><div class="input textarea">Limited run, while supplies last…</div></div>
+  </div>
+  <div class="cta" style="padding:12px 16px 20px"><div class="btn primary">Add to storefront</div></div>
+</div></div>
+
+<!-- 25 STOREFRONT -->
+<div class="slot"><label>25 · Org/Club storefront — student view (scrolls)</label>
 <div class="screen tall">
   <div style="background:var(--navy)"><div class="status" style="color:var(--cream-50)"><span>9:41</span><span class="sig"><span class="bat" style="border-color:var(--cream-50)"></span></span></div></div>
-  <div class="orghdr" style="padding-top:8px;flex-wrap:wrap">
+  <div class="orghdr" style="padding-top:4px;flex-wrap:wrap">
     <span data-i="back" class="c-cream" style="width:100%;margin-bottom:4px"></span>
     <div class="avatar"><span data-i="store" class="i28"></span></div>
-    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="h2">CSSEC</span><span data-i="seal-gold" class="i20"></span></div><div class="body-s sec">Computer Studies Student Executive Council</div><div class="body-s" style="margin-top:2px;display:flex;gap:8px;align-items:center"><span class="stars"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span></span>4.9 <span class="sec">(140) · 2.3k followers</span></div></div>
-    <div class="btn outline sm" style="border-color:var(--cream-50);color:var(--cream-50)">Follow</div>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:6px"><span class="h2">CSSEC</span><span data-i="seal-gold" class="i20"></span></div>
+      <div class="body-s" style="color:rgba(250,246,236,.7)">Computer Studies Student Executive Council</div>
+      <div style="display:flex;gap:8px;align-items:center;margin-top:2px"><span class="stars"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span></span><span class="body-s" style="color:var(--cream-50)">4.9 <span style="opacity:.6">(140) · 2.3k followers</span></span></div>
+    </div>
+    <div class="btn outline sm" style="border-color:var(--cream-50);color:var(--cream-50)">+ Follow</div>
   </div>
   <div class="pad" style="display:flex;flex-direction:column;gap:20px;padding-top:20px;padding-bottom:110px">
     <div>
       <div class="sh"><span class="h3">Pre-order <span class="acc">closing soon</span></span></div>
-      <div class="card" style="display:flex;flex-direction:column">
-        <div class="im" style="height:200px"><span data-i="hoodie" style="width:96px;height:96px"></span><span class="pill pre">Preorder</span><span class="pill" style="left:auto;right:8px;background:#fff;color:var(--copper);text-transform:none;letter-spacing:0"><span data-i="clock" class="i16 c-acc" style="margin-right:4px"></span>4d 06h left</span></div>
+      <div class="card">
+        <div class="im" style="height:180px"><span data-i="hoodie" style="width:80px;height:80px;color:var(--copper)"></span><span class="pill pre">Preorder</span></div>
         <div class="bd" style="gap:8px;padding:14px">
-          <div style="display:flex;justify-content:space-between;align-items:center"><span class="price">₱650</span><span class="badge"><span data-i="seal-gold"></span>Official Org</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center"><span class="price">₱650</span><span class="badge"><span data-i="seal-gold"></span>Official</span></div>
           <div class="h3">CSSEC Varsity Hoodie 2025</div>
           <div class="prog"><i style="width:72%"></i></div>
-          <div style="display:flex;justify-content:space-between" class="body-s"><span><b>86</b> ordered · 34 slots left</span><span style="color:var(--green);font-weight:500">✓ Confirmed to push through</span></div>
-          <div class="body-s sec">Pickup: Finster lobby, Oct 28–30 · GCash</div>
-          <div class="btn primary md" style="margin-top:4px">Pre-order · pick size</div>
+          <div style="display:flex;justify-content:space-between" class="body-s"><span><b>86</b> ordered · 34 slots left</span><span style="color:var(--green);font-weight:500">✓ Confirmed</span></div>
+          <div class="body-s sec">GCash 0917-xxx-4421 · Pickup Finster lobby Oct 28–30</div>
+          <div class="btn primary md" style="margin-top:4px">Pre-order — pick your size</div>
         </div>
       </div>
     </div>
     <div>
-      <div class="sh"><span class="h3">Merch</span><span class="body-s sec">14 items</span></div>
+      <div class="sh"><span class="h3">Buy now</span><span class="body-s sec">Available in hand</span></div>
       <div class="grid">
-        <div class="card"><div class="im"><span data-i="tshirt"></span></div><div class="bd"><span class="price">₱250</span><span class="ttl">CSSEC Shirt 2025 — Navy</span><span class="body-s sec">In stock · S–XL</span></div></div>
-        <div class="card"><div class="im"><span data-i="tag"></span><span class="pill pre">Preorder</span></div><div class="bd"><span class="price">₱150</span><span class="ttl">Canvas tote bag</span><span class="body-s sec">Closes Oct 20</span></div></div>
+        <div class="card"><div class="im"><span data-i="tshirt"></span></div><div class="bd"><span class="price">₱250</span><span class="ttl">CSSEC Shirt 2025 — Navy</span><span class="body-s sec">S, M, L, XL</span></div></div>
         <div class="card"><div class="im"><span data-i="tag"></span></div><div class="bd"><span class="price">₱80</span><span class="ttl">Lanyard + ID holder</span><span class="body-s sec">In stock</span></div></div>
         <div class="card"><div class="im"><span data-i="tag"></span></div><div class="bd"><span class="price">₱60</span><span class="ttl">Sticker pack (6 pcs)</span><span class="body-s sec">In stock</span></div></div>
+        <div class="card"><div class="im"><span data-i="tag"></span></div><div class="bd"><span class="price">₱45</span><span class="ttl">Enamel pin set</span><span class="body-s sec">Limited · 10 left</span></div></div>
       </div>
     </div>
-    <div class="review"><div style="display:flex;justify-content:space-between"><span class="label">Bea T.</span><span class="stars"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span></span></div><div class="body-s">Legit, pickup was on time, hoodie quality is 🔥</div></div>
+    <div class="review"><div style="display:flex;justify-content:space-between"><span class="label">Bea T.</span><span class="stars"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span></span></div><div class="body-s" style="margin-top:2px">Legit, pickup was on time, hoodie quality is 🔥</div></div>
   </div>
   <div class="tabbar">
     <div class="tab"><span data-i="home"></span>Home</div>
     <div class="tab on"><span data-i="grid"></span>Browse</div>
-    <div class="tab sell"><div class="fab"><span data-i="plus"></span></div><span>Sell</span></div>
+    <div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
     <div class="tab"><span data-i="chat"></span>Inbox</div>
     <div class="tab"><span data-i="user"></span>Me</div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 16 PRE-ORDER ORDERS LIST ═══════════════ -->
-<div class="slot"><label>16 · Pre-order orders (scrolls)</label>
+<!-- 26 ORDERS LIST -->
+<div class="slot"><label>26 · Pre-order orders list (scrolls)</label>
 <div class="screen tall">
   <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
-  <div class="hdr"><span data-i="back"></span><div class="ttl" style="text-align:left;flex:1"><div class="h3">Varsity Hoodie</div><div class="body-s sec">Orders · closes Oct 15</div></div><span data-i="dots"></span></div>
+  <div class="hdr"><span data-i="back"></span><div style="flex:1"><div class="h3">Varsity Hoodie</div><div class="body-s sec">Orders · closes Oct 15</div></div><span data-i="dots"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:110px">
     <div class="stats">
-      <div class="stat"><span class="n">86</span><span class="d">orders</span></div>
+      <div class="stat"><span class="n">86</span><span class="d">total orders</span></div>
       <div class="stat"><span class="n" style="color:var(--green)">71</span><span class="d">paid · ₱46.1k</span></div>
-      <div class="stat"><span class="n" style="color:var(--copper)">15</span><span class="d">pending · ₱9.7k</span></div>
+      <div class="stat"><span class="n" style="color:var(--copper)">15</span><span class="d">pending</span></div>
     </div>
     <div class="seg"><div class="on">All 86</div><div>Paid 71</div><div>Pending 15</div></div>
-    <div>
-      <div class="body-s sec" style="margin-bottom:8px">By size</div>
-      <div class="chips"><span class="chip tag">S · 18</span><span class="chip tag">M · 31</span><span class="chip tag">L · 26</span><span class="chip tag">XL · 11</span></div>
-    </div>
+    <div><div class="body-s sec" style="margin-bottom:8px">By size</div><div class="chips"><span class="chip tag">S · 18</span><span class="chip tag">M · 31</span><span class="chip tag">L · 26</span><span class="chip tag">XL · 11</span></div></div>
     <div class="search" style="height:40px;border-radius:12px"><span data-i="search" class="i16 c-sec"></span><span class="body-s">Search name or student no.</span></div>
     <div>
-      <div class="lrow"><div class="avatar" style="width:36px;height:36px"><span data-i="user" class="i16 c-acc"></span></div><div><div>Ana L.</div><div class="sub">L · GCash ref 8829… · Oct 3</div></div><div class="r"><span class="label">₱650</span><span class="pill paid">Paid</span></div></div>
-      <div class="lrow"><div class="avatar" style="width:36px;height:36px"><span data-i="user" class="i16 c-acc"></span></div><div><div>Ram S.</div><div class="sub">M · no payment yet · Oct 3</div></div><div class="r"><span class="label">₱650</span><span class="pill pend">Pending</span></div></div>
-      <div class="lrow"><div class="avatar" style="width:36px;height:36px"><span data-i="user" class="i16 c-acc"></span></div><div><div>Bea T.</div><div class="sub">S · GCash ref 8811… · Oct 2</div></div><div class="r"><span class="label">₱650</span><span class="pill paid">Paid</span></div></div>
-      <div class="lrow"><div class="avatar" style="width:36px;height:36px"><span data-i="user" class="i16 c-acc"></span></div><div><div>Jo R.</div><div class="sub">M · downpayment ₱200 · Oct 2</div></div><div class="r"><span class="label">₱450 due</span><span class="pill pend">Partial</span></div></div>
-      <div class="lrow"><div class="avatar" style="width:36px;height:36px"><span data-i="user" class="i16 c-acc"></span></div><div><div>Kai M.</div><div class="sub">XL · GCash ref 8790… · Oct 1</div></div><div class="r"><span class="label">₱650</span><span class="pill paid">Paid</span></div></div>
-      <div class="lrow"><div class="avatar" style="width:36px;height:36px"><span data-i="user" class="i16 c-acc"></span></div><div><div>Mico G.</div><div class="sub">L · GCash ref 8774… · Oct 1</div></div><div class="r"><span class="label">₱650</span><span class="pill paid">Paid</span></div></div>
+      <div class="lrow"><div class="avatar" style="width:34px;height:34px"><span data-i="user" class="i16 c-acc"></span></div><div><div class="label-s">Ana L.</div><div class="sub">L · GCash ref 8829… · Oct 3</div></div><div class="r"><span class="label-s">₱650</span><span class="pill paid">Paid</span></div></div>
+      <div class="lrow"><div class="avatar" style="width:34px;height:34px"><span data-i="user" class="i16 c-acc"></span></div><div><div class="label-s">Ram S.</div><div class="sub">M · no payment yet · Oct 3</div></div><div class="r"><span class="label-s">₱650</span><span class="pill pend">Pending</span></div></div>
+      <div class="lrow"><div class="avatar" style="width:34px;height:34px"><span data-i="user" class="i16 c-acc"></span></div><div><div class="label-s">Bea T.</div><div class="sub">S · GCash ref 8811… · Oct 2</div></div><div class="r"><span class="label-s">₱650</span><span class="pill paid">Paid</span></div></div>
+      <div class="lrow"><div class="avatar" style="width:34px;height:34px"><span data-i="user" class="i16 c-acc"></span></div><div><div class="label-s">Jo R.</div><div class="sub">M · downpayment ₱200 · Oct 2</div></div><div class="r"><span class="label-s">₱450 due</span><span class="pill pend">Partial</span></div></div>
+      <div class="lrow"><div class="avatar" style="width:34px;height:34px"><span data-i="user" class="i16 c-acc"></span></div><div><div class="label-s">Kai M.</div><div class="sub">XL · GCash ref 8790… · Oct 1</div></div><div class="r"><span class="label-s">₱650</span><span class="pill paid">Paid</span></div></div>
+      <div class="lrow" style="border:none"><div class="avatar" style="width:34px;height:34px"><span data-i="user" class="i16 c-acc"></span></div><div><div class="label-s">Mico G.</div><div class="sub">L · GCash ref 8774… · Oct 1</div></div><div class="r"><span class="label-s">₱650</span><span class="pill paid">Paid</span></div></div>
     </div>
   </div>
-  <div class="cta"><div class="btn outline md"><span data-i="upload" class="i20"></span>Export to Sheets</div><div class="btn primary md wide"><span data-i="bell" class="i20 c-cream"></span>Remind 15 pending</div></div>
+  <div class="cta"><div class="btn outline md"><span data-i="upload" class="i20"></span>Export</div><div class="btn primary md wide"><span data-i="bell" class="i20 c-cream"></span>Remind 15 pending</div></div>
 </div></div>
 
 
 <!-- ═══════════════════════════ BUSINESSES ═══════════════════════════ -->
 <div class="persona">Local <span>Businesses</span></div>
 
-<!-- ═══════════════ 17 PARTNER WITH KNIGHTMARKET ═══════════════ -->
-<div class="slot"><label>17 · Partner with KnightMarket (scrolls)</label>
+<!-- 27 PITCH -->
+<div class="slot"><label>27 · Partner with KnightMarket (scrolls)</label>
 <div class="screen tall">
-  <img class="rays" src="ray1.png" alt="" style="height:300px;object-fit:cover">
-  <div class="rel">
-    <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
-    <div class="hdr"><span data-i="back"></span><span class="h3 ttl">For businesses</span><span style="width:24px"></span></div>
-    <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:110px">
-      <div class="card" style="padding:20px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center">
-        <div class="avatar" style="width:64px;height:64px"><span data-i="coffee" class="i32 c-acc"></span></div>
-        <div class="h1">Meet here. <span class="acc">Get rewarded.</span></div>
-        <div class="sec body-s" style="max-width:280px">Students already meet up to trade. Make them meet at your place.</div>
-      </div>
-      <div class="benefit"><div class="ic"><span data-i="pin"></span></div><div><div class="label">Official meetup spot</div><div class="body-s sec">Your café or shop appears in every meetup picker, ranked above generic spots.</div></div></div>
-      <div class="benefit"><div class="ic"><span data-i="ticket"></span></div><div><div class="label">Coupons that walk in the door</div><div class="body-s sec">Both buyer and seller unlock a coupon when they meet at your spot. Two customers per trade.</div></div></div>
-      <div class="benefit"><div class="ic"><span data-i="mega"></span></div><div><div class="label">Ads in a feed students actually scroll</div><div class="body-s sec">Banner on Home + sponsored cards in Browse. Only verified AdDU students see them.</div></div></div>
-      <div class="benefit"><div class="ic"><span data-i="chart"></span></div><div><div class="label">See what you're getting</div><div class="body-s sec">Meetups hosted, coupons redeemed, ad views — updated live.</div></div></div>
-      <div class="h3" style="margin-top:4px">Plans <span class="body-s sec" style="font-weight:400">(sample pricing)</span></div>
-      <div style="display:flex;gap:10px">
-        <div class="plan"><span class="label">Meetup Partner</span><span class="pr">₱0 <small>/mo</small></span><li>✓ Listed as meetup spot</li><li>✓ You fund the coupon</li><li>✓ Basic foot-traffic stats</li><li>· Ads</li></div>
-        <div class="plan on"><div style="display:flex;justify-content:space-between"><span class="label">Advertiser</span><span class="pill gold">Best</span></div><span class="pr">₱1,499 <small>/mo</small></span><li>✓ Everything in Partner</li><li>✓ Home banner slot</li><li>✓ 2 sponsored cards</li><li>✓ Priority in meetup picker</li><li>✓ Full analytics</li></div>
-      </div>
-      <div class="field"><span class="label">Business name *</span><div class="input"><span class="val">Kape Roxas</span></div></div>
-      <div class="field"><span class="label">Type *</span><div class="input"><span class="val" style="flex:1">Café</span><span data-i="chev-d" class="i20"></span></div></div>
-      <div class="field"><span class="label">Location *</span><div class="input"><span data-i="pin" class="i20 c-sec"></span><span class="val">Roxas Ave, across Jacinto gate</span></div></div>
-      <div class="field"><span class="label">Your coupon offer</span><div class="input"><span data-i="ticket" class="i20 c-sec"></span><span class="val" style="flex:1">5% off any drink</span><span data-i="chev-d" class="i20"></span></div><span class="body-s sec">Sample offers: 5–10% off · free upsize · ₱10 off ₱100</span></div>
-      <div class="field"><span class="label">Contact *</span><div class="input"><span class="val">0917 ••• 8821 · hello@kaperoxas.ph</span></div></div>
+  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+  <div class="hdr"><span data-i="back"></span><span class="h3 ttl">For businesses</span><span style="width:24px"></span></div>
+  <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-bottom:100px">
+    <div style="background:var(--navy);border-radius:20px;padding:20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
+      <div class="avatar" style="width:64px;height:64px;background:var(--copper)"><span data-i="coffee" class="i32 c-white"></span></div>
+      <div class="h1" style="color:var(--cream-50)">Meet here. <span style="color:var(--gold)">Get rewarded.</span></div>
+      <div style="color:rgba(250,246,236,.7);font-size:13px">Students already meet up to trade. Make them meet at your place.</div>
     </div>
-    <div class="cta" style="padding:16px"><div class="btn accent">Apply as partner</div></div>
+    <div class="benefit"><div class="ic"><span data-i="pin"></span></div><div><div class="label">Official meetup spot</div><div class="body-s sec">Your café or shop appears in every student's meetup picker, ranked above generic campus spots.</div></div></div>
+    <div class="benefit"><div class="ic"><span data-i="ticket"></span></div><div><div class="label">Coupons that walk in</div><div class="body-s sec">Both buyer and seller unlock a coupon when they pick your spot. That's two customers per trade.</div></div></div>
+    <div class="benefit"><div class="ic"><span data-i="mega"></span></div><div><div class="label">Ads in a feed they actually scroll</div><div class="body-s sec">Home banner + sponsored cards in Browse. Only verified AdDU students see them.</div></div></div>
+    <div class="benefit"><div class="ic"><span data-i="chart"></span></div><div><div class="label">Real numbers in your dashboard</div><div class="body-s sec">Meetups hosted, coupons redeemed &amp; verified, ad views — updated live.</div></div></div>
+    <div class="h3">Plans</div>
+    <div style="display:flex;gap:10px">
+      <div class="plan"><span class="label">Meetup Spot</span><span class="pr">₱499 <small>/mo</small></span><li>✓ Listed as meetup spot</li><li>✓ Coupon shown to students</li><li>✓ Coupon code dashboard</li><li>✓ Foot-traffic stats</li><li>· Home banner</li><li>· Sponsored cards</li></div>
+      <div class="plan on"><div style="display:flex;justify-content:space-between"><span class="label">Advertiser</span><span class="pill gold">Best</span></div><span class="pr">₱1,499 <small>/mo</small></span><li>✓ Everything in Meetup Spot</li><li>✓ Home banner slot</li><li>✓ 2 sponsored feed cards</li><li>✓ Priority in meetup picker</li><li>✓ Full analytics</li></div>
+    </div>
+    <div class="field"><span class="label">Business name *</span><div class="input"><span class="val">Kape Roxas</span></div></div>
+    <div class="field"><span class="label">Type *</span><div class="input"><span class="val" style="flex:1">Café</span><span data-i="chev-d" class="i20"></span></div></div>
+    <div class="field"><span class="label">Location *</span><div class="input"><span data-i="pin" class="i20 c-sec"></span><span class="val">Roxas Ave, across Jacinto gate</span></div></div>
+    <div class="field"><span class="label">Your coupon offer</span><div class="input"><span data-i="ticket" class="i20 c-sec"></span><span class="val" style="flex:1">5% off any drink</span><span data-i="chev-d" class="i20"></span></div><span class="body-s sec">Examples: 5–10% off · free upsize · ₱10 off ₱100+</span></div>
+    <div class="field"><span class="label">Contact *</span><div class="input"><span class="val">0917 ••• 8821 · hello@kaperoxas.ph</span></div></div>
   </div>
+  <div class="cta" style="padding:12px 16px 20px"><div class="btn accent">Apply as partner</div></div>
 </div></div>
 
-<!-- ═══════════════ 18 BUSINESS DASHBOARD ═══════════════ -->
-<div class="slot"><label>18 · Business dashboard (scrolls)</label>
+<!-- 28 DASHBOARD -->
+<div class="slot"><label>28 · Business dashboard (scrolls)</label>
 <div class="screen tall">
   <div style="background:var(--navy)"><div class="status" style="color:var(--cream-50)"><span>9:41</span><span class="sig"><span class="bat" style="border-color:var(--cream-50)"></span></span></div></div>
   <div class="orghdr" style="padding-top:8px">
-    <div class="avatar" style="background:var(--copper);color:#fff"><span data-i="coffee" class="i28 c-white"></span></div>
-    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="h2">Kape Roxas</span><span class="pill partner">Partner</span></div><div class="body-s sec">Advertiser plan · renews Nov 1</div></div>
+    <div class="avatar" style="background:var(--copper)"><span data-i="coffee" class="i28 c-white"></span></div>
+    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="h2">Kape Roxas</span><span class="pill partner">Advertiser</span></div><div class="body-s" style="color:rgba(250,246,236,.7)">Plan renews Nov 1</div></div>
     <span data-i="bell" class="c-cream"></span>
   </div>
   <div class="pad" style="display:flex;flex-direction:column;gap:20px;padding-top:20px;padding-bottom:40px">
@@ -878,133 +1269,272 @@ img{display:block;max-width:100%}
       <div class="sh"><span class="h3">This month</span><span class="label-s acc">Oct ▾</span></div>
       <div class="stats">
         <div class="stat"><span class="n">142</span><span class="d">meetups hosted</span><span class="up">↑ 24%</span></div>
-        <div class="stat"><span class="n">96</span><span class="d">coupons redeemed</span><span class="up">68% of issued</span></div>
-        <div class="stat"><span class="n">3.8k</span><span class="d">ad views</span><span class="up">210 taps</span></div>
+        <div class="stat"><span class="n">96</span><span class="d">coupons redeemed</span><span class="up">68% rate</span></div>
+        <div class="stat"><span class="n">3.8k</span><span class="d">ad views</span><span class="up">5.5% tap rate</span></div>
       </div>
     </div>
     <div>
-      <div class="sh"><span class="h3">Your coupon</span><span class="label-s acc">Edit</span></div>
-      <div class="coupon"><div><div class="pct">5% OFF</div><div class="sm">any drink · shown at counter</div></div><div class="dash"></div><div style="flex:1"><div class="sm">Issued this month</div><div class="label" style="color:#fff">142 · 96 used</div><div class="sm" style="margin-top:4px">Valid on meetup day only</div></div></div>
+      <div class="sh"><span class="h3">Your coupon</span><span class="label-s acc">Edit offer</span></div>
+      <div class="coupon"><div><div class="pct">5% OFF</div><div class="sm">any drink · show at counter</div></div><div class="dash"></div><div style="flex:1"><div class="sm">Issued this month</div><div class="label" style="color:#fff">142 · 96 used</div><div class="sm" style="margin-top:4px">Valid meetup day only</div></div></div>
+    </div>
+    <div>
+      <div class="sh"><span class="h3">Recent coupon codes</span><span class="label-s acc">See all 142</span></div>
+      <div class="card" style="padding:12px;display:flex;flex-direction:column;gap:0">
+        <div class="body-s sec" style="margin-bottom:8px">Students show you their code — verify it in-app</div>
+        <div class="code-row"><span class="code-tag">KM-4X7Q</span><div style="flex:1"><div class="label-s">Bea T. &amp; Kai M.</div><div class="body-s sec">Oct 8 · 4:15 PM</div></div><span class="pill paid">Used</span></div>
+        <div class="code-row"><span class="code-tag">KM-8R2P</span><div style="flex:1"><div class="label-s">Ana L. &amp; Ram S.</div><div class="body-s sec">Oct 8 · 3:40 PM</div></div><span class="pill paid">Used</span></div>
+        <div class="code-row"><span class="code-tag">KM-1T9M</span><div style="flex:1"><div class="label-s">Jo R. &amp; Mico G.</div><div class="body-s sec">Oct 7 · 5:00 PM</div></div><span class="pill paid">Used</span></div>
+        <div class="code-row" style="border:none"><span class="code-tag">KM-6W3N</span><div style="flex:1"><div class="label-s">Unscanned yet</div><div class="body-s sec">Oct 7 · issued, not shown</div></div><span class="pill pend">Pending</span></div>
+      </div>
     </div>
     <div>
       <div class="sh"><span class="h3">Peak meetup hours</span></div>
       <div class="card" style="padding:14px;display:flex;flex-direction:column;gap:8px">
         <div class="hbars"><i style="height:20%"></i><i style="height:25%"></i><i style="height:30%"></i><i style="height:45%"></i><i style="height:60%"></i><i class="hi" style="height:100%"></i><i class="hi" style="height:90%"></i><i style="height:50%"></i><i style="height:25%"></i></div>
         <div style="display:flex;justify-content:space-between" class="body-s sec"><span>10a</span><span>12p</span><span>2p</span><span>4p</span><span>6p</span></div>
-        <div class="body-s">Busiest <b style="font-weight:500">4–6 PM, Mon–Fri</b> · staff up accordingly</div>
+        <div class="body-s">Busiest <b style="font-weight:500">4–6 PM Mon–Fri</b> · staff up accordingly</div>
       </div>
     </div>
     <div>
       <div class="sh"><span class="h3">Active ad</span><span class="label-s acc">Manage</span></div>
       <div class="card" style="padding:14px;display:flex;flex-direction:column;gap:10px">
-        <div class="banner" style="height:72px"><div class="im"><span data-i="coffee"></span></div><div><div class="label" style="color:var(--cream-50)">Iced latte ₱79 for KnightMarket users</div><div class="body-s" style="opacity:.7">Kape Roxas · Roxas Ave</div></div><span class="ad">AD</span></div>
+        <div class="banner"><div class="im"><span data-i="coffee"></span></div><div><div class="label" style="color:var(--cream-50);font-size:13px">Iced latte ₱79 for KnightMarket users</div><div class="body-s" style="opacity:.7">Kape Roxas · Roxas Ave</div></div><span class="ad">AD</span></div>
         <div style="display:flex;justify-content:space-between" class="body-s"><span class="sec">Home banner · runs until Oct 31</span><span><b>3,812</b> views · <b>5.5%</b> CTR</span></div>
       </div>
     </div>
     <div>
-      <div class="lrow"><span data-i="ticket" class="c-acc"></span>Edit coupon offer<span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
-      <div class="lrow"><span data-i="mega" class="c-acc"></span>Create new ad<span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
-      <div class="lrow"><span data-i="cash" class="c-acc"></span>Billing &amp; plan<span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
+      <div class="lrow"><span data-i="ticket" class="c-acc"></span><span>Edit coupon offer</span><span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
+      <div class="lrow"><span data-i="mega" class="c-acc"></span><span>Create new ad</span><span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
+      <div class="lrow" style="border:none"><span data-i="cash" class="c-acc"></span><span>Billing &amp; plan</span><span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
     </div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 19 MEETUP PICKER (STUDENT SIDE) ═══════════════ -->
-<div class="slot"><label>19 · Propose meetup — partner spots (student side)</label>
+<!-- 29 PLAN MANAGEMENT -->
+<div class="slot"><label>29 · Business plan management / upgrade (new)</label>
+<div class="screen tall">
+  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+  <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Billing &amp; plan</span><span style="width:24px"></span></div>
+  <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:40px">
+    <div class="card" style="padding:16px;display:flex;flex-direction:column;gap:8px;border:1.5px solid var(--copper)">
+      <div style="display:flex;justify-content:space-between;align-items:center"><span class="label">Current plan</span><span class="pill partner">Advertiser</span></div>
+      <div class="h2">₱1,499<span class="per">/mo</span></div>
+      <div class="body-s sec">Renews Nov 1, 2025 · GCash auto-charge to 0917•••8821</div>
+      <div class="prog"><i style="width:60%"></i></div>
+      <div class="body-s sec">18 days left in this cycle</div>
+    </div>
+    <div>
+      <div class="sh"><span class="h3">This month's usage</span></div>
+      <div class="stats">
+        <div class="stat"><span class="n">2/2</span><span class="d">sponsored cards used</span></div>
+        <div class="stat"><span class="n">1/1</span><span class="d">banner slot used</span></div>
+        <div class="stat"><span class="n">3,812</span><span class="d">ad views</span></div>
+      </div>
+    </div>
+    <div class="benefit warn"><div class="ic"><span data-i="alert"></span></div><div><div class="label">You've used all sponsored card slots</div><div class="body-s sec">Upgrade to Advertiser+ for more visibility this enrollment period.</div></div></div>
+    <div class="h3">Compare plans</div>
+    <div style="display:flex;gap:10px">
+      <div class="plan"><span class="label">Meetup Spot</span><span class="pr">₱499<small>/mo</small></span><li>✓ Meetup listing</li><li>✓ Coupon dashboard</li><li>· No ads</li></div>
+      <div class="plan on"><span class="label">Advertiser</span><span class="pr">₱1,499<small>/mo</small></span><li>✓ Everything + ads</li><li>✓ 2 sponsored cards</li><li>✓ 1 banner slot</li></div>
+      <div class="plan"><span class="pill gold" style="align-self:flex-start">New</span><span class="label">Advertiser+</span><span class="pr">₱2,999<small>/mo</small></span><li>✓ 5 sponsored cards</li><li>✓ 2 banner slots</li><li>✓ Push notif feature</li></div>
+    </div>
+    <div class="btn accent">Upgrade to Advertiser+</div>
+    <div class="divrow">Billing history</div>
+    <div class="lrow"><span data-i="cash" class="c-sec"></span><div><div class="label-s">Oct 2025</div><div class="body-s sec">Advertiser plan</div></div><span class="r label-s">₱1,499</span></div>
+    <div class="lrow" style="border:none"><span data-i="cash" class="c-sec"></span><div><div class="label-s">Sep 2025</div><div class="body-s sec">Advertiser plan</div></div><span class="r label-s">₱1,499</span></div>
+  </div>
+</div></div>
+
+<!-- 30 MEETUP PICKER -->
+<div class="slot"><label>30 · Propose meetup — student sees partner spots</label>
 <div class="screen">
   <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
-  <div class="hdr" style="background:#fff"><span data-i="back"></span><div class="avatar" style="width:32px;height:32px"><span data-i="user" class="i16 c-acc"></span></div><div style="flex:1"><span class="label">Kai M.</span> <span data-i="seal" class="i16"></span></div></div>
-  <div class="msgs"><div class="bub me">Can I see it first before I decide?</div><div class="bub them">Sure, free tomorrow after 4pm.</div></div>
+  <div class="hdr" style="background:#fff;border-bottom:1px solid var(--sand-300)">
+    <span data-i="back"></span>
+    <div class="avatar" style="width:32px;height:32px"><span data-i="user" class="i16 c-acc"></span></div>
+    <div style="flex:1"><span class="label">Kai M.</span> <span data-i="seal" class="i16"></span></div>
+  </div>
+  <div class="msgs" style="padding-bottom:120px">
+    <div class="bub me">Can I see it first before I decide?</div>
+    <div class="bub them">Sure, free tomorrow after 4pm.</div>
+  </div>
   <div class="scrim"></div>
-  <div class="sheet" style="gap:14px">
+  <div class="sheet" style="gap:12px">
     <div class="grab"></div>
-    <div style="display:flex;justify-content:space-between;align-items:center"><span class="h3">Pick a meetup spot</span><span data-i="x" class="i20"></span></div>
+    <div style="display:flex;justify-content:space-between;align-items:center"><span class="h3">Pick a meetup spot</span><span data-i="x" class="i20 c-sec"></span></div>
     <div class="mapbox">
-      <div class="pin pub" style="left:40px;top:30px"><span data-i="pin"></span>Jacinto gate</div>
-      <div class="pin partner" style="left:150px;top:60px"><span data-i="pin"></span>Kape Roxas 🎟</div>
-      <div class="pin partner" style="left:260px;top:24px"><span data-i="pin"></span>PrintHub 🎟</div>
-      <div class="pin pub" style="left:230px;top:88px"><span data-i="pin"></span>Roxas gate</div>
+      <div class="pin pub" style="left:36px;top:28px"><span data-i="pin"></span>Jacinto gate</div>
+      <div class="pin partner" style="left:148px;top:58px"><span data-i="pin"></span>Kape Roxas 🎟</div>
+      <div class="pin partner" style="left:258px;top:22px"><span data-i="pin"></span>PrintHub 🎟</div>
+      <div class="pin pub" style="left:228px;top:86px"><span data-i="pin"></span>Roxas gate</div>
     </div>
-    <div class="body-s sec">Partner spots give <b style="color:var(--copper);font-weight:500">both of you</b> a coupon</div>
-    <div>
-      <div class="lrow" style="background:var(--copper-100);margin:0 -16px;padding:8px 16px;border:none;border-radius:12px"><span data-i="coffee" class="c-acc"></span><div><div class="label" style="display:flex;gap:6px;align-items:center">Kape Roxas <span class="pill partner">Partner</span></div><div class="sub">2 min walk · <b style="color:var(--copper);font-weight:500">5% off any drink</b></div></div><span class="r"><span data-i="check-c" class="c-acc"></span></span></div>
-      <div class="lrow"><span data-i="printer" class="c-acc"></span><div><div class="label" style="display:flex;gap:6px;align-items:center">PrintHub Roxas <span class="pill partner">Partner</span></div><div class="sub">4 min walk · <b style="color:var(--copper);font-weight:500">10% off printing</b></div></div></div>
-      <div class="lrow"><span data-i="pin" class="c-sec"></span><div><div class="label">Jacinto campus — main gate</div><div class="sub">Campus · no coupon</div></div></div>
-      <div class="lrow" style="border:none"><span data-i="pin" class="c-sec"></span><div><div class="label">Finster Hall lobby</div><div class="sub">Campus · no coupon</div></div></div>
+    <div class="body-s sec">🎟 Partner spots give <b style="color:var(--copper)">both of you</b> a discount coupon</div>
+    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--sand-300)">
+      <div class="lrow" style="background:var(--copper-100);padding:10px 12px;border:none;border-bottom:1px solid var(--sand-300)"><span data-i="coffee" class="c-acc"></span><div><div class="label" style="display:flex;gap:6px;align-items:center">Kape Roxas <span class="pill partner">Partner</span></div><div class="sub">2 min walk · <b style="color:var(--copper);font-weight:500">5% off any drink</b></div></div><span class="r"><span data-i="check-c" class="c-acc i20"></span></span></div>
+      <div class="lrow" style="padding:10px 12px;border:none;border-bottom:1px solid var(--sand-300)"><span data-i="printer" class="c-acc"></span><div><div class="label" style="display:flex;gap:6px;align-items:center">PrintHub Roxas <span class="pill partner">Partner</span></div><div class="sub">4 min walk · <b style="color:var(--copper);font-weight:500">10% off printing</b></div></div></div>
+      <div class="lrow" style="padding:10px 12px;border:none;border-bottom:1px solid var(--sand-300)"><span data-i="pin" class="c-sec"></span><div><div class="label">Jacinto campus — main gate</div><div class="sub">Campus · no coupon</div></div></div>
+      <div class="lrow" style="padding:10px 12px;border:none"><span data-i="pin" class="c-sec"></span><div><div class="label">Finster Hall lobby</div><div class="sub">Campus · no coupon</div></div></div>
     </div>
     <div class="chips"><span class="chip on">Tomorrow · 4:15 PM</span><span class="chip">Tomorrow · 5:00 PM</span><span class="chip outline">Pick time</span></div>
-    <div class="btn primary">Send proposal</div>
+    <div class="btn primary">Send meetup proposal</div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 20 COUPON UNLOCKED (STUDENT SIDE) ═══════════════ -->
-<div class="slot"><label>20 · Meetup confirmed → coupon (student side)</label>
+<!-- 31 COUPON UNLOCKED -->
+<div class="slot"><label>31 · Meetup confirmed → coupon unlocked (student)</label>
 <div class="screen">
   <img class="rays" src="ray1.png" alt=""><img class="noise" src="noise.png" alt="">
   <div class="rel">
     <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
     <div class="hdr"><span style="width:24px"></span><span class="ttl"></span><span data-i="x"></span></div>
-    <div class="pad" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center;padding-top:12px">
+    <div class="pad" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center;padding-top:8px">
       <div class="bigcheck"><span data-i="check"></span></div>
-      <div><div class="h1">Meetup <span class="acc">confirmed</span></div><div class="sec body-s" style="margin-top:4px">Kai accepted. You both got a coupon.</div></div>
-      <div class="card" style="width:358px;padding:14px;display:flex;gap:12px;align-items:center;text-align:left">
+      <div><div class="h1">Meetup <span class="acc">confirmed!</span></div><div class="sec body-s" style="margin-top:4px">Kai accepted. You both unlocked a coupon 🎉</div></div>
+      <div style="width:358px;background:#fff;border-radius:16px;box-shadow:var(--sh-card);padding:14px;display:flex;gap:12px;align-items:center;text-align:left">
         <div class="avatar" style="width:44px;height:44px"><span data-i="coffee" class="i20 c-acc"></span></div>
-        <div style="flex:1"><div class="label">Kape Roxas</div><div class="body-s sec">Roxas Ave, across Jacinto gate</div><div class="body-s" style="margin-top:2px"><b style="font-weight:500">Tue, Oct 8 · 4:15 PM</b></div></div>
+        <div style="flex:1"><div class="label">Kape Roxas</div><div class="body-s sec">Roxas Ave, across Jacinto gate</div><div class="body-s" style="margin-top:2px"><b style="font-weight:600">Tue, Oct 8 · 4:15 PM</b></div></div>
         <span data-i="nav" class="c-acc"></span>
       </div>
-      <div class="coupon" style="width:358px;text-align:left"><div><div class="pct">5% OFF</div><div class="sm">any drink</div></div><div class="dash"></div><div style="flex:1"><div class="sm">Show at the counter</div><div class="h2" style="color:#fff;letter-spacing:2px">KM-4X7Q</div><div class="sm">Valid Oct 8 only · until 8 PM</div></div></div>
-      <div style="display:flex;gap:10px;width:358px"><div class="btn outline md" style="flex:1"><span data-i="cal" class="i20"></span>Add to calendar</div><div class="btn primary md" style="flex:1"><span data-i="nav" class="i20 c-cream"></span>Directions</div></div>
-      <div class="body-s sec" style="max-width:300px;margin-top:8px"><span data-i="shield-check" class="i16 c-sec"></span> Partner spots are public and staffed — safer trades, free perks.</div>
+      <div class="coupon" style="width:358px;text-align:left">
+        <div><div class="pct">5% OFF</div><div class="sm">any drink at Kape Roxas</div></div>
+        <div class="dash"></div>
+        <div style="flex:1"><div class="sm">Show this at the counter</div><div style="font-size:20px;font-weight:700;letter-spacing:3px;color:#fff;margin-top:2px">KM-4X7Q</div><div class="sm" style="margin-top:2px">Valid Oct 8 only · until 8 PM</div></div>
+      </div>
+      <div style="display:flex;gap:10px;width:358px">
+        <div class="btn outline md" style="flex:1"><span data-i="cal" class="i20"></span>Calendar</div>
+        <div class="btn primary md" style="flex:1"><span data-i="nav" class="i20 c-cream"></span>Directions</div>
+      </div>
+      <div class="body-s sec" style="max-width:300px">Partner spots are public, staffed, and near campus — safer trades, free perks.</div>
     </div>
   </div>
 </div></div>
 
-<!-- ═══════════════ 21 AD PLACEMENTS (STUDENT SIDE) ═══════════════ -->
-<div class="slot"><label>21 · Ad placements — what students see (scrolls)</label>
+<!-- 32 VERIFY COUPON STAFF -->
+<div class="slot"><label>32 · Verify a coupon code (staff side)</label>
+<div class="screen">
+  <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
+  <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Verify a coupon</span><span style="width:24px"></span></div>
+  <div class="pad" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
+    <div class="sec body-s">Ask the student for their code and enter it below</div>
+    <div class="codebox"><div>K</div><div>M</div><div>-</div><div>4</div><div>X</div><div>7</div><div>Q</div></div>
+    <div class="btn primary" style="max-width:200px"><span data-i="search" class="i20 c-cream"></span>Check code</div>
+    <div class="card" style="width:100%;padding:16px;display:flex;flex-direction:column;gap:10px;text-align:left;border:1.5px solid var(--green)">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:40px;height:40px;border-radius:50%;background:#DDEBE3;display:flex;align-items:center;justify-content:center"><span data-i="check-c" style="color:var(--green)"></span></div>
+        <div><div class="label" style="color:var(--green)">Valid coupon</div><div class="body-s sec">Issued today · not yet used</div></div>
+      </div>
+      <div class="divrow" style="margin:0"></div>
+      <div class="body-s"><b>5% off any drink</b></div>
+      <div class="body-s sec">Meetup: Bea T. &amp; Kai M. · Oct 8, 4:15 PM</div>
+      <div class="btn accent md">Mark as redeemed</div>
+    </div>
+    <div class="body-s sec" style="margin-top:4px">Other possible results:</div>
+    <div style="width:100%;display:flex;flex-direction:column;gap:8px">
+      <div class="lrow" style="background:#fff;border-radius:10px;padding:10px 12px;border:1px solid var(--sand-300)"><span class="code-tag" style="font-size:12px">KM-9Z12</span><span class="body-s sec" style="flex:1">Already redeemed · 2:10 PM</span><span data-i="check-c" class="i16" style="color:var(--navy-300)"></span></div>
+      <div class="lrow" style="background:#fff;border-radius:10px;padding:10px 12px;border:1px solid var(--sand-300)"><span class="code-tag" style="font-size:12px;background:#F6E4E2;color:var(--red)">KM-0000</span><span class="body-s sec" style="flex:1">Invalid code</span><span data-i="x-circle" class="i16 c-red"></span></div>
+    </div>
+  </div>
+</div></div>
+
+<!-- 33 AD PLACEMENTS -->
+<div class="slot"><label>33 · Ad placements — student sees in Home (scrolls)</label>
 <div class="screen tall">
   <div class="status"><span>9:41</span><span class="sig"><span class="bat"></span></span></div>
-  <div class="pad" style="height:52px;display:flex;align-items:center;justify-content:space-between">
-    <div style="display:flex;align-items:center;gap:8px"><img src="logo.png" alt="" style="width:28px;height:28px;object-fit:contain"><span class="h3">Knight<span class="acc">Market</span></span></div>
+  <div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between">
+    <div style="display:flex;align-items:center;gap:8px">
+      <div style="width:26px;height:26px;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center"><span data-i="shield" style="width:16px;height:16px;color:var(--cream-50)"></span></div>
+      <span class="h3">Knight<span class="acc">Market</span></span>
+    </div>
     <span class="chip filter" style="height:28px"><span data-i="seal" class="i16"></span>AdDU</span>
   </div>
-  <div class="pad" style="margin-top:8px"><div class="search"><span data-i="search" class="i20 c-sec"></span>Search books, gear, uniforms…</div></div>
-  <div class="pad" style="margin-top:16px">
-    <div class="banner"><div class="im"><span data-i="coffee"></span></div><div style="flex:1"><div class="label" style="color:var(--cream-50)">Iced latte ₱79 for KnightMarket users</div><div class="body-s" style="opacity:.7">Kape Roxas · 2 min from Jacinto gate</div></div><span class="pill" style="background:var(--copper);color:#fff;text-transform:none;letter-spacing:0">Show coupon</span><span class="ad">SPONSORED</span></div>
+  <div class="pad" style="margin-top:4px"><div class="search"><span data-i="search" class="i20 c-sec"></span>Search books, gear, uniforms…</div></div>
+  <div class="pad sec-gap">
+    <div class="banner">
+      <div class="im"><span data-i="coffee"></span></div>
+      <div style="flex:1"><div class="label" style="color:var(--cream-50);font-size:13px">Iced latte ₱79 for KnightMarket users</div><div class="body-s" style="opacity:.7;margin-top:2px">Kape Roxas · 2 min from Jacinto gate</div></div>
+      <span class="pill" style="background:var(--copper);color:#fff;text-transform:none;letter-spacing:0;font-size:11px;flex:none">Coupon</span>
+      <span class="ad">SPONSORED</span>
+    </div>
   </div>
   <div class="pad sec-gap">
-    <div class="sh"><span class="h2">Your course codes</span><span class="label-s acc">See all</span></div>
-    <div class="chips"><span class="chip">#PATHFit3</span><span class="chip">#MMW</span><span class="chip">#RPH</span><span class="chip">#STS</span><span class="chip">#PurCom</span></div>
+    <div class="sh"><span class="h2">Categories</span><span class="label-s acc">See all</span></div>
+    <div class="tiles">
+      <div class="tile"><span data-i="book"></span>Books</div>
+      <div class="tile"><span data-i="tshirt"></span>Uniforms</div>
+      <div class="tile"><span data-i="racket"></span>PE Gear</div>
+      <div class="tile"><span data-i="steth"></span>Lab</div>
+      <div class="tile"><span data-i="calc"></span>Electronics</div>
+      <div class="tile"><span data-i="fan"></span>Dorm</div>
+      <div class="tile"><span data-i="hoodie"></span>Org/Club Merch</div>
+      <div class="tile"><span data-i="dress"></span>Formal</div>
+    </div>
   </div>
   <div class="pad sec-gap" style="padding-bottom:110px">
     <div class="sh"><span class="h2">New near you</span></div>
     <div class="grid">
-      <div class="card"><div class="im"><img src="books.png" alt=""><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★ 4.8</span></span></div></div>
-      <div class="card spons"><div class="im"><span data-i="printer"></span><span class="sp">SPONSORED</span></div><div class="bd"><span class="price">₱2 <span class="per">/page</span></span><span class="ttl">Thesis printing + binding, same day</span><span class="body-s sec">PrintHub Roxas · 4 min walk</span><span class="badge acc"><span data-i="ticket" class="c-acc"></span>10% off for KM users</span></div></div>
-      <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket + 3 shuttles</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Bea T.<span class="rate">★ 5.0</span></span></div></div>
-      <div class="card"><div class="im"><span data-i="calc"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱600</span><span class="ttl">Casio fx-991EX scientific calc</span><span class="body-s sec">Good · Electronics</span><span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★ 4.6</span></span></div></div>
+      <div class="card"><div class="im"><img src="books.png" alt=""><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★4.8</span></span></div></div>
+      <div class="card spons"><div class="im" style="background:var(--copper-100)"><span data-i="printer" style="color:var(--copper);width:56px;height:56px"></span><span class="sp">SPONSORED</span></div><div class="bd"><span class="price">₱2 <span class="per">/page</span></span><span class="ttl">Thesis printing + binding, same day</span><span class="body-s sec">PrintHub Roxas · 4 min walk</span><span class="badge acc"><span data-i="ticket" class="c-acc"></span>10% off for KM users</span></div></div>
+      <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket + 3 shuttles</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Bea T.<span class="rate">★5.0</span></span></div></div>
+      <div class="card"><div class="im"><span data-i="calc"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱600</span><span class="ttl">Casio fx-991EX scientific calc</span><span class="body-s sec">Good · Electronics</span><span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★4.6</span></span></div></div>
     </div>
   </div>
   <div class="tabbar">
     <div class="tab on"><span data-i="home"></span>Home</div>
     <div class="tab"><span data-i="grid"></span>Browse</div>
-    <div class="tab sell"><div class="fab"><span data-i="plus"></span></div><span>Sell</span></div>
+    <div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
     <div class="tab"><span data-i="chat"></span>Inbox</div>
     <div class="tab"><span data-i="user"></span>Me</div>
+  </div>
+</div></div>
+
+
+<!-- ═══════════════════════════ INTERNAL (REFERENCE ONLY — NOT STUDENT-FACING) ═══════════════════════════ -->
+<div class="persona internal">Internal · <span>Admin / Moderation (reference)</span></div>
+
+<!-- 34 ADMIN -->
+<div class="slot"><label>34 · Admin moderation dashboard (reference, scrolls)</label>
+<div class="screen tall">
+  <div class="adminbar"><span data-i="shield" class="i20 c-cream"></span><span class="label" style="color:#fff">KnightMarket Admin</span><span class="label-s" style="margin-left:auto;color:rgba(250,246,236,.7)">Moderator: Staff01</span></div>
+  <div class="pad" style="display:flex;flex-direction:column;gap:20px;padding-top:16px;padding-bottom:40px">
+    <div class="stats">
+      <div class="stat"><span class="n">7</span><span class="d">pending org apps</span></div>
+      <div class="stat"><span class="n">12</span><span class="d">flagged listings</span></div>
+      <div class="stat"><span class="n">3</span><span class="d">open disputes</span></div>
+    </div>
+    <div>
+      <div class="sh"><span class="h3">Org / Club verification queue</span></div>
+      <div class="admin-row"><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="store" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">CSSEC</div><div class="body-s sec">Submitted by Mico G. · cert attached</div></div><div class="admin-actions"><div class="icobtn ok"><span data-i="check-c"></span></div><div class="icobtn no"><span data-i="x-circle"></span></div></div></div>
+      <div class="admin-row"><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="store" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">Dance Troupe Club</div><div class="body-s sec">Submitted by Nica R. · missing adviser email</div></div><div class="admin-actions"><div class="icobtn ok"><span data-i="check-c"></span></div><div class="icobtn no"><span data-i="x-circle"></span></div></div></div>
+      <div class="admin-row" style="border:none"><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="store" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">JPIA</div><div class="body-s sec">Submitted by Carlo D. · cert attached</div></div><div class="admin-actions"><div class="icobtn ok"><span data-i="check-c"></span></div><div class="icobtn no"><span data-i="x-circle"></span></div></div></div>
+    </div>
+    <div>
+      <div class="sh"><span class="h3">Flagged listings</span></div>
+      <div class="admin-row"><span data-i="flag" class="c-red"></span><div style="flex:1"><div class="label-s">"Brand new iPhone 15, cheap"</div><div class="body-s sec">3 reports · Suspicious seller / possible scam</div></div><span class="pill danger">High priority</span></div>
+      <div class="admin-row"><span data-i="flag" class="c-red"></span><div style="flex:1"><div class="label-s">Nursing duty whites, size M</div><div class="body-s sec">1 report · Item not as described</div></div><span class="pill pend">Review</span></div>
+      <div class="admin-row" style="border:none"><span data-i="flag" class="c-red"></span><div style="flex:1"><div class="label-s">"Selling exam answer keys"</div><div class="body-s sec">5 reports · Inappropriate content</div></div><span class="pill danger">High priority</span></div>
+    </div>
+    <div>
+      <div class="sh"><span class="h3">Open disputes</span></div>
+      <div class="admin-row"><div class="avatar" style="width:32px;height:32px"><span data-i="user" class="i14 c-acc"></span></div><div style="flex:1"><div class="label-s">Ram S. vs. Ana L.</div><div class="body-s sec">Item not received after payment · racket rental</div></div><span class="label-s acc">Review</span></div>
+      <div class="admin-row" style="border:none"><div class="avatar" style="width:32px;height:32px"><span data-i="user" class="i14 c-acc"></span></div><div style="flex:1"><div class="label-s">Jo R. vs. CSSEC</div><div class="body-s sec">Pre-order paid but not received</div></div><span class="label-s acc">Review</span></div>
+    </div>
+    <div class="body-s sec center" style="margin-top:8px">This is an internal tool for KnightMarket staff — not part of the student, org, or business apps.</div>
   </div>
 </div></div>
 
 </div><!-- /board -->
 
 <script>
-/* Inline SVG icons (so html.to.design imports them as vectors, not font glyphs) */
 const I={
  search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
  sliders:'<path d="M4 7h9M19 7h1M4 17h3M13 17h7"/><circle cx="16" cy="7" r="2.5"/><circle cx="10" cy="17" r="2.5"/>',
  heart:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+ 'heart-filled':'<path fill="currentColor" stroke="none" d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
  back:'<path d="M19 12H5M11 18l-6-6 6-6"/>',
  arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',
  plus:'<path d="M12 5v14M5 12h14"/>',
  x:'<path d="M6 6l12 12M18 6L6 18"/>',
+ 'x-circle':'<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>',
  home:'<path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z"/>',
  grid:'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
  chat:'<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>',
@@ -1030,6 +1560,34 @@ const I={
  fan:'<circle cx="12" cy="12" r="2"/><path d="M12 10c0-5 4-6 4-3s-2 3-4 3zM14 12c5 0 6 4 3 4s-3-2-3-4zM12 14c0 5-4 6-4 3s2-3 4-3zM10 12c-5 0-6-4-3-4s3 2 3 4z"/>',
  hoodie:'<path d="M8 6a4 4 0 0 1 8 0l4 3-2 3-2-1v10H8V11l-2 1-2-3z"/><path d="M10 6a2 2 0 0 0 4 0"/>',
  dress:'<path d="M9 3l3 4 3-4 1 6-2 2 4 10H6l4-10-2-2z"/>',
+ star:'<path fill="currentColor" stroke="none" d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/>',
+ ticket:'<path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2a2 2 0 0 0 0-4z"/><path d="M12 6v12" stroke-dasharray="2 2"/>',
+ store:'<path d="M4 10l1.5-5h13L20 10M4 10v10h16V10M4 10a3 3 0 0 0 5.3 0 3 3 0 0 0 5.4 0A3 3 0 0 0 20 10"/><path d="M10 20v-6h4v6"/>',
+ mega:'<path d="M4 10v4h3l7 4V6l-7 4z"/><path d="M17 9a4 4 0 0 1 0 6"/>',
+ chart:'<path d="M4 20V4M4 20h16"/><path d="M8 16l4-5 3 3 5-7"/>',
+ users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15 14.5a4.5 4.5 0 0 1 6.5 4"/>',
+ cash:'<rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/>',
+ pkg:'<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/>',
+ cal:'<rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/>',
+ eye:'<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/>',
+ coffee:'<path d="M5 8h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 10h2a2 2 0 0 1 0 4h-2M8 4v2M11 4v2"/>',
+ printer:'<path d="M7 9V4h10v5M7 17H4v-8h16v8h-3"/><rect x="7" y="14" width="10" height="6"/>',
+ upload:'<path d="M12 16V4M7 9l5-5 5 5M4 20h16"/>',
+ 'check-c':'<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16.5 9"/>',
+ share:'<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.6M8.2 13.2l7.6 4.6"/>',
+ bell:'<path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
+ bolt:'<path d="M13 2L5 13h6l-1 9 8-11h-6z"/>',
+ nav:'<path d="M3 11l18-8-8 18-2-8z"/>',
+ shield:'<path d="M12 3l8 4v5c0 5-3.5 9.7-8 11-4.5-1.3-8-6-8-11V7z"/>',
+ imgph:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/>',
+ idcard:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M13 10h5M13 14h3"/>',
+ scanframe:'<path d="M4 8V5a1 1 0 0 1 1-1h3M20 8V5a1 1 0 0 1-1-1h-3M4 16v3a1 1 0 0 0 1 1h3M20 16v3a1 1 0 0 1-1 1h-3"/>',
+ rocket:'<path d="M12 2c2.5 2 4 5.5 4 9 0 2.5-1 5-2 6l-1-3h-2l-1 3c-1-1-2-3.5-2-6 0-3.5 1.5-7 4-9z"/><circle cx="12" cy="9" r="1.5"/><path d="M9 15l-2 4M15 15l2 4"/>',
+ gift:'<rect x="4" y="9" width="16" height="11" rx="1"/><path d="M4 9h16M12 9v11M12 9c-1.5-4-6-4-6-1.5S9 9 12 9zM12 9c1.5-4 6-4 6-1.5S15 9 12 9z"/>',
+ settings:'<circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.6a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6A7 7 0 0 0 5 12a7 7 0 0 0 .1 1.2l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 2 1.2L10 21h4l.5-2.6a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2z"/>',
+ logout:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>',
+ trash:'<path d="M4 7h16M9 7V4h6v3M6 7l1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13"/><path d="M10 11v6M14 11v6"/>',
+ alert:'<path d="M12 3l10 18H2z"/><path d="M12 9v5M12 17h.01"/>',
 };
 document.querySelectorAll('[data-i]').forEach(el=>{
   const p=I[el.dataset.i]; if(!p) return;
