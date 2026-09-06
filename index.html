@@ -31,8 +31,6 @@ img{display:block;max-width:100%}
 .status .bat{width:24px;height:11px;border:1.5px solid var(--navy);border-radius:3px;position:relative}
 .status .bat::after{content:"";position:absolute;inset:2px;right:4px;background:var(--navy);border-radius:1px}
 .pad{padding:0 16px}
-.rays{position:absolute;inset:0;pointer-events:none;opacity:.7;object-fit:cover;width:100%;height:100%}
-.noise{position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:multiply;object-fit:cover;width:100%;height:100%}
 /* FIX: .rel needs real height so absolute-positioned children (step dots) anchor to the full screen, not just content height */
 .rel{position:relative;z-index:1;height:100%}
 
@@ -89,6 +87,7 @@ img{display:block;max-width:100%}
 .pill.gold{background:var(--gold);color:var(--navy)}
 .pill.partner{background:var(--copper-100);color:var(--copper);text-transform:none;letter-spacing:0}
 .pill.boost{background:var(--gold);color:var(--navy);text-transform:none;letter-spacing:0;gap:4px}
+.pill.boost [data-i]{width:12px!important;height:12px!important;flex:none}
 .pill.danger{background:#F6E4E2;color:var(--red);text-transform:none;letter-spacing:0}
 .badge{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:500;color:var(--navy)}
 .badge [data-i]{width:16px;height:16px}
@@ -105,7 +104,7 @@ img{display:block;max-width:100%}
 .card .im{height:160px;background:var(--sand);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .card .im img{width:60%;height:auto}
 .card .im [data-i]{width:56px;height:56px;color:var(--copper)}
-.card .pill{position:absolute;top:8px;left:8px}
+.card .im .pill{position:absolute;top:8px;left:8px}
 .card .heart{position:absolute;top:6px;right:6px;width:28px;height:28px;border-radius:999px;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center}
 .card .heart [data-i]{width:16px;height:16px}
 .card .bd{padding:10px 12px 12px;display:flex;flex-direction:column;gap:4px}
@@ -303,7 +302,6 @@ img{display:block;max-width:100%}
 .icobtn.ok{background:#DDEBE3}.icobtn.ok [data-i]{color:var(--green);width:16px;height:16px}
 .icobtn.no{background:#F6E4E2}.icobtn.no [data-i]{color:var(--red);width:16px;height:16px}
 .pill.buy{background:var(--green);color:#fff}
-.pill.boost [data-i]{width:12px;height:12px;flex:none}
 .btn.disabled{opacity:.4;pointer-events:none}
 .course-card{width:112px;height:84px;background:var(--copper-100);border-radius:14px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;flex:none}
 .course-card .code{font-family:monospace;font-weight:700;font-size:13px;color:var(--navy)}
@@ -319,7 +317,8 @@ img{display:block;max-width:100%}
 <!-- 01 -->
 <div class="slot"><label>01 · Verify Email</label>
 <div class="screen">
-  <img class="rays" src="ray1.png" alt=""><img class="noise" src="noise.png" alt="">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
+  <div class="rays" style="background:radial-gradient(circle at 50% -10%,rgba(242,201,76,.35),transparent 60%)"></div>
   <div class="rel">
     <div class="pad" style="padding-top:72px;display:flex;flex-direction:column;align-items:center;gap:0">
       <div style="width:88px;height:88px;border-radius:24px;background:var(--navy);display:flex;align-items:center;justify-content:center"><span data-i="shield" class="i40 c-cream"></span></div>
@@ -343,7 +342,8 @@ img{display:block;max-width:100%}
 <!-- 02 -->
 <div class="slot"><label>02 · Verify Code</label>
 <div class="screen">
-  <img class="rays" src="ray1.png" alt=""><img class="noise" src="noise.png" alt="">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
+  <div class="rays" style="background:radial-gradient(circle at 50% -10%,rgba(242,201,76,.35),transparent 60%)"></div>
   <div class="rel">
     <div class="hdr"><span data-i="back"></span></div>
     <div class="pad" style="padding-top:24px;display:flex;flex-direction:column;gap:12px">
@@ -363,6 +363,7 @@ img{display:block;max-width:100%}
 <!-- 03 -->
 <div class="slot"><label>03 · Verify with Student ID — Capture (alt path)</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="rel">
     <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Verify with Student ID</span><span style="width:24px"></span></div>
     <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-top:8px">
@@ -385,6 +386,7 @@ img{display:block;max-width:100%}
 <!-- 04 -->
 <div class="slot"><label>04 · Confirm ID Details (OCR review)</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="rel">
     <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Confirm your details</span><span style="width:24px"></span></div>
     <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px">
@@ -410,6 +412,7 @@ img{display:block;max-width:100%}
 <!-- New · Switch campus (Step 4d) -->
 <div class="slot"><label>New · Switch campus (sheet overlay)</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
 <div class="scrim"></div>
 <div class="sheet">
   <div class="grab"></div>
@@ -424,6 +427,7 @@ img{display:block;max-width:100%}
 <!-- New · Add your classes (Step 5a) -->
 <div class="slot"><label>New · Add your classes (onboarding)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
 <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Add your classes</span><span class="label-s acc">Skip</span></div>
 <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px">
   <div>
@@ -450,6 +454,7 @@ img{display:block;max-width:100%}
 <!-- 05 HOME -->
 <div class="slot"><label>05 · Home (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div style="position:absolute;top:0;left:0;right:0;height:160px;overflow:hidden;pointer-events:none"><img class="rays" src="ray1.png" alt=""></div>
   <div class="rel">
     <div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between">
@@ -525,8 +530,8 @@ img{display:block;max-width:100%}
       <div class="org">
         <div class="im"><span data-i="hoodie"></span></div>
         <div class="bd">
-          <span class="badge"><span data-i="seal-gold"></span>Official · CSSEC</span>
-          <span class="h3">CSSEC Varsity Hoodie 2025</span>
+          <span class="badge"><span data-i="seal-gold"></span>Official · KM Club</span>
+          <span class="h3">KM Club Varsity Hoodie 2025</span>
           <span class="body-s sec">Pre-order · closes Oct 15 · ₱650</span>
           <span class="pill pre" style="margin-top:4px;align-self:flex-start">Preorder open</span>
         </div>
@@ -546,7 +551,7 @@ img{display:block;max-width:100%}
     <div class="pad sec-gap" style="padding-bottom:100px">
       <div class="sh"><span class="h2">New near you</span></div>
       <div class="grid">
-        <div class="card"><div class="im"><img src="books.png" alt=""><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★4.8</span></span></div></div>
+        <div class="card"><div class="im"><span data-i="book"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★4.8</span></span></div></div>
         <div class="card"><div class="im"><span data-i="tshirt"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱450</span><span class="ttl">Nursing duty whites, size M</span><span class="body-s sec">Good · Uniforms</span><span class="badge"><span data-i="seal"></span>Jo R.<span class="rate">★4.9</span></span></div></div>
         <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket + 3 shuttles</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Bea T.<span class="rate">★5.0</span></span></div></div>
         <div class="card"><div class="im"><span data-i="calc"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱600</span><span class="ttl">Casio fx-991EX scientific calc</span><span class="body-s sec">Good · Electronics</span><span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★4.6</span></span></div></div>
@@ -565,6 +570,7 @@ img{display:block;max-width:100%}
 <!-- New · Edit your classes (Step 5c) -->
 <div class="slot"><label>New · Edit your classes</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
 <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Edit your classes</span><span class="label-s acc">Done</span></div>
 <div class="pad" style="padding-top:8px"><div class="search"><span data-i="search" class="i20 c-sec"></span><span style="color:var(--navy-300)">Search course code…</span></div></div>
 <div class="pad sec-gap">
@@ -587,6 +593,7 @@ img{display:block;max-width:100%}
 <!-- New · Browse Explore landing (Step 6) -->
 <div class="slot"><label>New · Browse — Explore (default landing, scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
 <div class="hdr" style="gap:10px">
   <div class="search" style="flex:1">Search books, gear, uniforms…</div>
   <span data-i="sliders"></span>
@@ -611,9 +618,9 @@ img{display:block;max-width:100%}
 <div class="pad sec-gap" style="padding-bottom:110px">
   <div class="sh"><span class="h2">Everyone's browsing</span></div>
   <div class="grid">
-    <div class="card"><div class="im"><img src="books.png" alt=""><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span></div></div>
+    <div class="card"><div class="im"><span data-i="book"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span></div></div>
     <div class="card spons"><div class="im" style="background:var(--copper-100)"><span data-i="printer" style="color:var(--copper);width:56px;height:56px"></span><span class="sp">SPONSORED</span></div><div class="bd"><span class="price">₱2 <span class="per">/page</span></span><span class="ttl">Thesis printing + binding</span><span class="body-s sec">PrintHub Roxas · 4 min walk</span></div></div>
-    <div class="card"><div class="im"><span data-i="hoodie"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱650</span><span class="ttl">CSSEC Varsity Hoodie 2025</span><span class="badge"><span data-i="seal-gold"></span>Official · CSSEC</span></div></div>
+    <div class="card"><div class="im"><span data-i="hoodie"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱650</span><span class="ttl">KM Club Varsity Hoodie 2025</span><span class="badge"><span data-i="seal-gold"></span>Official · KM Club</span></div></div>
     <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱80 <span class="per">/sem</span></span><span class="ttl">Badminton racket + case</span><span class="body-s sec">Good · #PATHFit3</span></div></div>
   </div>
 </div>
@@ -629,6 +636,7 @@ img{display:block;max-width:100%}
 <!-- 06 BROWSE -->
 <div class="slot"><label>06 · Browse — #PATHFit3 (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr" style="gap:10px">
     <span data-i="back"></span>
     <div class="search" style="flex:1;height:44px;border-radius:12px"><span data-i="search" class="i20 c-sec"></span><span class="val">#PATHFit3</span></div>
@@ -668,6 +676,7 @@ img{display:block;max-width:100%}
 <!-- 07 FILTER SHEET -->
 <div class="slot"><label>07 · Filter Sheet (overlay)</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr" style="gap:10px"><span data-i="back"></span><div class="search" style="flex:1;height:44px;border-radius:12px"><span data-i="search" class="i20 c-sec"></span><span class="val">#PATHFit3</span></div><span data-i="sliders"></span></div>
   <div class="pad" style="display:flex;gap:8px;margin-top:4px"><span class="chip filter on">#PATHFit3</span><span class="chip filter">Filters</span></div>
   <div class="pad" style="margin-top:24px"><div class="grid">
@@ -675,16 +684,23 @@ img{display:block;max-width:100%}
     <div class="card"><div class="im"><span data-i="racket"></span></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket + 3 shuttles</span></div></div>
   </div></div>
   <div class="scrim"></div>
-  <div class="sheet">
+    <div class="sheet">
     <div class="grab"></div>
-    <div style="display:flex;justify-content:space-between;align-items:center"><span class="h3">Filters</span><span class="label-s acc">Reset all</span></div>
-    <div class="field"><span class="label">Listing type</span><div class="seg"><div>Buy</div><div class="on">Rent</div><div>All</div></div></div>
-    <div class="field"><span class="label">Categories</span>
-    <div class="chips">
-      <span class="chip filter on">PE & Sports Gear <span data-i="x" class="i14 c-cream"></span></span>
-      <span class="chip filter">Books</span><span class="chip filter">Uniforms</span><span class="chip filter">Electronics</span><span class="chip filter">Misc</span>
-    </div></div>
-    <div class="field"><span class="label">Course codes</span>
+    <!-- DEV NOTE: filter logic = AND across groups (Listing type, Categories, Course codes, Condition, Seller, Price).
+        Within a single group, selections are OR'd (e.g. Books + Uniforms = show either). -->
+    <div style="display:flex;justify-content:space-between;align-items:center"><span class="h3">Filters</span><span class="label-s
+    acc">Reset all</span></div>
+    <div class="field"><span class="label">Listing type</span><div class="seg"><div>Buy <span class="body-s" style="opacity:.6;margin-left:4px">42</span></div><div class="on">Rent <span class="body-s" style="opacity:.6;margin-left:4px">6</span></div><div>All <span class="body-s" style="opacity:.6;margin-left:4px">48</span></div>
+</div></div>
+      <div class="field"><span class="label">Categories <span class="body-s sec" style="font-weight:400">(matches any selected)</span></span>
+      <div class="chips">
+      <span class="chip filter on">PE & Sports Gear (6) <span data-i="x" class="i14 c-cream"></span></span>
+      <span class="chip filter">Books (2)</span><span class="chip filter">Uniforms (3)</span><span class="chip filter">Electronics (1)</span>
+      <span class="chip filter" style="opacity:.4">Dorm (0)</span><span class="chip filter">Misc (1)</span>
+      </div>
+      <div class="body-s sec" style="margin-top:2px">Counts update live based on your other filters — e.g. Dorm shows 0 because nobody's renting dorm items right now</div>
+      </div>
+    <div class="field"><span class="label">Course codes <span class="body-s sec" style="font-weight:400">(matches any selected)</span></span>
     <div class="chips">
       <span class="chip filter on">#PATHFit3 <span data-i="x" class="i14 c-cream"></span></span>
       <span class="chip filter on">#MMW <span data-i="x" class="i14 c-cream"></span></span>
@@ -712,9 +728,28 @@ img{display:block;max-width:100%}
   </div>
 </div></div>
 
+<!-- New · Filters — No matching results -->
+<div class="slot"><label>New · Filters — No matching results</label>
+<div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
+<div class="hdr" style="gap:10px"><span data-i="back"></span><div class="search" style="flex:1;height:44px;border-radius:12px"><span data-i="search" class="i20 c-sec"></span><span class="val">#PATHFit3</span></div><span data-i="sliders"></span></div>
+<div class="pad" style="display:flex;gap:8px;margin-top:4px;flex-wrap:wrap">
+<span class="chip filter on">#PATHFit3 <span data-i="x" class="i16 c-cream"></span></span>
+<span class="chip filter on">Electronics <span data-i="x" class="i16 c-cream"></span></span>
+<span class="chip filter on">Rent <span data-i="x" class="i16 c-cream"></span></span>
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 40px 0;text-align:center;gap:14px">
+<div style="width:80px;height:80px;border-radius:999px;background:var(--copper-100);display:flex;align-items:center;justify-content:center"><span data-i="sliders" style="width:36px;height:36px;color:var(--copper)"></span></div>
+<div><div class="h3">No items match all these filters</div><div class="sec body-s" style="margin-top:6px;max-width:270px">You've combined "Electronics" with "#PATHFit3" — try removing a filter to see more results.</div></div>
+<div class="btn accent" style="max-width:240px">Reset all filters</div>
+<span class="label-s acc" style="cursor:pointer">Remove "Electronics" only</span>
+</div>
+</div></div>
+
 <!-- 08 LISTING DETAIL -->
 <div class="slot"><label>08 · Listing Detail (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hero">
     <!-- FIX: neutral "no photo" placeholder icon instead of an oversized item icon -->
     <span data-i="imgph" style="width:88px;height:88px;color:var(--copper-300)"></span>
@@ -758,6 +793,7 @@ img{display:block;max-width:100%}
 <!-- New · Listing Detail — Buy version (Step 8) -->
 <div class="slot"><label>New · Listing Detail — Buy version</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
 <div class="hero">
   <span data-i="imgph" style="width:88px;height:88px;color:var(--copper-300)"></span>
   <div class="top"><div class="circ"><span data-i="back" class="i20"></span></div><div class="r"><div class="circ"><span data-i="heart" class="i20"></span></div><div class="circ"><span data-i="dots" class="i20"></span></div></div></div>
@@ -785,6 +821,7 @@ img{display:block;max-width:100%}
 <!-- New · Listing Detail — Sold/Unavailable (Step 9) -->
 <div class="slot"><label>New · Listing Detail — Sold/Unavailable</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
 <div class="hero">
   <span data-i="imgph" style="width:88px;height:88px;color:var(--copper-300)"></span>
   <div class="top"><div class="circ"><span data-i="back" class="i20"></span></div></div>
@@ -809,6 +846,7 @@ img{display:block;max-width:100%}
 <!-- New · My Listing — Manage (seller view) (Step 10) -->
 <div class="slot"><label>New · My Listing — Manage (seller view)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
 <div class="hero">
   <span data-i="racket" style="width:80px;height:80px;color:var(--copper-300)"></span>
   <div class="top"><div class="circ"><span data-i="back" class="i20"></span></div><div class="r"><div class="circ"><span data-i="dots" class="i20"></span></div></div></div>
@@ -833,9 +871,46 @@ img{display:block;max-width:100%}
 </div>
 </div></div>
 
+<!-- New · My Listing — Sold (seller view, post-sale summary) -->
+<div class="slot"><label>New · My Listing — Sold (seller view, post-sale summary)</label>
+<div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
+<div class="hdr"><span data-i="back"></span><span class="h3 ttl">My listing</span><span style="width:24px"></span></div>
+<div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:40px">
+<div style="background:var(--red);color:#fff;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:2px">
+<div class="label" style="color:#fff">This item has been marked sold</div>
+<div class="body-s" style="opacity:.85">Sold to Bea T. · Oct 6, 4:39 PM</div>
+</div>
+<div class="card" style="padding:10px;display:flex;gap:10px;align-items:center">
+<div style="width:64px;height:64px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center;flex:none"><span data-i="book" style="color:var(--copper)"></span></div>
+<div style="flex:1"><div class="label">Math in the Modern World, 2nd Ed</div><div class="body-s sec">Like New · #MMW</div><div class="price" style="margin-top:2px">₱350</div></div>
+<span class="pill" style="background:var(--navy-100);color:var(--navy-300)">Sold</span>
+</div>
+<div class="card" style="padding:14px;display:flex;flex-direction:column;gap:2px">
+<div class="h3" style="margin-bottom:6px">Trade summary</div>
+<div class="lrow" style="border-bottom:1px solid var(--sand-300)"><span data-i="user" class="c-acc"></span><div style="flex:1"><div class="label-s">Sold to Bea T.</div><div class="body-s sec">Verified student · 8 trades done</div></div></div>
+<div class="lrow" style="border-bottom:1px solid var(--sand-300)"><span data-i="cash" class="c-acc"></span><div style="flex:1"><div class="label-s">Payment</div><div class="body-s sec">GCash ref #88290</div></div><span class="pill paid">Received</span></div>
+<div class="lrow" style="border-bottom:1px solid var(--sand-300)"><span data-i="pin" class="c-acc"></span><div style="flex:1"><div class="label-s">Meetup</div><div class="body-s sec">Kape Roxas · Oct 6, 4:15 PM</div></div></div>
+<div class="lrow" style="border:none"><span data-i="clock" class="c-acc"></span><div style="flex:1"><div class="label-s">Listed</div><div class="body-s sec">Oct 3 · sold in 5 days</div></div></div>
+</div>
+<div class="stats">
+<div class="stat"><span class="n">43</span><span class="d">total views</span></div>
+<div class="stat"><span class="n">2</span><span class="d">saved by others</span></div>
+<div class="stat"><span class="n">5d</span><span class="d">time to sell</span></div>
+</div>
+<div class="benefit" style="background:var(--copper-100)">
+<div class="ic" style="background:#fff"><span data-i="star" class="c-acc"></span></div>
+<div><div class="label">Rate your trade with Bea</div><div class="body-s sec">Help other sellers know she's a great buyer.</div></div>
+</div>
+<div class="btn outline">Relist this item</div>
+<div class="btn primary">Go to My Listings</div>
+</div>
+</div></div>
+
 <!-- 09 CHAT -->
 <div class="slot"><label>09 · Chat</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr" style="background:#fff;border-bottom:1px solid var(--sand-300)">
     <span data-i="back"></span>
     <div class="avatar" style="width:34px;height:34px"><span data-i="user" class="i16 c-acc"></span></div>
@@ -869,32 +944,51 @@ img{display:block;max-width:100%}
 </div></div>
 
 <!-- New · Inbox (conversation list) (Step 11) -->
+<!-- New · Inbox (conversation list) (Step 11) -->
 <div class="slot"><label>New · Inbox (conversation list, scrolls)</label>
 <div class="screen tall">
-<div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between"><span class="h3">Inbox</span><span data-i="search" class="i20 c-sec"></span></div>
-<div class="pad" style="padding-bottom:100px">
-  <div class="lrow">
-    <div class="avatar" style="width:44px;height:44px"><span data-i="user" class="i20 c-acc"></span></div>
-    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="label">Kai M.</span><span data-i="seal" class="i16"></span></div><div class="body-s sec">Perfect, see you at 4:15 👍</div></div>
-    <span class="body-s sec">2:14 PM</span>
-  </div>
-  <div class="lrow">
-    <div class="avatar" style="width:44px;height:44px"><span data-i="user" class="i20 c-acc"></span></div>
-    <div style="flex:1"><div class="label">Bea T.</div><div class="body-s sec">Is the calc still available?</div></div>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span class="body-s sec">Yesterday</span><span class="unread-dot"></span></div>
-  </div>
-  <div class="lrow" style="border:none">
-    <div class="avatar" style="width:44px;height:44px;background:var(--gold)"><span data-i="store" class="i20" style="color:var(--navy)"></span></div>
-    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="label">CSSEC</span><span data-i="seal-gold" class="i16"></span></div><div class="body-s sec">Your hoodie order is confirmed!</div></div>
-    <span class="body-s sec">2d ago</span>
-  </div>
+<div class="status"><span>9:41</span><div class="bat"></div></div>
+<div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between"><span class="h3">Inbox</span>
+<span data-i="search" class="i20 c-sec"></span></div>
+<div class="pad" style="margin-top:4px"><div class="seg"><div class="on">All</div><div>Buying</div><div>Selling</div></div></div>
+<div class="pad" style="margin-top:12px;padding-bottom:100px">
+<div class="lrow">
+<div class="avatar" style="width:44px;height:44px"><span data-i="user" class="i20 c-acc"></span></div>
+<div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="label">Kai M.</span><span data-i="seal" class="i16"></span></div><div class="body-s sec">Sure, free tomorrow after 4pm, Jacinto…</div><div class="body-s sec" style="margin-top:2px">Badminton racket · ₱80/sem</div></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px"><span class="body-s sec">2:14 PM</span><span class="unread-dot"></span></div>
+</div>
+<div class="lrow">
+<div class="avatar" style="width:44px;height:44px"><span data-i="user" class="i20 c-acc"></span></div>
+<div style="flex:1"><div class="label">Jo R.</div><div class="body-s sec">Is the BP apparatus still available?</div><div class="body-s sec" style="margin-top:2px">BP apparatus · ₱150/sem</div></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px"><span class="body-s sec">Yesterday</span><span class="unread-dot"></span></div>
+</div>
+<div class="lrow">
+<div class="avatar" style="width:44px;height:44px;background:var(--gold)"><span data-i="store" class="i20" style="color:var(--navy)"></span></div>
+<div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="label">Org Name</span><span data-i="seal-gold" class="i16"></span></div><div class="body-s sec">Your pre-order for the Varsity Hoodie is co…</div><div class="body-s sec" style="margin-top:2px">Varsity Hoodie · ₱650</div></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px"><span class="body-s sec">Oct 5</span><span class="unread-dot"></span></div>
+</div>
+<div class="lrow">
+<div class="avatar" style="width:44px;height:44px"><span data-i="user" class="i20 c-acc"></span></div>
+<div style="flex:1"><div class="label">Ana L.</div><div class="body-s sec">Thanks for the meetup! Here's my rat…</div><div class="body-s sec" style="margin-top:2px">Chem lab manual · ₱150</div></div>
+<span class="body-s sec">Oct 4</span>
+</div>
+<div class="lrow">
+<div class="avatar" style="width:44px;height:44px"><span data-i="user" class="i20 c-acc"></span></div>
+<div style="flex:1"><div class="label">Ram S.</div><div class="body-s sec">Hi, is the MMW book still available?</div><div class="body-s sec" style="margin-top:2px">MMW book · ₱350</div></div>
+<span class="body-s sec">Oct 3</span>
+</div>
+<div class="lrow" style="border:none">
+<div class="avatar" style="width:44px;height:44px"><span data-i="user" class="i20 c-acc"></span></div>
+<div style="flex:1"><div class="label">Mico G.</div><div class="body-s sec">Your meetup's confirmed, see you at 6pm!</div><div class="body-s sec" style="margin-top:2px">Casio fx-991EX · ₱600</div></div>
+<span class="body-s sec">Oct 1</span>
+</div>
 </div>
 <div class="tabbar">
-  <div class="tab"><span data-i="home"></span>Home</div>
-  <div class="tab"><span data-i="grid"></span>Browse</div>
-  <div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
-  <div class="tab on"><span data-i="chat"></span>Inbox</div>
-  <div class="tab"><span data-i="user"></span>Me</div>
+<div class="tab"><span data-i="home"></span>Home</div>
+<div class="tab"><span data-i="grid"></span>Browse</div>
+<div class="tab-sell-wrap"><div class="fab-sell"><span data-i="plus"></span></div><span class="tab-label">Sell</span></div>
+<div class="tab on"><span data-i="chat"></span>Inbox</div>
+<div class="tab"><span data-i="user"></span>Me</div>
 </div>
 </div></div>
 
@@ -904,6 +998,7 @@ img{display:block;max-width:100%}
 <!-- 10 SELL -->
 <div class="slot"><label>10 · Sell / New Listing (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">New listing</span><span class="label-s acc">Preview</span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px;padding-bottom:100px">
     <div class="field"><div class="photos"><div><span data-i="camera"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div></div><span class="body-s sec">Add up to 6 photos · first one is the cover</span></div>
@@ -929,6 +1024,7 @@ img{display:block;max-width:100%}
 <!-- 11 BOOST -->
 <div class="slot"><label>11 · Boost this listing (seller)</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">Boost listing</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px">
     <div class="card" style="padding:12px;display:flex;gap:12px;align-items:center">
@@ -951,6 +1047,7 @@ img{display:block;max-width:100%}
 <!-- 12 RATE TRADE -->
 <div class="slot"><label>12 · Rate your trade</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <img class="rays" src="ray1.png" alt="">
   <div class="rel">
     <div class="hdr"><span style="width:24px"></span><span class="h3 ttl">Rate your trade</span><span class="label-s sec">Skip</span></div>
@@ -980,6 +1077,7 @@ img{display:block;max-width:100%}
 <!-- 13 SELLER PROFILE -->
 <div class="slot"><label>13 · Seller profile (public, scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="back"></span><span class="ttl"></span><span data-i="share"></span><span data-i="flag" class="c-red"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:100px">
     <div style="display:flex;gap:14px;align-items:center">
@@ -1009,7 +1107,7 @@ img{display:block;max-width:100%}
     <div class="sh" style="margin:0"><span class="h3">Listings (3)</span></div>
     <div class="grid">
       <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span></div><div class="bd"><span class="price">₱80 <span class="per">/sem</span></span><span class="ttl">Badminton racket + case</span><span class="body-s sec">Good · #PATHFit3</span></div></div>
-      <div class="card"><div class="im"><img src="books.png" alt=""></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span></div></div>
+      <div class="card"><div class="im"><span data-i="book"></span></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span></div></div>
     </div>
   </div>
   <div class="cta"><div class="btn primary"><span data-i="chat" class="i20 c-cream"></span>Message Kai</div></div>
@@ -1018,6 +1116,7 @@ img{display:block;max-width:100%}
 <!-- 14 REPORT A LISTING -->
 <div class="slot"><label>14 · Report a listing (new)</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">Report listing</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px">
     <div class="card" style="padding:12px;display:flex;gap:12px;align-items:center">
@@ -1046,6 +1145,7 @@ img{display:block;max-width:100%}
 <!-- 15 EMPTY STATE -->
 <div class="slot"><label>15 · Empty State — #Theo</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <img class="rays" src="ray1.png" alt="">
   <div class="rel" style="height:100%;display:flex;flex-direction:column">
     <div class="hdr" style="gap:10px">
@@ -1073,11 +1173,12 @@ img{display:block;max-width:100%}
 <!-- 16 WISHLIST -->
 <div class="slot"><label>16 · Saved items / Wishlist (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Saved items</span><span class="label-s acc">Edit</span></div>
   <div class="pad" style="margin-top:4px"><div class="seg"><div class="on">All 9</div><div>Buy 6</div><div>Rent 3</div></div></div>
   <div class="pad" style="margin-top:16px;padding-bottom:100px">
     <div class="grid">
-      <div class="card"><div class="im"><img src="books.png" alt=""><div class="heart"><span data-i="heart-filled" class="c-red"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★4.8</span></span></div></div>
+      <div class="card"><div class="im"><span data-i="book"></span><div class="heart"><span data-i="heart-filled" class="c-red"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★4.8</span></span></div></div>
       <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart-filled" class="c-red"></span></div></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket + 3 shuttles</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Bea T.<span class="rate">★5.0</span></span></div></div>
       <div class="card"><div class="im"><span data-i="calc"></span><div class="heart"><span data-i="heart-filled" class="c-red"></span></div></div><div class="bd"><span class="price">₱600</span><span class="ttl">Casio fx-991EX scientific calc</span><span class="body-s sec">Good · Electronics</span><span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★4.6</span></span></div></div>
       <div class="card"><div class="im"><span data-i="tshirt"></span><div class="heart"><span data-i="heart-filled" class="c-red"></span></div></div><div class="bd"><span class="price">₱450</span><span class="ttl">Nursing duty whites, size M</span><span class="body-s sec">Good · Uniforms</span><span class="badge"><span data-i="seal"></span>Jo R.<span class="rate">★4.9</span></span></div></div>
@@ -1100,6 +1201,7 @@ img{display:block;max-width:100%}
 <!-- 17 ME -->
 <div class="slot"><label>17 · Me (own profile, scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between"><span class="h3">Me</span><span data-i="settings" class="i20 c-sec"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:100px">
     <div style="display:flex;gap:14px;align-items:center">
@@ -1123,8 +1225,10 @@ img{display:block;max-width:100%}
       </div>
     </div>
     <div>
-      <div class="lrow"><span data-i="heart" class="c-acc"></span><span>Saved items</span><span class="r sec body-s">9</span><span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
-      <div class="lrow"><span data-i="seal-gold" class="c-acc"></span><span>Verify my org / club</span><span class="r"><span data-i="chev-r" class="c-sec"></span></span></div>
+      <div class="lrow"><span data-i="heart" class="c-acc"></span><span>Saved items</span><span class="r" style="display:flex;align-items:center;gap:6px"><span class="sec body-s">9</span><span data-i="chev-r" class="c-sec"></span></span></div>
+      <div class="lrow"><span data-i="ticket" class="c-acc"></span><span>My coupons</span><span class="r" style="display:flex;align-items:center;gap:6px"><span class="pill pend">1 unused</span><span data-i="chev-r" class="c-sec"></span></span></div>
+      <div class="lrow"><span data-i="seal-gold" class="c-acc"></span><span>Verify my org / club</span><span class="r"><span data-
+      i="chev-r" class="c-sec"></span></span></div>
       <div class="lrow"><span data-i="gift" class="c-acc"></span><span>Invite friends</span><span class="r pill" style="background:var(--copper-100);color:var(--copper);text-transform:none">2 boosts earned</span></div>
       <div class="lrow"><span data-i="bell" class="c-acc"></span><span>Notifications</span><span class="r"><span class="unread-dot"></span></span></div>
       <div class="lrow"><span data-i="cash" class="c-acc"></span><span>Payment info</span><span class="r sec body-s">GCash 0917•••2210</span></div>
@@ -1144,6 +1248,7 @@ img{display:block;max-width:100%}
 <!-- 18 NOTIFICATIONS -->
 <div class="slot"><label>18 · Notifications (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Notifications</span><span class="label-s acc">Mark all read</span></div>
   <div class="pad" style="margin-top:4px"><div class="seg"><div class="on">All</div><div>Unread</div></div></div>
   <div class="pad" style="margin-top:16px;padding-bottom:100px">
@@ -1152,7 +1257,7 @@ img{display:block;max-width:100%}
     <div class="lrow"><div class="nicon" style="background:#DDEBE3"><span data-i="check-c" style="color:var(--green)"></span></div><div><div class="label-s">Your offer was accepted</div><div class="body-s sec">Badminton racket · ₱80/sem · 1 hr ago</div></div><span class="unread-dot" style="margin-left:auto"></span></div>
     <div class="body-s sec" style="margin:16px 0 8px">Earlier</div>
     <div class="lrow"><div class="nicon" style="background:var(--copper-100)"><span data-i="star" style="color:var(--gold)"></span></div><div><div class="label-s">Bea T. rated you 5★</div><div class="body-s sec">"On time, great condition!" · Yesterday</div></div></div>
-    <div class="lrow"><div class="nicon" style="background:var(--copper-100)"><span data-i="pkg" style="color:var(--copper)"></span></div><div><div class="label-s">CSSEC pre-order update</div><div class="body-s sec">Hoodie confirmed to push through — 86/120 · 2d ago</div></div></div>
+    <div class="lrow"><div class="nicon" style="background:var(--copper-100)"><span data-i="pkg" style="color:var(--copper)"></span></div><div><div class="label-s">KM Club pre-order update</div><div class="body-s sec">Hoodie confirmed to push through — 86/120 · 2d ago</div></div></div>
     <div class="lrow"><div class="nicon" style="background:var(--copper-100)"><span data-i="ticket" style="color:var(--copper)"></span></div><div><div class="label-s">Your coupon expires soon</div><div class="body-s sec">Kape Roxas 5% off · valid until 8PM today · 2d ago</div></div></div>
     <div class="lrow" style="border:none"><div class="nicon" style="background:#F6E4E2"><span data-i="heart" style="color:var(--red)"></span></div><div><div class="label-s">Price drop on a saved item</div><div class="body-s sec">Casio fx-991EX now ₱600, was ₱750 · 3d ago</div></div></div>
   </div>
@@ -1161,6 +1266,7 @@ img{display:block;max-width:100%}
 <!-- 19 REFERRAL -->
 <div class="slot"><label>19 · Invite friends / Referral</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <img class="rays" src="ray1.png" alt="">
   <div class="rel">
     <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Invite friends</span><span style="width:24px"></span></div>
@@ -1190,16 +1296,45 @@ img{display:block;max-width:100%}
   </div>
 </div></div>
 
+<div class="slot"><label>New · My coupons (student, scrolls)</label>
+<div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
+<div class="hdr"><span data-i="back"></span><span class="h3 ttl">My coupons</span><span style="width:24px"></span></div>
+<div class="pad" style="margin-top:4px"><div class="seg"><div class="on">All</div><div>Unused</div><div>Used</div><div>Expired</div></div></div>
+<div class="pad" style="margin-top:16px;display:flex;flex-direction:column;gap:14px;padding-bottom:40px">
+<div class="coupon">
+<div><div class="pct">5% OFF</div><div class="sm">any drink at Kape Roxas</div></div>
+<div class="dash"></div>
+<div style="flex:1"><div class="sm">Show this at the counter</div><div style="font-size:18px;font-weight:700;letter-spacing:2px;color:#fff;margin-top:2px">KM-4X7Q</div><div class="sm" style="margin-top:2px">Unlocked from meetup with Kai M. · Oct 8</div></div>
+<span class="pill pend" style="align-self:flex-start">Unused</span>
+</div>
+<div class="coupon" style="background:var(--sand);color:var(--navy);opacity:.7">
+<div><div class="pct" style="color:var(--navy)">10% OFF</div><div class="sm" style="color:var(--navy-300)">printing at PrintHub Roxas</div></div>
+<div class="dash" style="border-color:rgba(11,42,62,.2)"></div>
+<div style="flex:1"><div class="sm" style="color:var(--navy-300)">Redeemed at counter</div><div style="font-size:18px;font-weight:700;letter-spacing:2px;margin-top:2px">KM-9Z12</div><div class="sm" style="color:var(--navy-300);margin-top:2px">Used Oct 5 · 2:10 PM</div></div>
+<span class="pill paid" style="align-self:flex-start">Used</span>
+</div>
+<div class="coupon" style="background:var(--navy-100);color:var(--navy-300);opacity:.6">
+<div><div class="pct" style="color:var(--navy-300)">5% OFF</div><div class="sm">any drink at Kape Roxas</div></div>
+<div class="dash" style="border-color:rgba(11,42,62,.15)"></div>
+<div style="flex:1"><div class="sm">Expired unused</div><div style="font-size:18px;font-weight:700;letter-spacing:2px;margin-top:2px">KM-2P81</div><div class="sm" style="margin-top:2px">Expired Sep 30</div></div>
+<span class="pill danger" style="align-self:flex-start">Expired</span>
+</div>
+<div class="body-s sec center" style="margin-top:4px">Coupons unlock when a meetup at a partner spot is confirmed, and expire at the end of that meetup day.</div>
+</div>
+</div></div>
+
 <!-- ═══════════════════════════ ORGS &amp; CLUBS ═══════════════════════════ -->
 <div class="persona">Student <span>Orgs &amp; Clubs</span></div>
 
 <!-- 20 APPLY -->
 <div class="slot"><label>20 · Apply for Org/Club badge (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Verify your org or club</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-bottom:100px">
     <div><div class="h1">Your org/club, <span class="acc">more visible.</span></div><div class="sec" style="margin-top:6px;font-size:13px">Reach students already browsing for what you're selling.</div></div>
-    <div class="benefit"><div class="ic"><span data-i="seal-gold"></span></div><div><div class="label">Gold Official badge</div><div class="body-s sec">Students know it's the real CSSEC/JPIA/Dance Club — not a random reseller.</div></div></div>
+    <div class="benefit"><div class="ic"><span data-i="seal-gold"></span></div><div><div class="label">Gold Official badge</div><div class="body-s sec">Students know it's the real KM Club/JPIA/Dance Club — not a random reseller.</div></div></div>
     <div class="benefit"><div class="ic"><span data-i="pkg"></span></div><div><div class="label">Run pre-orders properly</div><div class="body-s sec">Sizes, quantities, deadline — GCash number shown to buyer. No more Google Forms chaos.</div></div></div>
     <div class="benefit"><div class="ic"><span data-i="store"></span></div><div><div class="label">Your own storefront</div><div class="body-s sec">List hoodies, shirts, stickers, lanyards, pins, tote bags — anything you sell.</div></div></div>
     <div class="benefit"><div class="ic"><span data-i="bolt"></span></div><div><div class="label">Featured on Home · "Org &amp; Club drops"</div><div class="body-s sec">Seen by every student who opens the app, not just your followers.</div></div></div>
@@ -1208,7 +1343,7 @@ img{display:block;max-width:100%}
       <div class="plan"><span class="label">Starter</span><span class="pr">₱299 <small>/sem</small></span><li>✓ Org/Club badge</li><li>✓ List up to 10 items</li><li>✓ Basic pre-order (1 active)</li><li>· Featured on Home</li><li>· Analytics</li></div>
       <div class="plan on"><div style="display:flex;justify-content:space-between"><span class="label">Full</span><span class="pill gold">Popular</span></div><span class="pr">₱599 <small>/sem</small></span><li>✓ Everything in Starter</li><li>✓ Unlimited listings</li><li>✓ Unlimited pre-orders</li><li>✓ Featured on Home</li><li>✓ Order list + export</li><li>✓ Analytics</li></div>
     </div>
-    <div class="field"><span class="label">Organization / club name *</span><div class="input"><span class="val">CSSEC — Computer Studies Student Exec. Council</span></div></div>
+    <div class="field"><span class="label">Organization / club name *</span><div class="input"><span class="val">KM Club — KnightMarket Club</span></div></div>
     <div class="field"><span class="label">Type *</span><div class="input"><span class="val" style="flex:1">Accredited org (SAMAHAN-recognized)</span><span data-i="chev-d" class="i20"></span></div></div>
     <div class="field"><span class="label">Adviser / moderator email *</span><div class="input"><span class="val">jdelacruz@addu.edu.ph</span></div></div>
     <div class="field"><span class="label">Proof of accreditation / recognition *</span>
@@ -1224,9 +1359,10 @@ img{display:block;max-width:100%}
 <!-- 21 DASHBOARD -->
 <div class="slot"><label>21 · Org/Club dashboard (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="orghdr" style="padding-top:8px">
     <div class="avatar"><span data-i="store" class="i28"></span></div>
-    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="h2">CSSEC</span><span data-i="seal-gold" class="i20"></span></div><div class="body-s" style="color:rgba(250,246,236,.7)">Full plan · active until Dec 20</div></div>
+    <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="h2">KM Club</span><span data-i="seal-gold" class="i20"></span></div><div class="body-s" style="color:rgba(250,246,236,.7)">Full plan · active until Dec 20</div></div>
     <span data-i="bell" class="c-cream"></span>
   </div>
   <div class="pad" style="display:flex;flex-direction:column;gap:20px;padding-top:20px;padding-bottom:110px">
@@ -1243,7 +1379,7 @@ img{display:block;max-width:100%}
       <div class="card" style="padding:14px;display:flex;flex-direction:column;gap:10px">
         <div style="display:flex;gap:12px;align-items:center">
           <div style="width:44px;height:44px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="hoodie" style="color:var(--copper)"></span></div>
-          <div style="flex:1"><div class="label">CSSEC Varsity Hoodie 2025</div><div class="body-s sec">₱650 · closes in <b class="acc" style="font-weight:500">4 days</b></div></div>
+          <div style="flex:1"><div class="label">KM Club Varsity Hoodie 2025</div><div class="body-s sec">₱650 · closes in <b class="acc" style="font-weight:500">4 days</b></div></div>
           <span class="pill pre">Live</span>
         </div>
         <div class="prog"><i style="width:72%"></i></div>
@@ -1254,7 +1390,7 @@ img{display:block;max-width:100%}
     <div>
       <div class="sh"><span class="h3">In-hand merch</span><span class="label-s acc">+ Add item</span></div>
       <div class="grid">
-        <div class="card"><div class="im"><span data-i="tshirt"></span></div><div class="bd"><span class="price">₱250</span><span class="ttl">CSSEC Shirt 2025 — Navy</span><span class="body-s sec">In stock · S–XL</span></div></div>
+        <div class="card"><div class="im"><span data-i="tshirt"></span></div><div class="bd"><span class="price">₱250</span><span class="ttl">KM Club Shirt 2025 — Navy</span><span class="body-s sec">In stock · S–XL</span></div></div>
         <div class="card"><div class="im"><span data-i="tag"></span></div><div class="bd"><span class="price">₱80</span><span class="ttl">Lanyard + ID holder</span><span class="body-s sec">In stock · 32 left</span></div></div>
       </div>
     </div>
@@ -1286,6 +1422,7 @@ img{display:block;max-width:100%}
 <!-- 22 ORG ANALYTICS DEEP-DIVE (new) -->
 <div class="slot"><label>22 · Org analytics deep-dive (new, scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Analytics</span><span data-i="upload" class="i20"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:20px;padding-bottom:40px">
     <div class="seg"><div class="on">This sem</div><div>Last sem</div><div>All time</div></div>
@@ -1306,7 +1443,7 @@ img{display:block;max-width:100%}
       <div class="sh"><span class="h3">Top performing items</span></div>
       <div class="lrow"><span class="label-s" style="width:20px">1</span><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="hoodie" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">Varsity Hoodie 2025</div><div class="body-s sec">86 orders · ₱55.9k</div></div></div>
       <div class="lrow"><span class="label-s" style="width:20px">2</span><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="tag" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">Lanyard + ID holder</div><div class="body-s sec">48 sold · ₱3.8k</div></div></div>
-      <div class="lrow" style="border:none"><span class="label-s" style="width:20px">3</span><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="tshirt" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">CSSEC Shirt 2025</div><div class="body-s sec">31 sold · ₱7.75k</div></div></div>
+      <div class="lrow" style="border:none"><span class="label-s" style="width:20px">3</span><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="tshirt" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">KM Club Shirt 2025</div><div class="body-s sec">31 sold · ₱7.75k</div></div></div>
     </div>
     <div>
       <div class="sh"><span class="h3">Follower growth</span></div>
@@ -1322,10 +1459,11 @@ img{display:block;max-width:100%}
 <!-- 23 NEW PRE-ORDER -->
 <div class="slot"><label>23 · New pre-order (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">New pre-order</span><span class="label-s acc">Preview</span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px;padding-bottom:100px">
     <div class="field"><div class="photos"><div><span data-i="hoodie"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div></div><span class="body-s sec">Mockups are fine — show front and back</span></div>
-    <div class="field"><span class="label">Item name *</span><div class="input"><span class="val">CSSEC Varsity Hoodie 2025</span></div></div>
+    <div class="field"><span class="label">Item name *</span><div class="input"><span class="val">KM Club Varsity Hoodie 2025</span></div></div>
     <div class="field"><span class="label">Category *</span><div class="input"><span class="val" style="flex:1">Clothing &amp; Merch</span><span data-i="chev-d" class="i20"></span></div></div>
     <div class="field"><span class="label">Price per piece *</span><div class="input"><span style="font-weight:500">₱</span><span class="val">650</span></div></div>
     <div class="field"><span class="label">Sizes offered <span class="body-s sec" style="font-weight:400">(skip if one-size)</span></span><div class="sizes"><div>XS</div><div class="on">S</div><div class="on">M</div><div class="on">L</div><div class="on">XL</div><div>XXL</div></div></div>
@@ -1342,7 +1480,7 @@ img{display:block;max-width:100%}
     <div class="trow"><div><div class="label">Require downpayment</div><div class="body-s sec">₱200 now — balance paid on pickup</div></div><div class="toggle"></div></div>
     <div class="field"><span class="label">Pickup details</span><div class="input"><span data-i="pin" class="i20 c-sec"></span><span class="val" style="flex:1">Finster Hall lobby · Oct 28–30, 1–5 PM</span></div></div>
     <div class="trow"><div><div class="label" style="display:flex;align-items:center;gap:6px">Feature on Home <span class="pill gold">Full plan</span></div><div class="body-s sec">Shows in "Org &amp; Club drops" until deadline</div></div><div class="toggle"></div></div>
-    <div class="trow"><div><div class="label">Notify followers</div><div class="body-s sec">2,310 students follow CSSEC</div></div><div class="toggle"></div></div>
+    <div class="trow"><div><div class="label">Notify followers</div><div class="body-s sec">2,310 students follow KM Club</div></div><div class="toggle"></div></div>
   </div>
   <div class="cta" style="padding:12px 16px 20px"><div class="btn primary">Publish pre-order</div></div>
 </div></div>
@@ -1350,6 +1488,7 @@ img{display:block;max-width:100%}
 <!-- 24 ADD MERCH -->
 <div class="slot"><label>24 · Add merch item — in-hand stock (new)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="x"></span><span class="h3 ttl">Add merch item</span><span class="label-s acc">Preview</span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-top:8px;padding-bottom:100px">
     <div class="field"><div class="photos"><div><span data-i="tag"></span></div><div><span data-i="plus"></span></div><div><span data-i="plus"></span></div></div><span class="body-s sec">Add photos of the actual item</span></div>
@@ -1361,12 +1500,30 @@ img{display:block;max-width:100%}
     </div>
     <div class="field"><span class="label">Price *</span><div class="input"><span style="font-weight:500">₱</span><span class="val">45</span></div></div>
     <div class="field"><span class="label">Stock quantity *</span><div class="input"><span class="val">10</span><span class="sec body-s" style="margin-left:auto">pcs left</span></div></div>
-    <div class="field"><span class="label">Sizes <span class="body-s sec" style="font-weight:400">(skip if not applicable)</span></span><div class="sizes"><div>XS</div><div>S</div><div>M</div><div>L</div><div>XL</div></div></div>
-    <div class="field"><span class="label">How do buyers pay? *</span>
-      <div class="seg"><div class="on">GCash</div><div>Cash</div><div>Both</div></div>
-      <div class="input" style="margin-top:6px"><span data-i="cash" class="i20 c-sec"></span><span class="val" style="flex:1">GCash number: 0917 ••• 4421</span></div>
+    <div class="field"><span class="label">Sizes <span class="body-s sec" style="font-weight:400">(skip if not applicable)</span>
+    </span><div class="sizes"><div>XS</div><div>S</div><div>M</div><div>L</div><div>XL</div></div></div>
+    <div class="field"><span class="label">Variants <span class="body-s sec" style="font-weight:400">(optional — different designs/colors, e.g. Pin design 1, 2, 3)</span></span>
+    <div style="display:flex;flex-direction:column;gap:8px">
+    <div class="trow">
+    <span class="val" style="flex:1">Design 1 — Campus skyline</span>
+    <div class="input" style="width:64px;height:36px;padding:0 10px;flex:none"><span class="val">10</span></div>
+    <span data-i="x" class="i16 c-sec"></span>
     </div>
-    <div class="field"><span class="label">Pickup / claim spot</span><div class="input"><span data-i="pin" class="i20 c-sec"></span><span class="val" style="flex:1">CSSEC office, Finster Hall</span></div></div>
+    <div class="trow">
+    <span class="val" style="flex:1">Design 2 — Mascot</span>
+    <div class="input" style="width:64px;height:36px;padding:0 10px;flex:none"><span class="val">10</span></div>
+    <span data-i="x" class="i16 c-sec"></span>
+    </div>
+    <span class="chip outline" style="align-self:flex-start"><span data-i="plus" class="i14"></span> Add variant</span>
+    </div>
+    <div class="body-s sec">Each variant gets its own name and stock count. If you add variants, they replace the single "Stock quantity" field above.</div>
+    </div>
+    <div class="field"><span class="label">How do buyers pay? *</span>
+    <div class="seg"><div class="on">GCash</div><div>Cash</div><div>Both</div></div>
+    <div class="input" style="margin-top:6px"><span data-i="cash" class="i20 c-sec"></span><span class="val" style="flex:1">GCash
+    number: 0917 ••• 4421</span></div>
+    </div>
+    <div class="field"><span class="label">Pickup / claim spot</span><div class="input"><span data-i="pin" class="i20 c-sec"></span><span class="val" style="flex:1">KM Club office, Finster Hall</span></div></div>
     <div class="field"><span class="label">Description</span><div class="input textarea">Limited run, while supplies last…</div></div>
   </div>
   <div class="cta" style="padding:12px 16px 20px"><div class="btn primary">Add to storefront</div></div>
@@ -1375,12 +1532,13 @@ img{display:block;max-width:100%}
 <!-- 25 STOREFRONT -->
 <div class="slot"><label>25 · Org/Club storefront — student view (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="orghdr" style="padding-top:4px;flex-wrap:wrap">
     <span data-i="back" class="c-cream" style="width:100%;margin-bottom:4px"></span>
     <div class="avatar"><span data-i="store" class="i28"></span></div>
     <div style="flex:1">
-      <div style="display:flex;align-items:center;gap:6px"><span class="h2">CSSEC</span><span data-i="seal-gold" class="i20"></span></div>
-      <div class="body-s" style="color:rgba(250,246,236,.7)">Computer Studies Student Executive Council</div>
+      <div style="display:flex;align-items:center;gap:6px"><span class="h2">KM Club</span><span data-i="seal-gold" class="i20"></span></div>
+      <div class="body-s" style="color:rgba(250,246,236,.7)">KnightMarket Club</div>
       <div style="display:flex;gap:8px;align-items:center;margin-top:2px"><span class="stars"><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span><span data-i="star"></span></span><span class="body-s" style="color:var(--cream-50)">4.9 <span style="opacity:.6">(140) · 2.3k followers</span></span></div>
     </div>
     <div class="btn outline sm" style="border-color:var(--cream-50);color:var(--cream-50)">+ Follow</div>
@@ -1392,7 +1550,7 @@ img{display:block;max-width:100%}
         <div class="im" style="height:180px"><span data-i="hoodie" style="width:80px;height:80px;color:var(--copper)"></span><span class="pill pre">Preorder</span></div>
         <div class="bd" style="gap:8px;padding:14px">
           <div style="display:flex;justify-content:space-between;align-items:center"><span class="price">₱650</span><span class="badge"><span data-i="seal-gold"></span>Official</span></div>
-          <div class="h3">CSSEC Varsity Hoodie 2025</div>
+          <div class="h3">KM Club Varsity Hoodie 2025</div>
           <div class="prog"><i style="width:72%"></i></div>
           <div style="display:flex;justify-content:space-between" class="body-s"><span><b>86</b> ordered · 34 slots left</span><span style="color:var(--green);font-weight:500">✓ Confirmed</span></div>
           <div class="body-s sec">GCash 0917-xxx-4421 · Pickup Finster lobby Oct 28–30</div>
@@ -1403,7 +1561,7 @@ img{display:block;max-width:100%}
     <div>
       <div class="sh"><span class="h3">Buy now</span><span class="body-s sec">Available in hand</span></div>
       <div class="grid">
-        <div class="card"><div class="im"><span data-i="tshirt"></span></div><div class="bd"><span class="price">₱250</span><span class="ttl">CSSEC Shirt 2025 — Navy</span><span class="body-s sec">S, M, L, XL</span></div></div>
+        <div class="card"><div class="im"><span data-i="tshirt"></span></div><div class="bd"><span class="price">₱250</span><span class="ttl">KM Club Shirt 2025 — Navy</span><span class="body-s sec">S, M, L, XL</span></div></div>
         <div class="card"><div class="im"><span data-i="tag"></span></div><div class="bd"><span class="price">₱80</span><span class="ttl">Lanyard + ID holder</span><span class="body-s sec">In stock</span></div></div>
         <div class="card"><div class="im"><span data-i="tag"></span></div><div class="bd"><span class="price">₱60</span><span class="ttl">Sticker pack (6 pcs)</span><span class="body-s sec">In stock</span></div></div>
         <div class="card"><div class="im"><span data-i="tag"></span></div><div class="bd"><span class="price">₱45</span><span class="ttl">Enamel pin set</span><span class="body-s sec">Limited · 10 left</span></div></div>
@@ -1423,6 +1581,7 @@ img{display:block;max-width:100%}
 <!-- 26 ORDERS LIST -->
 <div class="slot"><label>26 · Pre-order orders list (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="back"></span><div style="flex:1"><div class="h3">Varsity Hoodie</div><div class="body-s sec">Orders · closes Oct 15</div></div><span data-i="dots"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:110px">
     <div class="stats">
@@ -1452,6 +1611,7 @@ img{display:block;max-width:100%}
 <!-- 27 PITCH -->
 <div class="slot"><label>27 · Partner with KnightMarket (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">For businesses</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:14px;padding-bottom:100px">
     <div style="background:var(--navy);border-radius:20px;padding:20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
@@ -1480,6 +1640,7 @@ img{display:block;max-width:100%}
 <!-- 28 DASHBOARD -->
 <div class="slot"><label>28 · Business dashboard (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="orghdr" style="padding-top:8px">
     <div class="avatar" style="background:var(--copper)"><span data-i="coffee" class="i28 c-white"></span></div>
     <div style="flex:1"><div style="display:flex;align-items:center;gap:6px"><span class="h2">Kape Roxas</span><span class="pill partner">Advertiser</span></div><div class="body-s" style="color:rgba(250,246,236,.7)">Plan renews Nov 1</div></div>
@@ -1534,6 +1695,7 @@ img{display:block;max-width:100%}
 <!-- 29 PLAN MANAGEMENT -->
 <div class="slot"><label>29 · Business plan management / upgrade (new)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Billing &amp; plan</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px;padding-bottom:40px">
     <div class="card" style="padding:16px;display:flex;flex-direction:column;gap:8px;border:1.5px solid var(--copper)">
@@ -1568,6 +1730,7 @@ img{display:block;max-width:100%}
 <!-- 30 MEETUP PICKER -->
 <div class="slot"><label>30 · Propose meetup — student sees partner spots</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr" style="background:#fff;border-bottom:1px solid var(--sand-300)">
     <span data-i="back"></span>
     <div class="avatar" style="width:32px;height:32px"><span data-i="user" class="i16 c-acc"></span></div>
@@ -1602,7 +1765,8 @@ img{display:block;max-width:100%}
 <!-- 31 COUPON UNLOCKED -->
 <div class="slot"><label>31 · Meetup confirmed → coupon unlocked (student)</label>
 <div class="screen">
-  <img class="rays" src="ray1.png" alt=""><img class="noise" src="noise.png" alt="">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
+  <div class="rays" style="background:radial-gradient(circle at 50% -10%,rgba(242,201,76,.35),transparent 60%)"></div>
   <div class="rel">
     <div class="hdr"><span style="width:24px"></span><span class="ttl"></span><span data-i="x"></span></div>
     <div class="pad" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center;padding-top:8px">
@@ -1613,7 +1777,8 @@ img{display:block;max-width:100%}
         <div style="flex:1"><div class="label">Kape Roxas</div><div class="body-s sec">Roxas Ave, across Jacinto gate</div><div class="body-s" style="margin-top:2px"><b style="font-weight:600">Tue, Oct 8 · 4:15 PM</b></div></div>
         <span data-i="nav" class="c-acc"></span>
       </div>
-      <div class="coupon" style="width:358px;text-align:left">
+        <div style="width:358px;display:flex;justify-content:flex-end"><span class="pill pend">Not yet redeemed</span></div>
+        <div class="coupon" style="width:358px;text-align:left">
         <div><div class="pct">5% OFF</div><div class="sm">any drink at Kape Roxas</div></div>
         <div class="dash"></div>
         <div style="flex:1"><div class="sm">Show this at the counter</div><div style="font-size:20px;font-weight:700;letter-spacing:3px;color:#fff;margin-top:2px">KM-4X7Q</div><div class="sm" style="margin-top:2px">Valid Oct 8 only · until 8 PM</div></div>
@@ -1630,6 +1795,7 @@ img{display:block;max-width:100%}
 <!-- 32 VERIFY COUPON STAFF -->
 <div class="slot"><label>32 · Verify a coupon code (staff side)</label>
 <div class="screen">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="hdr"><span data-i="back"></span><span class="h3 ttl">Verify a coupon</span><span style="width:24px"></span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center">
     <div class="sec body-s">Ask the student for their code and enter it below</div>
@@ -1656,6 +1822,7 @@ img{display:block;max-width:100%}
 <!-- 33 AD PLACEMENTS -->
 <div class="slot"><label>33 · Ad placements — student sees in Home (scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="pad" style="height:48px;display:flex;align-items:center;justify-content:space-between">
     <div style="display:flex;align-items:center;gap:8px">
       <div style="width:26px;height:26px;border-radius:8px;background:var(--navy);display:flex;align-items:center;justify-content:center"><span data-i="shield" style="width:16px;height:16px;color:var(--cream-50)"></span></div>
@@ -1688,7 +1855,7 @@ img{display:block;max-width:100%}
   <div class="pad sec-gap" style="padding-bottom:110px">
     <div class="sh"><span class="h2">New near you</span></div>
     <div class="grid">
-      <div class="card"><div class="im"><img src="books.png" alt=""><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★4.8</span></span></div></div>
+      <div class="card"><div class="im"><span data-i="book"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱350</span><span class="ttl">Math in the Modern World, 2nd Ed</span><span class="body-s sec">Like New · #MMW</span><span class="badge"><span data-i="seal"></span>Kai M.<span class="rate">★4.8</span></span></div></div>
       <div class="card spons"><div class="im" style="background:var(--copper-100)"><span data-i="printer" style="color:var(--copper);width:56px;height:56px"></span><span class="sp">SPONSORED</span></div><div class="bd"><span class="price">₱2 <span class="per">/page</span></span><span class="ttl">Thesis printing + binding, same day</span><span class="body-s sec">PrintHub Roxas · 4 min walk</span><span class="badge acc"><span data-i="ticket" class="c-acc"></span>10% off for KM users</span></div></div>
       <div class="card"><div class="im"><span data-i="racket"></span><span class="pill rent">Rent</span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱120 <span class="per">/sem</span></span><span class="ttl">Yonex racket + 3 shuttles</span><span class="body-s sec">Like New · #PATHFit3</span><span class="badge"><span data-i="seal"></span>Bea T.<span class="rate">★5.0</span></span></div></div>
       <div class="card"><div class="im"><span data-i="calc"></span><div class="heart"><span data-i="heart"></span></div></div><div class="bd"><span class="price">₱600</span><span class="ttl">Casio fx-991EX scientific calc</span><span class="body-s sec">Good · Electronics</span><span class="badge"><span data-i="seal"></span>Mico G.<span class="rate">★4.6</span></span></div></div>
@@ -1710,6 +1877,7 @@ img{display:block;max-width:100%}
 <!-- 34 ADMIN -->
 <div class="slot"><label>34 · Admin moderation dashboard (reference, scrolls)</label>
 <div class="screen tall">
+<div class="status"><span>9:41</span><div class="bat"></div></div>
   <div class="adminbar"><span data-i="shield" class="i20 c-cream"></span><span class="label" style="color:#fff">KnightMarket Admin</span><span class="label-s" style="margin-left:auto;color:rgba(250,246,236,.7)">Moderator: Staff01</span></div>
   <div class="pad" style="display:flex;flex-direction:column;gap:20px;padding-top:16px;padding-bottom:40px">
     <div class="stats">
@@ -1719,7 +1887,7 @@ img{display:block;max-width:100%}
     </div>
     <div>
       <div class="sh"><span class="h3">Org / Club verification queue</span></div>
-      <div class="admin-row"><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="store" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">CSSEC</div><div class="body-s sec">Submitted by Mico G. · cert attached</div></div><div class="admin-actions"><div class="icobtn ok"><span data-i="check-c"></span></div><div class="icobtn no"><span data-i="x-circle"></span></div></div></div>
+      <div class="admin-row"><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="store" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">KM Club</div><div class="body-s sec">Submitted by Mico G. · cert attached</div></div><div class="admin-actions"><div class="icobtn ok"><span data-i="check-c"></span></div><div class="icobtn no"><span data-i="x-circle"></span></div></div></div>
       <div class="admin-row"><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="store" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">Dance Troupe Club</div><div class="body-s sec">Submitted by Nica R. · missing adviser email</div></div><div class="admin-actions"><div class="icobtn ok"><span data-i="check-c"></span></div><div class="icobtn no"><span data-i="x-circle"></span></div></div></div>
       <div class="admin-row" style="border:none"><div style="width:36px;height:36px;border-radius:8px;background:var(--sand);display:flex;align-items:center;justify-content:center"><span data-i="store" style="width:18px;height:18px;color:var(--copper)"></span></div><div style="flex:1"><div class="label-s">JPIA</div><div class="body-s sec">Submitted by Carlo D. · cert attached</div></div><div class="admin-actions"><div class="icobtn ok"><span data-i="check-c"></span></div><div class="icobtn no"><span data-i="x-circle"></span></div></div></div>
     </div>
@@ -1732,7 +1900,7 @@ img{display:block;max-width:100%}
     <div>
       <div class="sh"><span class="h3">Open disputes</span></div>
       <div class="admin-row"><div class="avatar" style="width:32px;height:32px"><span data-i="user" class="i14 c-acc"></span></div><div style="flex:1"><div class="label-s">Ram S. vs. Ana L.</div><div class="body-s sec">Item not received after payment · racket rental</div></div><span class="label-s acc">Review</span></div>
-      <div class="admin-row" style="border:none"><div class="avatar" style="width:32px;height:32px"><span data-i="user" class="i14 c-acc"></span></div><div style="flex:1"><div class="label-s">Jo R. vs. CSSEC</div><div class="body-s sec">Pre-order paid but not received</div></div><span class="label-s acc">Review</span></div>
+      <div class="admin-row" style="border:none"><div class="avatar" style="width:32px;height:32px"><span data-i="user" class="i14 c-acc"></span></div><div style="flex:1"><div class="label-s">Jo R. vs. KM Club</div><div class="body-s sec">Pre-order paid but not received</div></div><span class="label-s acc">Review</span></div>
     </div>
     <div class="body-s sec center" style="margin-top:8px">This is an internal tool for KnightMarket staff — not part of the student, org, or business apps.</div>
   </div>
@@ -1773,6 +1941,7 @@ const I={
  racket:'<ellipse cx="14.5" cy="8.5" rx="5" ry="6.5" transform="rotate(40 14.5 8.5)"/><path d="M10.5 13.5L4 20M12 5l5 4M10 8l6 5"/>',
  steth:'<path d="M6 3v6a5 5 0 0 0 10 0V3"/><path d="M11 14v2a4 4 0 0 0 8 0v-2"/><circle cx="19" cy="12" r="2"/>',
  calc:'<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8.5 12h1M12 12h1M15.5 12h1M8.5 16h1M12 16h1M15.5 16h1"/>',
+ fan:'<circle cx="12" cy="12" r="2"/><path d="M12 12c0-3.2 2.2-5.5 5.5-5.5 2 0 2.6 3.6-.5 5.5 3.1 1.9 2.5 5.5.5 5.5-3.3 0-5.5-2.3-5.5-5.5 0 3.2-2.2 5.5-5.5 5.5-2 0-2.6-3.6.5-5.5-3.1-1.9-2.5-5.5-.5-5.5 3.3 0 5.5 2.3 5.5 5.5z"/>',
  hoodie:'<path d="M8 6a4 4 0 0 1 8 0l4 3-2 3-2-1v10H8V11l-2 1-2-3z"/><path d="M10 6a2 2 0 0 0 4 0"/>',
  dress:'<path d="M9 3l3 4 3-4 1 6-2 2 4 10H6l4-10-2-2z"/>',
  star:'<path fill="currentColor" stroke="none" d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/>',
